@@ -2,32 +2,42 @@
 <html lang="de">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="annikaSCHULTE – Your datav deserves a better place"
+    />
 
-    <!-- Here is the script part that is needed for tailwindcss if I wanna use it:
-    <script src="https://cdn.tailwindcss.com"></script> -->
+    <!-- Here is the script part that is needed for tailwindcss:  -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Here is the customization part for tailwindcss if I wanna change sth:
+    <!-- Here is the customization part for tailwindcss if I wanna change sth: -->
     <script>
       tailwind.config = {
         theme: {
           extend: {
+            fontFamily: {
+              montserrat: "'Montserrat',sans-serif",
+            },
+
             colors: {
-              clifford: "#da373d",
+              /* here an example:
+              clifford: "#da373d", */
             },
           },
         },
       };
-    </script> -->
+    </script>
+
+    <script type="text/javascript">
+      let divH3 = document.querySelectorAll(".accordeon div");
+      for (let i = 0; i < divH3.length; i++) {
+        divH3[i].addEventListener("click", function () {
+          divH3[i].classList.toggle("on-acc");
+        });
+      }
+    </script>
 
     <title>annikaSCHULTE</title>
-
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-      crossorigin="anonymous"
-    />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -37,64 +47,288 @@
     />
 
     <style>
-      .navbarExtra {
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        font-family: "montserrat", "sansserif";
+        color: #333745;
+      }
+
+      h2 {
+        text-transform: uppercase;
+      }
+
+      h3 {
+        font-weight: 900;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        gap: 35px;
+        padding: 35px 0px;
+        width: 100vw;
+      }
+
+      .schritteLabel {
+        min-width: 235px;
+        text-transform: uppercase;
+        font-weight: 600;
+      }
+
+      .square {
         background-color: #daede2;
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-transform: uppercase;
+      }
+
+      /* accordion section. For more info, have a look here: https://www.w3schools.com/howto/howto_js_accordion.asp */
+
+      .accordion {
+        cursor: pointer;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        transition: 0.4s;
+      }
+
+      .panel {
+        display: none;
+        overflow: hidden;
+        margin-right: 70px;
       }
     </style>
 
-    <!-- We do not need our own css stylesheet her anymore since we use bootstrap:
+    <!-- We do not need our own css stylesheet her anymore since we use tailwind … 
+      … changes will be made in the style part above:
     <link rel="stylesheet" href="/style.css" /> -->
   </head>
 
   <body>
-    <!-- navbar via bootstrap: -->
     <nav
-      class="navbar navbar-expand-lg navbarExtra rounded"
-      aria-label="Thirteenth navbar example"
+      class="bg-[#DAEDE2] flex justify-between items-center py-6 w-full sticky top-0"
     >
-      <div class="container-fluid">
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarsExample11"
-          aria-controls="navbarsExample11"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
+      <img
+        class="pl-[30px] h-[50px]"
+        src="/public/images/annika-schulte-logo.svg"
+      />
 
-        <div class="collapse navbar-collapse d-lg-flex" id="navbarsExample11">
-          <a class="col-lg-2" href="#">
-            <img
-              class="py-3 px-3"
-              style="width: 75%"
-              src="/public/images/annika-schulte-logo.svg"
-            />
-          </a>
-          <ul class="navbar-nav col-lg-8 justify-content-lg-end">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#"
-                >Leistungen</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Zusammenarbeit</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Über mich</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Projektbeispiele</a>
-            </li>
-          </ul>
-          <div class="d-lg-flex col-lg-2 justify-content-lg-center">
-            <button class="btn btn-primary">Kontakt</button>
-          </div>
-        </div>
+      <div
+        class="flex items-center gap-[35px] pr-[70px] uppercase font-semibold"
+      >
+        <a href="#Leistungen">Leistungen</a>
+        <a>Zusammenarbeit</a>
+        <a>Über mich</a>
+        <a>Projektbeispiele</a>
+        <button
+          class="bg-[#333745] py-[12px] px-[30px] rounded-full text-[#DAEDE2] uppercase"
+        >
+          Kontakt
+        </button>
       </div>
     </nav>
+
+    <header>
+      <img
+        class="h-[600px] object-cover w-full p-[30px]"
+        src="/public/images/_DSC0706.jpg"
+      />
+    </header>
+
+    <main class="flex flex-col justify-center px-[140px]">
+      <div class="container justify-self-center">
+        <h2 id="Leistungen" class="justify-self-center font-bold">
+          Leistungen
+        </h2>
+        <section>
+          Überall werden mittlerweile Daten gesammelt. Die reine Existenz von
+          Daten schafft allerdings noch keinen Mehrwert für euer Geschäft. Ich
+          helfe euch euren Datenkeller zu entrümpeln, Farbe ins Spiel zu bringen
+          und die Taschenlampe nur auf Relevantes zu richten.
+        </section>
+      </div>
+
+      <div class="flex flex-col items-center">
+        <h3 class="font-semibold">
+          Die einzelnen Schritte zur besseren Datenwelt findet ihr hier:
+        </h3>
+        <hr class="bg-[#333745] h-[2px] w-full mt-[35px]" />
+        <div class="flex w-full hoverStatus py-[35px]">
+          <div>
+            <button class="accordion schritteLabel">Schritt 1</button>
+          </div>
+          <div class="flex flex-col gap-y-[35px]">
+            <button class="accordion font-semibold">Im Datenkeller.</button>
+            <div class="panel">
+              <p>
+                Im Datenkeller ist es dunkel und verstaubt. Ständig stolpert ihr
+                über herumliegende Daten. Außerdem gibt es viele Momente in
+                eurem Arbeitsalltag, in denen die Arbeit mit Daten hohe manuelle
+                Aufwände verursacht.
+              </p>
+              <p>
+                Zusammen formulieren wir eure Fragestellungen, erarbeiten eure
+                Anwendungsfälle, konzipieren Lösungswege und richten so die
+                Taschenlampe auf alles Relevante.
+              </p>
+            </div>
+          </div>
+        </div>
+        <hr class="bg-[#333745] h-[2px] w-full" />
+        <div class="flex w-full hoverStatus py-[35px]">
+          <div>
+            <button class="accordion schritteLabel">Schritt 2</button>
+          </div>
+          <div class="flex flex-col gap-y-[35px]">
+            <button class="accordion font-semibold">
+              Einmal Abstauben, bitte.
+            </button>
+            <div class="panel">
+              <p>
+                Das Ziel ist definiert. Jetzt ist es besonders wichtig, alles im
+                Detail zu durchforsten und einen genauen Überblick über den
+                Datenkeller zu erhalten. Dabei können wir durchaus feststellen,
+                dass die Datenmengen noch nicht ausreichen oder andere Daten
+                notwendig sind. Wir definieren gemeinsam, wie die Datenlücke
+                aufgefüllt werden kann.
+              </p>
+            </div>
+          </div>
+        </div>
+        <hr class="bg-[#333745] h-[2px] w-full" />
+        <div class="flex w-full hoverStatus py-[35px]">
+          <div>
+            <button class="accordion schritteLabel">Schritt 3</button>
+          </div>
+          <div class="flex flex-col gap-y-[35px]">
+            <button class="accordion font-semibold">
+              Ordnung ist das halbe Leben.
+            </button>
+            <div class="panel">
+              <p>
+                Damit die neu geschaffene Übersicht auch langfristig erhalten
+                bleibt, kümmern wir uns um Datenmodelle, Datenbanken und
+                Dokumentationen. Auch das extrem wichtige Thema
+                Datenqualitätsmanagement ist Teil dieses Schrittes. Denn wie
+                heißt es so schön: Sh*t in, Sh*t out. Fehlerhafte Daten oder
+                Datenlücken erschüttern das Vertrauen in die Zahlen – oft
+                nachhaltig.
+              </p>
+            </div>
+          </div>
+        </div>
+        <hr class="bg-[#333745] h-[2px] w-full" />
+        <div class="flex w-full hoverStatus py-[35px]">
+          <div>
+            <button class="accordion schritteLabel">Schritt 4</button>
+          </div>
+          <div class="flex flex-col gap-y-[35px]">
+            <button class="accordion font-semibold">Endlich Farbe.</button>
+            <div class="panel">
+              <p>
+                Nach dem Aufräumen beginnt der Spaß. Die Daten werden zum Leben
+                erweckt. In bunten Reports, übersichtlichen Tabellen,
+                automatisierten Prozessen, und und und hauchen wir euren Daten
+                Leben ein. Wir gestalten eine Datenwelt, die alle gerne nutzen,
+                die begeistert und die tägliche Arbeit erleichtert.
+              </p>
+            </div>
+          </div>
+        </div>
+        <hr class="bg-[#333745] h-[2px] w-full" />
+        <div class="flex w-full hoverStatus py-[35px]">
+          <div>
+            <button class="accordion schritteLabel">Schritt 5</button>
+          </div>
+          <div class="flex flex-col gap-y-[35px]">
+            <button class="accordion font-semibold">
+              Und dann noch eine Prise „Magie“.
+            </button>
+            <div class="panel">
+              <p>
+                Falls die reine Datenvisualisierung noch nicht genug ist, können
+                durch statistische Methoden Erkenntnisse erarbeitet werden, die
+                nicht auf den ersten Blick zu erkennen waren. Das fühlt sich
+                manchmal nach Magie an. Negativ könnte es auch als Black Box
+                bezeichnet werden. Daher ist es wichtig immer nur eine Prise
+                dazuzugeben.
+              </p>
+            </div>
+          </div>
+        </div>
+        <hr class="bg-[#333745] h-[2px] w-full" />
+        <div class="flex w-full hoverStatus py-[35px]">
+          <div>
+            <button class="accordion schritteLabel">Schritt 6</button>
+          </div>
+          <div class="flex flex-col gap-y-[35px]">
+            <button class="accordion font-semibold">
+              Treat your data right.
+            </button>
+            <div class="panel">
+              <p>
+                Die bessere Datenwelt ist gestaltet und die alltägliche Arbeit
+                mit den Analyseergebnissen beginnt. An diesem Punkt wird es
+                häufig kritisch. Denn ungepflegte Datenbanken, ins Leere
+                laufende Prozesse oder unplausible Reports nutzt – zurecht! -
+                niemand gerne. Das Vertrauen schwindet und im schlimmsten Fall,
+                wandert alles wieder in den Datenkeller.
+              </p>
+              Damit das nicht passiert, fragt mich gerne als eure Begleiterin an
+              und gemeinsam folgen wir dem Motto „Your data deserves a better
+              place.“ Und zwar langfristig!
+            </div>
+          </div>
+        </div>
+        <hr class="bg-[#333745] h-[2px] w-full mb-[35px]" />
+      </div>
+
+      <div class="container justify-self-center">
+        <h2 class="justify-self-center font-bold">Zusammenarbeit</h2>
+        <h3 class="font-semibold">
+          Was ihr also von der Zusammenarbeit mit mir erwarten könnt:
+        </h3>
+        <div class="flex gap-[35px] w-full">
+          <div class="square font-semibold">Klarheit</div>
+          <div class="square font-semibold">Autonomie</div>
+          <div class="square font-semibold">Effizienz</div>
+          <div class="square font-semibold">Fokus</div>
+        </div>
+      </div>
+      <section>
+        <p class="font-semibold inline">Klingt gut?</p>
+        Dann meldet euch bei mir für ein erstes, unverbindliches Gespräch. Dabei
+        werden wir herausfinden, ob der beschriebene Weg etwas für euch ist oder
+        an welchem Punkt des Weges ihr aktuell steht.
+      </section>
+      <section class="my-[35px]">
+        <p class="font-semibold inline">
+          Eventuell habt ihr euch gefragt, warum ich immer wieder von
+          „gemeinsam“ und „zusammen“
+        </p>
+        Eventuell habt ihr euch gefragt, warum ich immer wieder von „gemeinsam“
+        und „zusammen“ schreibe? Ganz einfach. Beim Thema Daten kommen wir nur
+        kooperativ ans Ziel. Eine fertige Lösung oder meine persönliche Meinung,
+        die den Anwendern vorgesetzt wird, kann nicht zum Ziel führen. Alle
+        Beteiligten müssen von Anfang an die Möglichkeit haben, ihre Arbeitswelt
+        rund um die Datennutzung mitzugestalten.
+      </section>
+      <p class="font-semibold inline">
+        Lasst uns also gemeinsam losgehen, ich zeige euch die Richtung und wir
+        finden zusammen den passenden Weg aus dem Datenkeller!
+      </p>
+      <button
+        class="bg-[#333745] py-[12px] px-[30px] rounded-full text-[#FFFFFF] uppercase w-fit my-[70px] font-semibold place-self-center"
+      >
+        Ich möchte loslegen
+      </button>
+    </main>
 
     <!-- old code without any CSS framework:
     <nav>
@@ -242,11 +476,21 @@
       </div>
     </main>  -->
 
-    <!-- The js setup for bootstrap: -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-      crossorigin="anonymous"
-    ></script>
+    <script>
+      var acc = document.getElementsByClassName("accordion");
+      var i;
+
+      for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+          this.classList.toggle("active");
+          var panel = this.nextElementSibling;
+          if (panel.style.display === "block") {
+            panel.style.display = "none";
+          } else {
+            panel.style.display = "block";
+          }
+        });
+      }
+    </script>
   </body>
 </html>
