@@ -113,7 +113,7 @@
 
   <body>
     <nav
-      class="bg-[#DAEDE2] flex justify-between items-center py-6 w-full sticky top-0 z-20"
+      class="bg-[#DAEDE2] flex justify-between items-center py-6 w-full sticky top-0 z-20 drop-shadow"
     >
       <img
         class="pl-[30px] h-[50px]"
@@ -123,15 +123,16 @@
       <div
         class="flex items-center gap-[35px] pr-[70px] uppercase font-semibold"
       >
-        <a href="#Leistungen">Leistungen</a>
-        <a href="#Zusammenarbeit">Zusammenarbeit</a>
-        <a href="#UeberMich">Über mich</a>
-        <a href="#Projektbeispiele">Projektbeispiele</a>
-        <button
-          class="bg-[#333745] py-[12px] px-[30px] rounded-full text-[#DAEDE2] uppercase"
+        <a href="#Leistungen" class="hover:underline">Leistungen</a>
+        <a href="#Zusammenarbeit" class="hover:underline">Zusammenarbeit</a>
+        <a href="#UeberMich" class="hover:underline">Über mich</a>
+        <a href="#Projektbeispiele" class="hover:underline">Projektbeispiele</a>
+        <a
+          href="#Kontakt"
+          class="bg-[#333745] py-[12px] px-[30px] rounded-full text-[#DAEDE2] uppercase hover:opacity-50"
         >
           Kontakt
-        </button>
+        </a>
       </div>
     </nav>
 
@@ -295,7 +296,7 @@
         <hr class="bg-[#333745] h-[2px] w-full mb-[35px]" />
       </div>
 
-      <div class="container items-center">
+      <div class="flex flex-col justify-center py-[35px] gap-[35px] mx-[140px]">
         <div class="flex justify-center items-center">
           <div id="Zusammenarbeit" class="-translate-y-[150px]"></div>
           <h2 class="absolute font-bold z-10">Zusammenarbeit</h2>
@@ -304,7 +305,7 @@
           ></div>
         </div>
 
-        <h3 class="font-semibold">
+        <h3 class="font-semibold text-center">
           Was ihr also von der Zusammenarbeit mit mir erwarten könnt:
         </h3>
         <div class="flex gap-[35px] w-full">
@@ -356,11 +357,12 @@
           Lasst uns also gemeinsam losgehen, ich zeige euch die Richtung und wir
           finden zusammen den passenden Weg aus dem Datenkeller!
         </p>
-        <button
+        <a
+          href="#Kontakt"
           class="bg-[#333745] py-[12px] px-[30px] rounded-full text-[#FFFFFF] uppercase w-fit my-[70px] font-semibold place-self-center"
         >
           Ich möchte loslegen
-        </button>
+        </a>
       </div>
 
       <div class="bg-[#F2D544] py-[70px] my-0">
@@ -411,7 +413,7 @@
             >
               <img
                 class="self-start h-[50px]"
-                src="/public/icons/annikaSCHULTE-icon-LinkedIn.svg"
+                src="/public/icons/annikaSCHULTE-icon-LinkedIn-1.svg"
             /></a>
           </div>
         </div>
@@ -769,7 +771,8 @@
                 <div>
                   <p>Name</p>
                   <input
-                    class="bg-[#DAEDE2] rounded-[5px] min-h-[50px] w-full h-full"
+                    autocomplete="off"
+                    class="bg-[#DAEDE2] rounded-[5px] pl-[15px] min-h-[50px] w-full h-full focus:outline-1 focus:outline-[#333745] focus:text-[#333745] focus:bg-[#DAEDE2]"
                     type="text"
                     name="name"
                     required
@@ -779,7 +782,8 @@
                 <div>
                   <p>Email</p>
                   <input
-                    class="bg-[#DAEDE2] rounded-[5px] min-h-[50px] w-full h-full"
+                    autocomplete="off"
+                    class="bg-[#DAEDE2] rounded-[5px] pl-[15px] min-h-[50px] w-full h-full focus:outline-1 focus:outline-[#333745] focus:text-[#333745] focus:bg-[#DAEDE2]"
                     type="email"
                     name="email"
                     required
@@ -789,7 +793,8 @@
               <div class="h-full">
                 <p>Nachricht, Challenge oder Fragen</p>
                 <textarea
-                  class="bg-[#DAEDE2] rounded-[5px] w-full h-full"
+                  autocomplete="off"
+                  class="bg-[#DAEDE2] rounded-[5px] pl-[15px] pt-[15px] w-full h-full focus:outline-1 focus:outline-[#333745] focus:text-[#333745] focus:bg-[#DAEDE2]"
                   name="message"
                   required
                   value="Nachricht, Challenge oder Fragen"
@@ -817,6 +822,54 @@
       </div>
     </main>
 
+    <footer class="bg-[#333745] p-[70px]">
+      <div>
+        <div class="flex justify-between">
+          <div class="text-[#DAEDE2]">
+            <a href="#Leistungen" class="hover:underline">Leistungen</a> |
+            <a href="#Zusammenarbeit" class="hover:underline">Zusammenarbeit</a>
+            | <a href="#UeberMich" class="hover:underline">Über mich</a> |
+            <a href="#Projektbeispiele" class="hover:underline"
+              >Projektbeispiele</a
+            >
+          </div>
+          <div class="text-[#DAEDE2]">
+            <a href="/impressum.html" class="hover:underline">Impressum</a> |
+            <a href="/datenschutz.html" class="hover:underline">Datenschutz</a>
+          </div>
+        </div>
+        <hr class="bg-[#DBEDE2] h-[2px] w-full my-[35px]" />
+        <div class="flex justify-between items-center w-full">
+          <div class="text-[#DAEDE2]">
+            ©
+            <span id="date" class="text-[#DAEDE2]"></span>
+            annikaSCHULTE
+          </div>
+          <div class="flex items-center text-[#DAEDE2]">
+            Design & Development made with
+            <img
+              class="mx-[5px]"
+              src="/public/icons/annikaSCHULTE-icon-heart.svg"
+            />by&nbsp;
+            <a
+              href="https://mk-rietzl.de/de/"
+              target="_blank"
+              rel="noreferrer"
+              class="underline"
+            >
+              mk rietzl</a
+            >
+          </div>
+          <a
+            href="https://www.linkedin.com/in/annika-schulte-02363511a/"
+            target="_blank"
+            rel="noreferrer"
+            ><img src="/public/icons/annikaSCHULTE-icon-LinkedIn-2.svg"
+          /></a>
+        </div>
+      </div>
+    </footer>
+
     <script>
       var acc = document.getElementsByClassName("accordion");
       var i;
@@ -832,6 +885,8 @@
           }
         });
       }
+
+      document.getElementById("date").innerHTML = new Date().getFullYear();
     </script>
   </body>
 </html>
