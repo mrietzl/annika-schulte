@@ -142,8 +142,8 @@
       />
     </header>
 
-    <main class="flex flex-col justify-center">
-      <div class="container justify-self-center">
+    <main>
+      <div class="flex flex-col justify-center py-[35px] gap-[35px] mx-[140px]">
         <div class="flex justify-center items-center">
           <div id="Leistungen" class="-translate-y-[150px]"></div>
           <h2 class="absolute font-bold z-10">Leistungen</h2>
@@ -152,7 +152,7 @@
           ></div>
         </div>
 
-        <section>
+        <section class="text-center">
           Überall werden mittlerweile Daten gesammelt. Die reine Existenz von
           Daten schafft allerdings noch keinen Mehrwert für euer Geschäft. Ich
           helfe euch euren Datenkeller zu entrümpeln, Farbe ins Spiel zu bringen
@@ -641,7 +641,180 @@
         </div>
       </div>
 
-      <div></div>
+      <div class="grid grid-cols-3 gap-[35px] mx-[70px] mt-[70px]">
+        <section
+          class="flex justify-center col-span-1 bg-[#DAEDE2] p-[35px] rounded-[15px] w-full"
+        >
+          <img
+            class="min-h-max"
+            src="/public/icons/annikaSCHULTE-icon-individualitaet.svg"
+          />
+        </section>
+        <section
+          class="flex items-center col-span-2 bg-[#DAEDE2] p-[35px] rounded-[15px] h-full"
+        >
+          <p>
+            Die hier aufgeführten Beispiele dienen lediglich der Inspiration.
+            Die Darstellung und Analyse von Daten ist sehr individuell. Deswegen
+            meldet euch am besten direkt bei mir, um über euren konkreten
+            Anwendungsfall zu sprechen.
+          </p>
+        </section>
+      </div>
+
+      <div class="grid grid-cols-3 gap-[35px] mx-[70px] my-[35px]">
+        <section
+          class="flex items-center col-span-2 bg-[#DAEDE2] p-[35px] rounded-[15px] h-full"
+        >
+          <p>
+            Die Umsetzbarkeit der „Magie-Level“, also der Einsatzgrad von
+            statistischen Methoden ist immer abhängig von der Datenmenge. Ich
+            berate euch gerne, was für euch und eure vorliegende Datenbasis
+            möglich ist oder was ihr benötigt, um in Zukunft ausreichend Daten
+            zu sammeln.
+          </p>
+        </section>
+        <section
+          class="flex justify-center col-span-1 bg-[#DAEDE2] p-[35px] rounded-[15px] w-full"
+        >
+          <img
+            class="min-h-max"
+            src="/public/icons/annikaSCHULTE-icon-datenmenge.svg"
+          />
+        </section>
+      </div>
+
+      <div class="grid grid-cols-3 gap-[35px] mx-[70px] mb-[70px]">
+        <section
+          class="flex justify-center col-span-1 bg-[#DAEDE2] p-[35px] rounded-[15px] w-full"
+        >
+          <img
+            class="min-h-max"
+            src="/public/icons/annikaSCHULTE-icon-tools.svg"
+          />
+        </section>
+        <section
+          class="flex items-center col-span-2 bg-[#DAEDE2] p-[35px] rounded-[15px] h-full"
+        >
+          <p>
+            Ich arbeite komplett unabhängig und nutze verschiedene Tools und
+            Infrastrukturen. Einige Beispiele sind Zoho Analytics, Excel,
+            Tableau, Google Analytics, Power BI, … Im Beratungsprozess wählen
+            wir gemeinsam die für euch passende Software oder Plattform aus.
+          </p>
+        </section>
+      </div>
+
+      <div class="bg-[#F6F792] py-[70px] my-0">
+        <div class="flex justify-start items-center pl-[140px]">
+          <div id="Kontakt" class="-translate-y-[150px]"></div>
+          <h2 class="absolute font-bold uppercase z-10">Kontakt</h2>
+          <div
+            class="absolute bg-[#DAEDE2] rounded-full w-[81px] h-[10px] z-0 translate-y-1.5"
+          ></div>
+        </div>
+
+        <div class="flex flex-col mx-[140px] mt-[70px]">
+          <section>
+            <p class="font-semibold inline">
+              Du möchtest mit mir durchstarten?
+            </p>
+            Dann buche dir gerne direkt einen
+            <a
+              class="font-semibold underline"
+              href="https://calendly.com/annikaschulte"
+              target="_blank"
+              rel="noreferrer"
+              >Termin</a
+            >
+            mit mir.
+          </section>
+          <section class="my-[35px]">
+            <p class="font-semibold inline">
+              Du möchtest mich per E-Mail kontaktieren?
+            </p>
+            Schreib mir gerne an
+
+            <!-- Bei zusätzlichen Verweisen für die E-Mail-Adresse, z.B. einem vordefinierten Betreff o.ä., siehe hier:
+            https://wiki.selfhtml.org/wiki/HTML/Tutorials/Links/Verweise_auf_Mailadressen -->
+            <a
+              class="font-semibold underline"
+              href="mailto:contact@annikaschulte.com"
+              target="_blank"
+              rel="noreferrer"
+              >contact@annikaschulte.com</a
+            >
+          </section>
+          <section>
+            <p class="font-semibold inline">Du hast eine Challenge für mich?</p>
+            Die Nutzung von Daten ist sehr individuell! Wie sieht Eure Challenge
+            für mich aus? Sendet mir hier eure Herausforderung oder eure
+            brennendsten Fragen und ich melde mich mit Ideen bei euch, wie eine
+            Lösung mithilfe von Daten aussehen könnte.
+          </section>
+
+          <form
+            class="mt-[35px]"
+            action="https://api.web3forms.com/submit"
+            method="POST"
+          >
+            <input
+              type="hidden"
+              name="access_key"
+              value="0f38ea7c-7b73-42f1-9be1-bb04e90b23e2"
+            />
+
+            <div class="grid grid-cols-2 gap-[70px]">
+              <div class="flex flex-col gap-[35px]">
+                <div>
+                  <p>Name</p>
+                  <input
+                    class="bg-[#DAEDE2] rounded-[5px] min-h-[50px] w-full h-full"
+                    type="text"
+                    name="name"
+                    required
+                  />
+                </div>
+
+                <div>
+                  <p>Email</p>
+                  <input
+                    class="bg-[#DAEDE2] rounded-[5px] min-h-[50px] w-full h-full"
+                    type="email"
+                    name="email"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="h-full">
+                <p>Nachricht, Challenge oder Fragen</p>
+                <textarea
+                  class="bg-[#DAEDE2] rounded-[5px] w-full h-full"
+                  name="message"
+                  required
+                  value="Nachricht, Challenge oder Fragen"
+                ></textarea>
+              </div>
+            </div>
+
+            <!-- Ist hier eine Captcha-Abfrage gewünscht?
+            <div class="h-captcha" data-captcha="true"></div> -->
+
+            <button
+              class="bg-[#333745] mt-[70px] py-[12px] px-[30px] rounded-full text-[#F6F792]"
+              type="submit"
+            >
+              senden
+            </button>
+          </form>
+
+          <script
+            src="https://web3forms.com/client/script.js"
+            async
+            defer
+          ></script>
+        </div>
+      </div>
     </main>
 
     <script>
