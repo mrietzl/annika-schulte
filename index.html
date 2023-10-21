@@ -15,26 +15,24 @@
       tailwind.config = {
         theme: {
           extend: {
+            backgroundSize: {
+              auto: "auto",
+              cover: "cover",
+              contain: "contain",
+              "50%": "50%",
+            },
+
             fontFamily: {
               montserrat: "'Montserrat',sans-serif",
             },
 
             colors: {
               /* here an example:
-              clifford: "#da373d", */
+                clifford: "#da373d", */
             },
           },
         },
       };
-    </script>
-
-    <script type="text/javascript">
-      let divH3 = document.querySelectorAll(".accordeon div");
-      for (let i = 0; i < divH3.length; i++) {
-        divH3[i].addEventListener("click", function () {
-          divH3[i].classList.toggle("on-acc");
-        });
-      }
     </script>
 
     <title>annikaSCHULTE</title>
@@ -62,6 +60,10 @@
         font-weight: 900;
       }
 
+      h4 {
+        text-decoration-line: underline;
+      }
+
       .container {
         display: flex;
         flex-direction: column;
@@ -69,6 +71,7 @@
         gap: 35px;
         padding: 35px 0px;
         width: 100vw;
+        margin: 0 140px;
       }
 
       .schritteLabel {
@@ -112,7 +115,7 @@
 
   <body>
     <nav
-      class="bg-[#DAEDE2] flex justify-between items-center py-6 w-full sticky top-0"
+      class="bg-[#DAEDE2] flex justify-between items-center py-6 w-full sticky top-0 z-20"
     >
       <img
         class="pl-[30px] h-[50px]"
@@ -141,11 +144,15 @@
       />
     </header>
 
-    <main class="flex flex-col justify-center px-[140px]">
+    <main class="flex flex-col justify-center">
       <div class="container justify-self-center">
-        <h2 id="Leistungen" class="justify-self-center font-bold">
-          Leistungen
-        </h2>
+        <div class="flex justify-center items-center">
+          <h2 id="Leistungen" class="absolute font-bold z-10">Leistungen</h2>
+          <div
+            class="absolute bg-[#DAEDE2] rounded-full w-[107px] h-[10px] z-0 translate-y-1.5"
+          ></div>
+        </div>
+
         <section>
           Überall werden mittlerweile Daten gesammelt. Die reine Existenz von
           Daten schafft allerdings noch keinen Mehrwert für euer Geschäft. Ich
@@ -154,7 +161,7 @@
         </section>
       </div>
 
-      <div class="flex flex-col items-center">
+      <div class="flex flex-col items-center mx-[140px]">
         <h3 class="font-semibold">
           Die einzelnen Schritte zur besseren Datenwelt findet ihr hier:
         </h3>
@@ -289,192 +296,162 @@
         <hr class="bg-[#333745] h-[2px] w-full mb-[35px]" />
       </div>
 
-      <div class="container justify-self-center">
-        <h2 class="justify-self-center font-bold">Zusammenarbeit</h2>
+      <div class="container items-center">
+        <div class="flex justify-center items-center">
+          <h2 class="absolute font-bold z-10">Zusammenarbeit</h2>
+          <div
+            class="absolute bg-[#DAEDE2] rounded-full w-[163px] h-[10px] z-0 translate-y-1.5"
+          ></div>
+        </div>
+
         <h3 class="font-semibold">
           Was ihr also von der Zusammenarbeit mit mir erwarten könnt:
         </h3>
         <div class="flex gap-[35px] w-full">
-          <div class="square font-semibold">Klarheit</div>
-          <div class="square font-semibold">Autonomie</div>
-          <div class="square font-semibold">Effizienz</div>
-          <div class="square font-semibold">Fokus</div>
+          <div class="square font-semibold">
+            <div class="z-10">Klarheit</div>
+            <div
+              class="absolute bg-[#F2D544] rounded-full w-[84px] h-[10px] z-0 translate-y-1.5"
+            ></div>
+          </div>
+          <div class="square font-semibold">
+            <div class="z-10">Autonomie</div>
+            <div
+              class="absolute bg-[#F2D544] rounded-full w-[105px] h-[10px] z-0 translate-y-1.5"
+            ></div>
+          </div>
+          <div class="square font-semibold">
+            <div class="z-10">Effizienz</div>
+            <div
+              class="absolute bg-[#F2D544] rounded-full w-[87px] h-[10px] z-0 translate-y-1.5"
+            ></div>
+          </div>
+          <div class="square font-semibold">
+            <div class="z-10">Fokus</div>
+            <div
+              class="absolute bg-[#F2D544] rounded-full w-[58px] h-[10px] z-0 translate-y-1.5"
+            ></div>
+          </div>
         </div>
       </div>
-      <section>
-        <p class="font-semibold inline">Klingt gut?</p>
-        Dann meldet euch bei mir für ein erstes, unverbindliches Gespräch. Dabei
-        werden wir herausfinden, ob der beschriebene Weg etwas für euch ist oder
-        an welchem Punkt des Weges ihr aktuell steht.
-      </section>
-      <section class="my-[35px]">
-        <p class="font-semibold inline">
+      <div class="flex flex-col mx-[140px]">
+        <section>
+          <p class="font-semibold inline">Klingt gut?</p>
+          Dann meldet euch bei mir für ein erstes, unverbindliches Gespräch.
+          Dabei werden wir herausfinden, ob der beschriebene Weg etwas für euch
+          ist oder an welchem Punkt des Weges ihr aktuell steht.
+        </section>
+        <section class="my-[35px]">
+          <p class="font-semibold inline">
+            Eine Sache möchte ich noch loswerden.
+          </p>
           Eventuell habt ihr euch gefragt, warum ich immer wieder von
-          „gemeinsam“ und „zusammen“
+          „gemeinsam“ und „zusammen“ schreibe? Ganz einfach. Beim Thema Daten
+          kommen wir nur kooperativ ans Ziel. Eine fertige Lösung oder meine
+          persönliche Meinung, die den Anwendern vorgesetzt wird, kann nicht zum
+          Ziel führen. Alle Beteiligten müssen von Anfang an die Möglichkeit
+          haben, ihre Arbeitswelt rund um die Datennutzung mitzugestalten.
+        </section>
+        <p class="font-semibold inline">
+          Lasst uns also gemeinsam losgehen, ich zeige euch die Richtung und wir
+          finden zusammen den passenden Weg aus dem Datenkeller!
         </p>
-        Eventuell habt ihr euch gefragt, warum ich immer wieder von „gemeinsam“
-        und „zusammen“ schreibe? Ganz einfach. Beim Thema Daten kommen wir nur
-        kooperativ ans Ziel. Eine fertige Lösung oder meine persönliche Meinung,
-        die den Anwendern vorgesetzt wird, kann nicht zum Ziel führen. Alle
-        Beteiligten müssen von Anfang an die Möglichkeit haben, ihre Arbeitswelt
-        rund um die Datennutzung mitzugestalten.
-      </section>
-      <p class="font-semibold inline">
-        Lasst uns also gemeinsam losgehen, ich zeige euch die Richtung und wir
-        finden zusammen den passenden Weg aus dem Datenkeller!
-      </p>
-      <button
-        class="bg-[#333745] py-[12px] px-[30px] rounded-full text-[#FFFFFF] uppercase w-fit my-[70px] font-semibold place-self-center"
-      >
-        Ich möchte loslegen
-      </button>
+        <button
+          class="bg-[#333745] py-[12px] px-[30px] rounded-full text-[#FFFFFF] uppercase w-fit my-[70px] font-semibold place-self-center"
+        >
+          Ich möchte loslegen
+        </button>
+      </div>
+
+      <div class="bg-[#F2D544] py-[70px] my-0">
+        <div class="flex justify-center items-center">
+          <h2 class="absolute font-bold z-10">Über mich</h2>
+          <div
+            class="absolute bg-[#DAEDE2] rounded-full w-[98px] h-[10px] z-0 translate-y-1.5"
+          ></div>
+        </div>
+
+        <div
+          class="flex mx-[140px] gap-[70px] mt-[35px] justify-start items-center"
+        >
+          <img
+            class="aspect-square object-cover max-h-[600px]"
+            src="/public/images/_DSC0757-Bearbeitet.jpg"
+          />
+          <div class="flex flex-col gap-[70px]">
+            <h4 class="text-5xl font-semibold">Hi, ich bin Annika.</h4>
+            <div class="flex flex-col gap-[35px]">
+              <div class="text-4xl font-medium z-10 w-fit">Wissensdurstig</div>
+              <div
+                class="absolute bg-[#F6F792] rounded-full w-[283px] h-[20px] z-0 translate-y-6"
+              ></div>
+            </div>
+
+            <div class="flex flex-col gap-[35px]">
+              <div class="text-4xl font-medium z-10 w-fit">
+                Begeisterungsfähig
+              </div>
+              <div
+                class="absolute bg-[#F6F792] rounded-full w-[361px] h-[20px] z-0 translate-y-6"
+              ></div>
+            </div>
+
+            <div class="flex flex-col gap-[35px]">
+              <div class="text-4xl font-medium z-10 w-fit">Verlässlich</div>
+              <div
+                class="absolute bg-[#F6F792] rounded-full w-[193px] h-[20px] z-0 translate-y-6"
+              ></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-col mx-[140px] mt-[70px]">
+          <section>
+            <p class="font-semibold inline">
+              Ich bin Datenanalystin und Beraterin.
+            </p>
+            Seit 2018 arbeite ich als Datenanalystin und habe schon die
+            unterschiedlichsten Projekte betreut. Von Vertrieb über Marketing
+            bis hin zum Einkauf. Vom ersten Beratungsgespräch über Data Audits
+            bis hin zum fertigen Dashboard. Ich kann die gesamte Bandbreite der
+            Datenanalyse abdecken.
+          </section>
+          <section class="my-[35px]">
+            <p class="font-semibold inline">Ich bin Software-Trainerin.</p>
+            Seit Anfang 2023 bin ich Software-Trainerin. Damit kultiviere ich
+            meine Fähigkeit, Menschen zur Nutzung von Technik und Daten zu
+            befähigen und sie dafür zu begeistern. Ich nutze gerne einfaches
+            Vokabular, um Missverständnissen vorzubeugen und kann mich
+            empathisch auf unterschiedliche Persönlichkeiten einstellen.
+          </section>
+          <section>
+            <p class="font-semibold inline">
+              Ich arbeite am liebsten an der Schnittstelle zwischen Technik und
+              Mensch.
+            </p>
+            Ich habe meinen beruflichen Weg im Jahr 2008 als „IT-Fachberaterin“
+            bei Siemens begonnen. Hier habe ich gelernt zwischen technischen und
+            fachlichen Abteilungen zu vermitteln. Denn manchmal spricht man zwar
+            die gleiche Sprache, aber versteht sich trotzdem nicht.
+          </section>
+          <section class="my-[35px]">
+            <p class="font-semibold inline">Ich bin begeisterungsfähig.</p>
+            Mit Freude und ehrlichem Interesse suche ich nach den bestmöglichen
+            Lösungen. Dabei kann ich motivieren und ermuntern. Denn mit Freude
+            und einer positiven Einstellung geht doch alles leichter von der
+            Hand.
+          </section>
+          <section>
+            <p class="font-semibold inline">Ich liebe das Lernen.</p>
+            Mein fast unstillbarer Wissensdurst führt dazu, dass ich mich
+            selbständig und zügig in die verschiedensten Themen einarbeiten und
+            eindenken kann. So gelingt es mir zielgruppenorientiert zu arbeiten
+            und die Bedürfnisse aller Beteiligten in meinen Konzepten zu
+            berücksichtigen.
+          </section>
+        </div>
+      </div>
     </main>
-
-    <!-- old code without any CSS framework:
-    <nav>
-      <img class="navLogo" src="/public/images/annika-schulte-logo.svg" />
-      <div class="container">
-        <a>Leistungen</a>
-        <a>Zusammenarbeit</a>
-        <a>Über mich</a>
-        <a>Projektbeispiele</a>
-        <button>Kontakt</button>
-      </div>
-    </nav>
-
-    <main>
-      <header>
-        <img class="headerImage" src="/public/images/_DSC0706.jpg" />
-      </header>
-      <div class="partOne">
-        <h2>Leistungen</h2>
-        <p>
-          Überall werden mittlerweile Daten gesammelt. Die reine Existenz von
-          Daten schafft allerdings noch keinen Mehrwert für euer Geschäft. Ich
-          helfe euch euren Datenkeller zu entrümpeln, Farbe ins Spiel zu bringen
-          und die Taschenlampe nur auf Relevantes zu richten.
-        </p>
-      </div>
-      <div class="partTwo">
-        <h3>Die einzelnen Schritte zur besseren Datenwelt findet ihr hier:</h3>
-
-        <hr />
-
-        <div class="schritte">
-          <div class="schritteLabel"><h4>Schritt 1</h4></div>
-          <div>
-            <h5>Im Datenkeller.</h5>
-            <p class="textLeft">
-              Im Datenkeller ist es dunkel und verstaubt. Ständig stolpert ihr
-              über herumliegende Daten. Außerdem gibt es viele Momente in eurem
-              Arbeitsalltag, in denen die Arbeit mit Daten hohe manuelle
-              Aufwände verursacht.
-            </p>
-            <p class="textLeft">
-              Zusammen formulieren wir eure Fragestellungen, erarbeiten eure
-              Anwendungsfälle, konzipieren Lösungswege und richten so die
-              Taschenlampe auf alles Relevante.
-            </p>
-          </div>
-        </div>
-
-        <hr />
-
-        <div class="schritte">
-          <div class="schritteLabel"><h4>Schritt 2</h4></div>
-          <div>
-            <h5>Einmal Abstauben, bitte.</h5>
-            <p class="textLeft">
-              Das Ziel ist definiert. Jetzt ist es besonders wichtig, alles im
-              Detail zu durchforsten und einen genauen Überblick über den
-              Datenkeller zu erhalten. Dabei können wir durchaus feststellen,
-              dass die Datenmengen noch nicht ausreichen oder andere Daten
-              notwendig sind. Wir definieren gemeinsam, wie die Datenlücke
-              aufgefüllt werden kann.
-            </p>
-          </div>
-        </div>
-
-        <hr />
-
-        <div class="schritte">
-          <div class="schritteLabel"><h4>Schritt 3</h4></div>
-          <div>
-            <h5>Ordnung ist das halbe Leben.</h5>
-            <p class="textLeft">
-              Damit die neu geschaffene Übersicht auch langfristig erhalten
-              bleibt, kümmern wir uns um Datenmodelle, Datenbanken und
-              Dokumentationen. Auch das extrem wichtige Thema
-              Datenqualitätsmanagement ist Teil dieses Schrittes. Denn wie heißt
-              es so schön: Sh*t in, Sh*t out. Fehlerhafte Daten oder Datenlücken
-              erschüttern das Vertrauen in die Zahlen – oft nachhaltig.
-            </p>
-          </div>
-        </div>
-
-        <hr />
-
-        <div class="schritte">
-          <div class="schritteLabel"><h4>Schritt 4</h4></div>
-          <div>
-            <h5>Endlich Farbe.</h5>
-            <p class="textLeft">
-              Nach dem Aufräumen beginnt der Spaß. Die Daten werden zum Leben
-              erweckt. In bunten Reports, übersichtlichen Tabellen,
-              automatisierten Prozessen, und und und hauchen wir euren Daten
-              Leben ein. Wir gestalten eine Datenwelt, die alle gerne nutzen,
-              die begeistert und die tägliche Arbeit erleichtert.
-            </p>
-          </div>
-        </div>
-
-        <hr />
-
-        <div class="schritte">
-          <div class="schritteLabel"><h4>Schritt 5</h4></div>
-          <div>
-            <h5>Und dann noch eine Prise „Magie“.</h5>
-            <p class="textLeft">
-              Falls die reine Datenvisualisierung noch nicht genug ist, können
-              durch statistische Methoden Erkenntnisse erarbeitet werden, die
-              nicht auf den ersten Blick zu erkennen waren. Das fühlt sich
-              manchmal nach Magie an. Negativ könnte es auch als Black Box
-              bezeichnet werden. Daher ist es wichtig immer nur eine Prise
-              dazuzugeben.
-            </p>
-          </div>
-        </div>
-
-        <hr />
-
-        <div class="schritte">
-          <div class="schritteLabel"><h4>Schritt 6</h4></div>
-          <div>
-            <h5>Treat your data right.</h5>
-            <p class="textLeft">
-              Die bessere Datenwelt ist gestaltet und die alltägliche Arbeit mit
-              den Analyseergebnissen beginnt. An diesem Punkt wird es häufig
-              kritisch. Denn ungepflegte Datenbanken, ins Leere laufende
-              Prozesse oder unplausible Reports nutzt – zurecht! - niemand
-              gerne. Das Vertrauen schwindet und im schlimmsten Fall, wandert
-              alles wieder in den Datenkeller.
-            </p>
-            <p class="textLeft">
-              Damit das nicht passiert, fragt mich gerne als eure Begleiterin an
-              und gemeinsam folgen wir dem Motto „Your data deserves a better
-              place.“ Und zwar langfristig!
-            </p>
-          </div>
-        </div>
-
-        <hr />
-      </div>
-
-      <div class="partTwo">
-        <h2>Zusammenarbeit</h2>
-        <h3>Was ihr also von der Zusammenarbeit mit mir erwarten könnt:</h3>
-      </div>
-    </main>  -->
 
     <script>
       var acc = document.getElementsByClassName("accordion");
