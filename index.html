@@ -95,16 +95,27 @@
       .accordion {
         cursor: pointer;
         width: 100%;
-        border: none;
         text-align: left;
         outline: none;
-        transition: 0.4s;
+        transition: 1s;
       }
 
       .panel {
-        display: none;
+        max-height: 0;
         overflow: hidden;
-        margin-right: 70px;
+        transition: max-height 0.5s in-ease-out;
+      }
+
+      .active .cross {
+        transform: rotate(45deg);
+        /*         transition: all 0.3s;
+ */
+      }
+
+      .plus {
+        transform: rotate(-45deg);
+        /*         transition: all 0.3s;
+ */
       }
     </style>
 
@@ -140,9 +151,14 @@
       <div class="absolute mb-[70px] self-end">
         <div class="flex justify-center">
           <div class="h-[300px] w-[1000px] bg-[#FFFFFF] opacity-25"></div>
-          <h1 class="absolute z-10 self-center text-5xl font-semibold">
-            Your data deserves a better place.
-          </h1>
+          <div class="absolute self-center">
+            <h1 class="relative z-10 text-5xl font-semibold">
+              Your data deserves a better place.
+            </h1>
+            <div
+              class="absolute h-[30px] w-[836px] -translate-y-4 rounded-full bg-[#F6F792] opacity-50"
+            ></div>
+          </div>
         </div>
       </div>
 
@@ -258,16 +274,22 @@
           </div>
         </div>
         <hr class="h-[2px] w-full bg-[#333745]" />
-        <div class="hoverStatus flex w-full py-[35px]">
+        <div class="flex w-full py-[35px]">
           <div>
-            <button class="accordion schritteLabel">Schritt 5</button>
+            <p class="schritteLabel">Schritt 5</p>
           </div>
-          <div class="flex flex-col gap-y-[35px]">
-            <button class="accordion font-semibold">
-              Und dann noch eine Prise „Magie“.
-            </button>
+          <div class="flex flex-col">
+            <div class="accordion flex place-content-between items-center">
+              <button class="font-semibold hover:underline">
+                Und dann noch eine Prise „Magie“.
+              </button>
+              <img
+                class="cross"
+                src="/public/illustrations-and-icons/2023-10-24-annikaSCHULTE-icon-cross.svg"
+              />
+            </div>
             <div class="panel">
-              <p>
+              <p class="mt-[35px]">
                 Falls die reine Datenvisualisierung noch nicht genug ist, können
                 durch statistische Methoden Erkenntnisse erarbeitet werden, die
                 nicht auf den ersten Blick zu erkennen waren. Das fühlt sich
@@ -279,15 +301,19 @@
           </div>
         </div>
         <hr class="h-[2px] w-full bg-[#333745]" />
-        <div class="hoverStatus flex w-full py-[35px]">
-          <div>
-            <button class="accordion schritteLabel">Schritt 6</button>
-          </div>
-          <div class="flex flex-col gap-y-[35px]">
-            <button class="accordion font-semibold">
-              Treat your data right.
-            </button>
-            <div class="panel">
+
+        <div class="flex w-full items-center py-[35px]">
+          <button class="schritteLabel text-start">Schritt 6</button>
+          <div class="flex w-full flex-col gap-y-[35px]">
+            <div class="flex place-content-between items-center">
+              <button class="font-semibold">Treat your data right.</button>
+
+              <img
+                src="/public/illustrations-and-icons/2023-10-24-annikaSCHULTE-icon-cross.svg"
+              />
+            </div>
+
+            <div class="flex hidden flex-col gap-y-[35px]">
               <p>
                 Die bessere Datenwelt ist gestaltet und die alltägliche Arbeit
                 mit den Analyseergebnissen beginnt. An diesem Punkt wird es
@@ -296,9 +322,11 @@
                 niemand gerne. Das Vertrauen schwindet und im schlimmsten Fall,
                 wandert alles wieder in den Datenkeller.
               </p>
-              Damit das nicht passiert, fragt mich gerne als eure Begleiterin an
-              und gemeinsam folgen wir dem Motto „Your data deserves a better
-              place.“ Und zwar langfristig!
+              <p>
+                Damit das nicht passiert, fragt mich gerne als eure Begleiterin
+                an und gemeinsam folgen wir dem Motto „Your data deserves a
+                better place.“ Und zwar langfristig!
+              </p>
             </div>
           </div>
         </div>
@@ -939,6 +967,8 @@
     </footer>
 
     <script>
+      // Initialization for ES Users
+
       var acc = document.getElementsByClassName("accordion");
       var i;
 
@@ -946,10 +976,11 @@
         acc[i].addEventListener("click", function () {
           this.classList.toggle("active");
           var panel = this.nextElementSibling;
-          if (panel.style.display === "block") {
-            panel.style.display = "none";
+          if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
           } else {
-            panel.style.display = "block";
+            panel.style.maxHeight = panel.scrollHeight + "px";
+            document.getElementByClassName("cross").add("plus");
           }
         });
       }
