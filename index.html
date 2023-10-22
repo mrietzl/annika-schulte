@@ -88,7 +88,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        text-transform: uppercase;
       }
 
       /* accordion section. For more info, have a look here: https://www.w3schools.com/howto/howto_js_accordion.asp */
@@ -114,15 +113,15 @@
 
   <body>
     <nav
-      class="bg-[#DAEDE2] flex justify-between items-center py-6 w-full sticky top-0 z-20 drop-shadow"
+      class="sticky top-0 z-20 flex w-full items-center justify-between bg-[#DAEDE2] py-6 drop-shadow"
     >
       <img
-        class="pl-[30px] h-[50px]"
+        class="h-[50px] pl-[30px]"
         src="/public/logo/annikaSCHULTE-logo.svg"
       />
 
       <div
-        class="flex items-center gap-[35px] pr-[70px] uppercase font-semibold"
+        class="flex items-center gap-[35px] pr-[70px] font-semibold uppercase"
       >
         <a href="#Leistungen" class="hover:underline">Leistungen</a>
         <a href="#Zusammenarbeit" class="hover:underline">Zusammenarbeit</a>
@@ -130,27 +129,36 @@
         <a href="#Projektbeispiele" class="hover:underline">Projektbeispiele</a>
         <a
           href="#Kontakt"
-          class="bg-[#333745] py-[12px] px-[30px] rounded-full text-[#DAEDE2] uppercase"
+          class="rounded-full bg-[#333745] px-[30px] py-[12px] uppercase text-[#DAEDE2]"
         >
           Kontakt
         </a>
       </div>
     </nav>
 
-    <header>
+    <header class="relative flex justify-center">
+      <div class="absolute mb-[70px] self-end">
+        <div class="flex justify-center">
+          <div class="h-[300px] w-[1000px] bg-[#FFFFFF] opacity-25"></div>
+          <h1 class="absolute z-10 self-center text-5xl font-semibold">
+            Your data deserves a better place.
+          </h1>
+        </div>
+      </div>
+
       <img
-        class="h-[600px] object-cover w-full p-[30px]"
+        class="h-[600px] w-full object-cover p-[30px]"
         src="/public/images/annikaSCHULTE-image-1.jpg"
       />
     </header>
 
     <main>
-      <div class="flex flex-col justify-center py-[35px] gap-[35px] mx-[140px]">
-        <div class="flex justify-center items-center">
+      <div class="mx-[140px] flex flex-col justify-center gap-[35px] py-[35px]">
+        <div class="flex items-center justify-center">
           <div id="Leistungen" class="-translate-y-[150px]"></div>
-          <h2 class="absolute font-bold z-10">Leistungen</h2>
+          <h2 class="absolute z-10 font-bold">Leistungen</h2>
           <div
-            class="absolute bg-[#DAEDE2] rounded-full w-[107px] h-[10px] z-0 translate-y-1.5"
+            class="absolute z-0 h-[10px] w-[107px] translate-y-1.5 rounded-full bg-[#DAEDE2]"
           ></div>
         </div>
 
@@ -162,12 +170,12 @@
         </section>
       </div>
 
-      <div class="flex flex-col items-center mx-[140px]">
+      <div class="mx-[140px] flex flex-col items-center">
         <h3 class="font-semibold">
           Die einzelnen Schritte zur besseren Datenwelt findet ihr hier:
         </h3>
-        <hr class="bg-[#333745] h-[2px] w-full mt-[35px]" />
-        <div class="flex w-full hoverStatus py-[35px]">
+        <hr class="mt-[35px] h-[2px] w-full bg-[#333745]" />
+        <div class="hoverStatus flex w-full py-[35px]">
           <div>
             <button class="accordion schritteLabel">Schritt 1</button>
           </div>
@@ -188,8 +196,8 @@
             </div>
           </div>
         </div>
-        <hr class="bg-[#333745] h-[2px] w-full" />
-        <div class="flex w-full hoverStatus py-[35px]">
+        <hr class="h-[2px] w-full bg-[#333745]" />
+        <div class="hoverStatus flex w-full py-[35px]">
           <div>
             <button class="accordion schritteLabel">Schritt 2</button>
           </div>
@@ -209,8 +217,8 @@
             </div>
           </div>
         </div>
-        <hr class="bg-[#333745] h-[2px] w-full" />
-        <div class="flex w-full hoverStatus py-[35px]">
+        <hr class="h-[2px] w-full bg-[#333745]" />
+        <div class="hoverStatus flex w-full py-[35px]">
           <div>
             <button class="accordion schritteLabel">Schritt 3</button>
           </div>
@@ -231,8 +239,8 @@
             </div>
           </div>
         </div>
-        <hr class="bg-[#333745] h-[2px] w-full" />
-        <div class="flex w-full hoverStatus py-[35px]">
+        <hr class="h-[2px] w-full bg-[#333745]" />
+        <div class="hoverStatus flex w-full py-[35px]">
           <div>
             <button class="accordion schritteLabel">Schritt 4</button>
           </div>
@@ -249,8 +257,8 @@
             </div>
           </div>
         </div>
-        <hr class="bg-[#333745] h-[2px] w-full" />
-        <div class="flex w-full hoverStatus py-[35px]">
+        <hr class="h-[2px] w-full bg-[#333745]" />
+        <div class="hoverStatus flex w-full py-[35px]">
           <div>
             <button class="accordion schritteLabel">Schritt 5</button>
           </div>
@@ -270,8 +278,8 @@
             </div>
           </div>
         </div>
-        <hr class="bg-[#333745] h-[2px] w-full" />
-        <div class="flex w-full hoverStatus py-[35px]">
+        <hr class="h-[2px] w-full bg-[#333745]" />
+        <div class="hoverStatus flex w-full py-[35px]">
           <div>
             <button class="accordion schritteLabel">Schritt 6</button>
           </div>
@@ -294,57 +302,93 @@
             </div>
           </div>
         </div>
-        <hr class="bg-[#333745] h-[2px] w-full mb-[35px]" />
+        <hr class="mb-[35px] h-[2px] w-full bg-[#333745]" />
       </div>
 
-      <div class="flex flex-col justify-center py-[35px] gap-[35px] mx-[140px]">
-        <div class="flex justify-center items-center">
+      <div class="mx-[140px] flex flex-col justify-center gap-[35px] py-[35px]">
+        <div class="flex items-center justify-center">
           <div id="Zusammenarbeit" class="-translate-y-[150px]"></div>
-          <h2 class="absolute font-bold z-10">Zusammenarbeit</h2>
+          <h2 class="absolute z-10 font-bold">Zusammenarbeit</h2>
           <div
-            class="absolute bg-[#DAEDE2] rounded-full w-[163px] h-[10px] z-0 translate-y-1.5"
+            class="absolute z-0 h-[10px] w-[163px] translate-y-1.5 rounded-full bg-[#DAEDE2]"
           ></div>
         </div>
 
-        <h3 class="font-semibold text-center">
+        <h3 class="text-center font-semibold">
           Was ihr also von der Zusammenarbeit mit mir erwarten könnt:
         </h3>
-        <div class="flex gap-[35px] w-full">
-          <div class="square font-semibold">
-            <div class="z-10">Klarheit</div>
+        <div class="flex w-full gap-[35px]">
+          <div class="square group relative">
+            <div class="z-10 font-semibold uppercase group-hover:hidden">
+              Klarheit
+            </div>
             <div
-              class="absolute bg-[#F2D544] rounded-full w-[84px] h-[10px] z-0 translate-y-1.5"
+              class="absolute z-0 h-[10px] w-[84px] translate-y-1.5 rounded-full bg-[#F2D544] group-hover:hidden"
             ></div>
+            <p
+              class="absolute hidden p-[35px] text-center group-hover:inline-flex"
+            >
+              Ihr werdet Klarheit über eure gesamte Datenwelt und die
+              dazugehörigen Prozesse erlangen.
+            </p>
           </div>
-          <div class="square font-semibold">
-            <div class="z-10">Autonomie</div>
+
+          <div class="square group relative">
+            <div class="z-10 font-semibold uppercase group-hover:hidden">
+              Autonomie
+            </div>
             <div
-              class="absolute bg-[#F2D544] rounded-full w-[105px] h-[10px] z-0 translate-y-1.5"
+              class="absolute z-0 h-[10px] w-[105px] translate-y-1.5 rounded-full bg-[#F2D544] group-hover:hidden"
             ></div>
+            <p
+              class="absolute hidden p-[35px] text-center group-hover:inline-flex"
+            >
+              Ihr seid auf die selbständige Nutzung der Software-Infrastruktur &
+              der Analyseergbnisse vorbereitet.
+            </p>
           </div>
-          <div class="square font-semibold">
-            <div class="z-10">Effizienz</div>
+
+          <div class="square group relative">
+            <div class="z-10 font-semibold uppercase group-hover:hidden">
+              Effizienz
+            </div>
             <div
-              class="absolute bg-[#F2D544] rounded-full w-[87px] h-[10px] z-0 translate-y-1.5"
+              class="absolute z-0 h-[10px] w-[87px] translate-y-1.5 rounded-full bg-[#F2D544] group-hover:hidden"
             ></div>
+            <p
+              class="absolute hidden p-[35px] text-center group-hover:inline-flex"
+            >
+              Ihr werdet deutlich effizienter arbeiten und dadurch langfristig
+              Zeit sparen.
+            </p>
           </div>
-          <div class="square font-semibold">
-            <div class="z-10">Fokus</div>
+
+          <div class="square group relative">
+            <div class="z-10 font-semibold uppercase group-hover:hidden">
+              Fokus
+            </div>
             <div
-              class="absolute bg-[#F2D544] rounded-full w-[58px] h-[10px] z-0 translate-y-1.5"
+              class="absolute z-0 h-[10px] w-[58px] translate-y-1.5 rounded-full bg-[#F2D544] group-hover:hidden"
             ></div>
+            <p
+              class="absolute hidden p-[35px] text-center group-hover:inline-flex"
+            >
+              Ihr werdet von euren Daten optimal unterstützt, sodass ihr euch
+              ganz auf euer Hauptgeschäft konzentrieren könnt.
+            </p>
           </div>
         </div>
       </div>
-      <div class="flex flex-col mx-[140px]">
+
+      <div class="mx-[140px] flex flex-col">
         <section>
-          <p class="font-semibold inline">Klingt gut?</p>
+          <p class="inline font-semibold">Klingt gut?</p>
           Dann meldet euch bei mir für ein erstes, unverbindliches Gespräch.
           Dabei werden wir herausfinden, ob der beschriebene Weg etwas für euch
           ist oder an welchem Punkt des Weges ihr aktuell steht.
         </section>
         <section class="my-[35px]">
-          <p class="font-semibold inline">
+          <p class="inline font-semibold">
             Eine Sache möchte ich noch loswerden.
           </p>
           Eventuell habt ihr euch gefragt, warum ich immer wieder von
@@ -354,56 +398,56 @@
           Ziel führen. Alle Beteiligten müssen von Anfang an die Möglichkeit
           haben, ihre Arbeitswelt rund um die Datennutzung mitzugestalten.
         </section>
-        <p class="font-semibold inline">
+        <p class="inline font-semibold">
           Lasst uns also gemeinsam losgehen, ich zeige euch die Richtung und wir
           finden zusammen den passenden Weg aus dem Datenkeller!
         </p>
         <a
           href="#Kontakt"
-          class="bg-[#333745] py-[12px] px-[30px] rounded-full text-[#FFFFFF] uppercase w-fit my-[70px] font-semibold place-self-center"
+          class="my-[70px] w-fit place-self-center rounded-full bg-[#333745] px-[30px] py-[12px] font-semibold uppercase text-[#FFFFFF]"
         >
           Ich möchte loslegen
         </a>
       </div>
 
-      <div class="bg-[#F2D544] py-[70px] my-0">
-        <div class="flex justify-center items-center">
+      <div class="my-0 bg-[#F2D544] py-[70px]">
+        <div class="flex items-center justify-center">
           <div id="UeberMich" class="-translate-y-[150px]"></div>
-          <h2 class="absolute font-bold z-10">Über mich</h2>
+          <h2 class="absolute z-10 font-bold">Über mich</h2>
           <div
-            class="absolute bg-[#DAEDE2] rounded-full w-[98px] h-[10px] z-0 translate-y-1.5"
+            class="absolute z-0 h-[10px] w-[98px] translate-y-1.5 rounded-full bg-[#DAEDE2]"
           ></div>
         </div>
 
         <div
-          class="flex mx-[140px] gap-[70px] mt-[35px] justify-start items-center"
+          class="mx-[140px] mt-[35px] flex items-center justify-start gap-[70px]"
         >
           <img
-            class="aspect-square object-cover max-h-[600px]"
+            class="aspect-square max-h-[600px] object-cover"
             src="/public/images/annikaSCHULTE-image-2.jpg"
           />
           <div class="flex flex-col gap-[70px]">
             <h4 class="text-5xl font-semibold">Hi, ich bin Annika.</h4>
             <div class="flex flex-col gap-[35px]">
-              <div class="text-4xl font-medium z-10 w-fit">Wissensdurstig</div>
+              <div class="z-10 w-fit text-4xl font-medium">Wissensdurstig</div>
               <div
-                class="absolute bg-[#F6F792] rounded-full w-[283px] h-[20px] z-0 translate-y-6"
+                class="absolute z-0 h-[20px] w-[283px] translate-y-6 rounded-full bg-[#F6F792]"
               ></div>
             </div>
 
             <div class="flex flex-col gap-[35px]">
-              <div class="text-4xl font-medium z-10 w-fit">
+              <div class="z-10 w-fit text-4xl font-medium">
                 Begeisterungsfähig
               </div>
               <div
-                class="absolute bg-[#F6F792] rounded-full w-[361px] h-[20px] z-0 translate-y-6"
+                class="absolute z-0 h-[20px] w-[361px] translate-y-6 rounded-full bg-[#F6F792]"
               ></div>
             </div>
 
             <div class="flex flex-col gap-[35px]">
-              <div class="text-4xl font-medium z-10 w-fit">Verlässlich</div>
+              <div class="z-10 w-fit text-4xl font-medium">Verlässlich</div>
               <div
-                class="absolute bg-[#F6F792] rounded-full w-[193px] h-[20px] z-0 translate-y-6"
+                class="absolute z-0 h-[20px] w-[193px] translate-y-6 rounded-full bg-[#F6F792]"
               ></div>
             </div>
 
@@ -413,15 +457,15 @@
               rel="noreferrer"
             >
               <img
-                class="self-start h-[50px]"
+                class="h-[50px] self-start"
                 src="/public/illustrations-and-icons/2023-10-24-annikaSCHULTE-icon-LinkedIn-1.svg"
             /></a>
           </div>
         </div>
 
-        <div class="flex flex-col mx-[140px] mt-[70px]">
+        <div class="mx-[140px] mt-[70px] flex flex-col">
           <section>
-            <p class="font-semibold inline">
+            <p class="inline font-semibold">
               Ich bin Datenanalystin und Beraterin.
             </p>
             Seit 2018 arbeite ich als Datenanalystin und habe schon die
@@ -431,7 +475,7 @@
             Datenanalyse abdecken.
           </section>
           <section class="my-[35px]">
-            <p class="font-semibold inline">Ich bin Software-Trainerin.</p>
+            <p class="inline font-semibold">Ich bin Software-Trainerin.</p>
             Seit Anfang 2023 bin ich Software-Trainerin. Damit kultiviere ich
             meine Fähigkeit, Menschen zur Nutzung von Technik und Daten zu
             befähigen und sie dafür zu begeistern. Ich nutze gerne einfaches
@@ -439,7 +483,7 @@
             empathisch auf unterschiedliche Persönlichkeiten einstellen.
           </section>
           <section>
-            <p class="font-semibold inline">
+            <p class="inline font-semibold">
               Ich arbeite am liebsten an der Schnittstelle zwischen Technik und
               Mensch.
             </p>
@@ -449,14 +493,14 @@
             die gleiche Sprache, aber versteht sich trotzdem nicht.
           </section>
           <section class="my-[35px]">
-            <p class="font-semibold inline">Ich bin begeisterungsfähig.</p>
+            <p class="inline font-semibold">Ich bin begeisterungsfähig.</p>
             Mit Freude und ehrlichem Interesse suche ich nach den bestmöglichen
             Lösungen. Dabei kann ich motivieren und ermuntern. Denn mit Freude
             und einer positiven Einstellung geht doch alles leichter von der
             Hand.
           </section>
           <section>
-            <p class="font-semibold inline">Ich liebe das Lernen.</p>
+            <p class="inline font-semibold">Ich liebe das Lernen.</p>
             Mein fast unstillbarer Wissensdurst führt dazu, dass ich mich
             selbständig und zügig in die verschiedensten Themen einarbeiten und
             eindenken kann. So gelingt es mir zielgruppenorientiert zu arbeiten
@@ -466,23 +510,23 @@
         </div>
       </div>
 
-      <div class="pt-[70px] pb-[35px]">
-        <div class="flex justify-center items-center">
+      <div class="pb-[35px] pt-[70px]">
+        <div class="flex items-center justify-center">
           <div id="Projektbeispiele" class="-translate-y-[150px]"></div>
-          <h2 class="absolute font-bold z-10">Projektbeispiele</h2>
+          <h2 class="absolute z-10 font-bold">Projektbeispiele</h2>
           <div
-            class="absolute bg-[#DAEDE2] rounded-full w-[164px] h-[10px] z-0 translate-y-1.5"
+            class="absolute z-0 h-[10px] w-[164px] translate-y-1.5 rounded-full bg-[#DAEDE2]"
           ></div>
         </div>
       </div>
 
-      <div class="flex gap-[35px] px-[70px] w-full">
+      <div class="flex w-full gap-[35px] px-[70px]">
         <div class="flex flex-col gap-[35px]">
           <section
-            class="bg-[#F6F792] flex flex-col content-center rounded-[15px]"
+            class="flex flex-col content-center rounded-[15px] bg-[#F6F792]"
           >
             <img
-              class="min-h-[175px] max-h-[200px] my-[70px]"
+              class="my-[70px] max-h-[200px] min-h-[175px]"
               src="/public/illustrations-and-icons/2023-10-24-annikaSCHULTE-illustration-vertriebs-dashboard.svg"
             />
             <div class="mx-[35px] mb-[35px] flex flex-col gap-[35px]">
@@ -502,9 +546,9 @@
           </section>
 
           <section
-            class="bg-[#F6F792] flex flex-row items-center rounded-[15px] p-[35px]"
+            class="flex flex-row items-center rounded-[15px] bg-[#F6F792] p-[35px]"
           >
-            <p class="font-semibold pr-[35px]">Magie-Level:</p>
+            <p class="pr-[35px] font-semibold">Magie-Level:</p>
             <div class="flex gap-[15px]">
               <img
                 class="h-[30px]"
@@ -522,12 +566,12 @@
           </section>
 
           <section>
-            <div class="flex justify-start items-center">
-              <div class="font-semibold uppercase z-10">
+            <div class="flex items-center justify-start">
+              <div class="z-10 font-semibold uppercase">
                 Vertriebs-Daschboard
               </div>
               <div
-                class="absolute bg-[#F6F792] rounded-full w-[222px] h-[10px] z-0 translate-y-1.5"
+                class="absolute z-0 h-[10px] w-[222px] translate-y-1.5 rounded-full bg-[#F6F792]"
               ></div>
             </div>
           </section>
@@ -535,10 +579,10 @@
 
         <div class="flex flex-col gap-[35px]">
           <section
-            class="bg-[#F6F792] flex flex-col content-center rounded-[15px]"
+            class="flex flex-col content-center rounded-[15px] bg-[#F6F792]"
           >
             <img
-              class="min-h-[175px] max-h-[200px] my-[70px]"
+              class="my-[70px] max-h-[200px] min-h-[175px]"
               src="/public/illustrations-and-icons/2023-10-24-annikaSCHULTE-illustration-marketingerfolgsmessung.svg"
             />
             <div class="mx-[35px] mb-[35px] flex flex-col gap-[35px]">
@@ -558,9 +602,9 @@
           </section>
 
           <section
-            class="bg-[#F6F792] flex flex-row items-center rounded-[15px] p-[35px]"
+            class="flex flex-row items-center rounded-[15px] bg-[#F6F792] p-[35px]"
           >
-            <p class="font-semibold pr-[35px]">Magie-Level:</p>
+            <p class="pr-[35px] font-semibold">Magie-Level:</p>
             <div class="flex gap-[15px]">
               <img
                 class="h-[30px]"
@@ -578,12 +622,12 @@
           </section>
 
           <section>
-            <div class="flex justify-start items-center">
-              <div class="font-semibold uppercase z-10">
+            <div class="flex items-center justify-start">
+              <div class="z-10 font-semibold uppercase">
                 Marketingerfolgsmessung
               </div>
               <div
-                class="absolute bg-[#F6F792] rounded-full w-[264px] h-[10px] z-0 translate-y-1.5"
+                class="absolute z-0 h-[10px] w-[264px] translate-y-1.5 rounded-full bg-[#F6F792]"
               ></div>
             </div>
           </section>
@@ -591,10 +635,10 @@
 
         <div class="flex flex-col gap-[35px]">
           <section
-            class="bg-[#F6F792] flex flex-col content-center rounded-[15px]"
+            class="flex flex-col content-center rounded-[15px] bg-[#F6F792]"
           >
             <img
-              class="min-h-[175px] max-h-[200px] my-[70px]"
+              class="my-[70px] max-h-[200px] min-h-[175px]"
               src="/public/illustrations-and-icons/2023-10-24-annikaSCHULTE-illustration-segmentierungen.svg"
             />
             <div class="mx-[35px] mb-[35px] flex flex-col gap-[35px]">
@@ -614,9 +658,9 @@
           </section>
 
           <section
-            class="bg-[#F6F792] flex flex-row items-center rounded-[15px] p-[35px]"
+            class="flex flex-row items-center rounded-[15px] bg-[#F6F792] p-[35px]"
           >
-            <p class="font-semibold pr-[35px]">Magie-Level:</p>
+            <p class="pr-[35px] font-semibold">Magie-Level:</p>
             <div class="flex gap-[15px]">
               <img
                 class="h-[30px]"
@@ -634,19 +678,19 @@
           </section>
 
           <section>
-            <div class="flex justify-start items-center">
-              <div class="font-semibold uppercase z-10">Segmentierungen</div>
+            <div class="flex items-center justify-start">
+              <div class="z-10 font-semibold uppercase">Segmentierungen</div>
               <div
-                class="absolute bg-[#F6F792] rounded-full w-[171px] h-[10px] z-0 translate-y-1.5"
+                class="absolute z-0 h-[10px] w-[171px] translate-y-1.5 rounded-full bg-[#F6F792]"
               ></div>
             </div>
           </section>
         </div>
       </div>
 
-      <div class="grid grid-cols-3 gap-[35px] mx-[70px] mt-[70px]">
+      <div class="mx-[70px] mt-[70px] grid grid-cols-3 gap-[35px]">
         <section
-          class="flex justify-center col-span-1 bg-[#DAEDE2] p-[35px] rounded-[15px] w-full"
+          class="col-span-1 flex w-full justify-center rounded-[15px] bg-[#DAEDE2] p-[35px]"
         >
           <img
             class="min-h-max"
@@ -654,7 +698,7 @@
           />
         </section>
         <section
-          class="flex items-center col-span-2 bg-[#DAEDE2] p-[35px] rounded-[15px] h-full"
+          class="col-span-2 flex h-full items-center rounded-[15px] bg-[#DAEDE2] p-[35px]"
         >
           <p>
             Die hier aufgeführten Beispiele dienen lediglich der Inspiration.
@@ -665,9 +709,9 @@
         </section>
       </div>
 
-      <div class="grid grid-cols-3 gap-[35px] mx-[70px] my-[35px]">
+      <div class="mx-[70px] my-[35px] grid grid-cols-3 gap-[35px]">
         <section
-          class="flex items-center col-span-2 bg-[#DAEDE2] p-[35px] rounded-[15px] h-full"
+          class="col-span-2 flex h-full items-center rounded-[15px] bg-[#DAEDE2] p-[35px]"
         >
           <p>
             Die Umsetzbarkeit der „Magie-Level“, also der Einsatzgrad von
@@ -678,7 +722,7 @@
           </p>
         </section>
         <section
-          class="flex justify-center col-span-1 bg-[#DAEDE2] p-[35px] rounded-[15px] w-full"
+          class="col-span-1 flex w-full justify-center rounded-[15px] bg-[#DAEDE2] p-[35px]"
         >
           <img
             class="min-h-max"
@@ -687,9 +731,9 @@
         </section>
       </div>
 
-      <div class="grid grid-cols-3 gap-[35px] mx-[70px] mb-[70px]">
+      <div class="mx-[70px] mb-[70px] grid grid-cols-3 gap-[35px]">
         <section
-          class="flex justify-center col-span-1 bg-[#DAEDE2] p-[35px] rounded-[15px] w-full"
+          class="col-span-1 flex w-full justify-center rounded-[15px] bg-[#DAEDE2] p-[35px]"
         >
           <img
             class="min-h-max"
@@ -697,7 +741,7 @@
           />
         </section>
         <section
-          class="flex items-center col-span-2 bg-[#DAEDE2] p-[35px] rounded-[15px] h-full"
+          class="col-span-2 flex h-full items-center rounded-[15px] bg-[#DAEDE2] p-[35px]"
         >
           <p>
             Ich arbeite komplett unabhängig und nutze verschiedene Tools und
@@ -708,23 +752,23 @@
         </section>
       </div>
 
-      <div class="bg-[#F6F792] py-[70px] my-0">
-        <div class="flex justify-start items-center pl-[140px]">
+      <div class="my-0 bg-[#F6F792] py-[70px]">
+        <div class="flex items-center justify-start pl-[140px]">
           <div id="Kontakt" class="-translate-y-[150px]"></div>
-          <h2 class="absolute font-bold uppercase z-10">Kontakt</h2>
+          <h2 class="absolute z-10 font-bold uppercase">Kontakt</h2>
           <div
-            class="absolute bg-[#DAEDE2] rounded-full w-[81px] h-[10px] z-0 translate-y-1.5"
+            class="absolute z-0 h-[10px] w-[81px] translate-y-1.5 rounded-full bg-[#DAEDE2]"
           ></div>
         </div>
 
-        <div class="flex flex-col mx-[140px] mt-[70px]">
+        <div class="mx-[140px] mt-[70px] flex flex-col">
           <div class="flex">
             <img
               class="h-[25px] pb-px pr-[10px]"
               src="/public/illustrations-and-icons/2023-10-24-annikaSCHULTE-icon-calender.svg"
             />
             <section>
-              <p class="font-semibold inline">
+              <p class="inline font-semibold">
                 Du möchtest mit mir durchstarten?
               </p>
               Dann buche dir gerne direkt einen
@@ -745,7 +789,7 @@
               src="/public/illustrations-and-icons/2023-10-24-annikaSCHULTE-icon-mail.svg"
             />
             <section class="my-[35px]">
-              <p class="font-semibold inline">
+              <p class="inline font-semibold">
                 Du möchtest mich per E-Mail kontaktieren?
               </p>
               Schreib mir gerne an
@@ -764,11 +808,11 @@
 
           <div class="flex">
             <img
-              class="h-[25px] mt-[2px] pr-[10px]"
+              class="mt-[2px] h-[25px] pr-[10px]"
               src="/public/illustrations-and-icons/2023-10-24-annikaSCHULTE-icon-message.svg"
             />
             <section>
-              <p class="font-semibold inline">
+              <p class="inline font-semibold">
                 Du hast eine Challenge für mich?
               </p>
               Die Nutzung von Daten ist sehr individuell! Wie sieht Eure
@@ -795,7 +839,7 @@
                   <p>Name</p>
                   <input
                     autocomplete="off"
-                    class="bg-[#DAEDE2] rounded-[5px] pl-[15px] min-h-[50px] w-full h-full focus:outline-1 focus:outline-[#333745] focus:text-[#333745] focus:bg-[#DAEDE2]"
+                    class="h-full min-h-[50px] w-full rounded-[5px] bg-[#DAEDE2] pl-[15px] focus:bg-[#DAEDE2] focus:text-[#333745] focus:outline-1 focus:outline-[#333745]"
                     type="text"
                     name="name"
                     required
@@ -806,7 +850,7 @@
                   <p>Email</p>
                   <input
                     autocomplete="off"
-                    class="bg-[#DAEDE2] rounded-[5px] pl-[15px] min-h-[50px] w-full h-full focus:outline-1 focus:outline-[#333745] focus:text-[#333745] focus:bg-[#DAEDE2]"
+                    class="h-full min-h-[50px] w-full rounded-[5px] bg-[#DAEDE2] pl-[15px] focus:bg-[#DAEDE2] focus:text-[#333745] focus:outline-1 focus:outline-[#333745]"
                     type="email"
                     name="email"
                     required
@@ -817,7 +861,7 @@
                 <p>Nachricht, Challenge oder Fragen</p>
                 <textarea
                   autocomplete="off"
-                  class="bg-[#DAEDE2] rounded-[5px] pl-[15px] pt-[15px] w-full h-full focus:outline-1 focus:outline-[#333745] focus:text-[#333745] focus:bg-[#DAEDE2]"
+                  class="h-full w-full rounded-[5px] bg-[#DAEDE2] pl-[15px] pt-[15px] focus:bg-[#DAEDE2] focus:text-[#333745] focus:outline-1 focus:outline-[#333745]"
                   name="message"
                   required
                   value="Nachricht, Challenge oder Fragen"
@@ -829,7 +873,7 @@
             <div class="h-captcha" data-captcha="true"></div> -->
 
             <button
-              class="bg-[#333745] mt-[70px] py-[12px] px-[30px] rounded-full text-[#F6F792]"
+              class="mt-[70px] rounded-full bg-[#333745] px-[30px] py-[12px] text-[#F6F792]"
               type="submit"
             >
               senden
@@ -861,8 +905,8 @@
             <a href="/datenschutz.html" class="hover:underline">Datenschutz</a>
           </div>
         </div>
-        <hr class="bg-[#DBEDE2] h-[2px] w-full my-[35px]" />
-        <div class="flex justify-between items-center w-full">
+        <hr class="my-[35px] h-[2px] w-full bg-[#DBEDE2]" />
+        <div class="flex w-full items-center justify-between">
           <div class="text-[#DAEDE2]">
             ©
             <span id="date" class="text-[#DAEDE2]"></span>
