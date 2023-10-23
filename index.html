@@ -75,12 +75,6 @@
         margin: 0 140px;
       }
 
-      .schritteLabel {
-        min-width: 235px;
-        text-transform: uppercase;
-        font-weight: 600;
-      }
-
       .square {
         background-color: #daede2;
         width: 100%;
@@ -90,32 +84,28 @@
         align-items: center;
       }
 
-      /* accordion section. For more info, have a look here: https://www.w3schools.com/howto/howto_js_accordion.asp */
+      /* accordion section; for more info, have a look here: https://www.w3schools.com/howto/howto_js_accordion.asp */
 
       .accordion {
         cursor: pointer;
         width: 100%;
-        text-align: left;
         outline: none;
-        transition: 1s;
+        transition: all 0.5s;
       }
 
       .panel {
         max-height: 0;
         overflow: hidden;
-        transition: max-height 0.5s in-ease-out;
+        transition: all 0.5s;
       }
 
       .active .cross {
         transform: rotate(45deg);
-        /*         transition: all 0.3s;
- */
+        transition: all 0.5s;
       }
 
-      .plus {
-        transform: rotate(-45deg);
-        /*         transition: all 0.3s;
- */
+      .cross {
+        transition: all 0.5s;
       }
     </style>
 
@@ -179,10 +169,10 @@
         </div>
 
         <section class="text-center">
-          Überall werden mittlerweile Daten gesammelt. Die reine Existenz von
-          Daten schafft allerdings noch keinen Mehrwert für euer Geschäft. Ich
-          helfe euch euren Datenkeller zu entrümpeln, Farbe ins Spiel zu bringen
-          und die Taschenlampe nur auf Relevantes zu richten.
+          Daten sind einfach überall. Die reine Existenz von Daten schafft
+          allerdings noch keinen Mehrwert für euer Geschäft. Ich helfe euch
+          euren Datenkeller zu entrümpeln, Farbe ins Spiel zu bringen und die
+          Taschenlampe nur auf Relevantes zu richten.
         </section>
       </div>
 
@@ -191,145 +181,164 @@
           Die einzelnen Schritte zur besseren Datenwelt findet ihr hier:
         </h3>
         <hr class="mt-[35px] h-[2px] w-full bg-[#333745]" />
-        <div class="hoverStatus flex w-full py-[35px]">
-          <div>
-            <button class="accordion schritteLabel">Schritt 1</button>
-          </div>
-          <div class="flex flex-col gap-y-[35px]">
-            <button class="accordion font-semibold">Im Datenkeller.</button>
-            <div class="panel">
-              <p>
-                Im Datenkeller ist es dunkel und verstaubt. Ständig stolpert ihr
-                über herumliegende Daten. Außerdem gibt es viele Momente in
-                eurem Arbeitsalltag, in denen die Arbeit mit Daten hohe manuelle
-                Aufwände verursacht.
-              </p>
-              <p>
-                Zusammen formulieren wir eure Fragestellungen, erarbeiten eure
-                Anwendungsfälle, konzipieren Lösungswege und richten so die
-                Taschenlampe auf alles Relevante.
-              </p>
-            </div>
-          </div>
-        </div>
-        <hr class="h-[2px] w-full bg-[#333745]" />
-        <div class="hoverStatus flex w-full py-[35px]">
-          <div>
-            <button class="accordion schritteLabel">Schritt 2</button>
-          </div>
-          <div class="flex flex-col gap-y-[35px]">
-            <button class="accordion font-semibold">
-              Einmal Abstauben, bitte.
-            </button>
-            <div class="panel">
-              <p>
-                Das Ziel ist definiert. Jetzt ist es besonders wichtig, alles im
-                Detail zu durchforsten und einen genauen Überblick über den
-                Datenkeller zu erhalten. Dabei können wir durchaus feststellen,
-                dass die Datenmengen noch nicht ausreichen oder andere Daten
-                notwendig sind. Wir definieren gemeinsam, wie die Datenlücke
-                aufgefüllt werden kann.
-              </p>
-            </div>
+        <div class="flex flex-col py-[35px]">
+          <button
+            class="accordion flex justify-between items-center hover:underline font-semibold"
+          >
+            <p>SCHRITT 1: Im Datenkeller.</p>
+
+            <img
+              class="cross"
+              src="/public/illustrations-and-icons/2023-10-24-annikaSCHULTE-icon-plus.svg"
+            />
+          </button>
+
+          <div class="panel flex flex-col gap-[35px]">
+            <p class="pt-[35px]">
+              Im Datenkeller ist es dunkel und verstaubt. Ständig stolpert ihr
+              über herumliegende Daten. Außerdem gibt es viele Momente in eurem
+              Arbeitsalltag, in denen die Arbeit mit Daten hohe manuelle
+              Aufwände verursacht. Zusammen formulieren wir eure
+              Fragestellungen, erarbeiten eure Anwendungsfälle, konzipieren
+              Lösungswege und richten so die Taschenlampe auf alles Relevante.
+            </p>
           </div>
         </div>
-        <hr class="h-[2px] w-full bg-[#333745]" />
-        <div class="hoverStatus flex w-full py-[35px]">
-          <div>
-            <button class="accordion schritteLabel">Schritt 3</button>
-          </div>
-          <div class="flex flex-col gap-y-[35px]">
-            <button class="accordion font-semibold">
-              Ordnung ist das halbe Leben.
-            </button>
-            <div class="panel">
-              <p>
-                Damit die neu geschaffene Übersicht auch langfristig erhalten
-                bleibt, kümmern wir uns um Datenmodelle, Datenbanken und
-                Dokumentationen. Auch das extrem wichtige Thema
-                Datenqualitätsmanagement ist Teil dieses Schrittes. Denn wie
-                heißt es so schön: Sh*t in, Sh*t out. Fehlerhafte Daten oder
-                Datenlücken erschüttern das Vertrauen in die Zahlen – oft
-                nachhaltig.
-              </p>
-            </div>
-          </div>
-        </div>
-        <hr class="h-[2px] w-full bg-[#333745]" />
-        <div class="hoverStatus flex w-full py-[35px]">
-          <div>
-            <button class="accordion schritteLabel">Schritt 4</button>
-          </div>
-          <div class="flex flex-col gap-y-[35px]">
-            <button class="accordion font-semibold">Endlich Farbe.</button>
-            <div class="panel">
-              <p>
-                Nach dem Aufräumen beginnt der Spaß. Die Daten werden zum Leben
-                erweckt. In bunten Reports, übersichtlichen Tabellen,
-                automatisierten Prozessen, und und und hauchen wir euren Daten
-                Leben ein. Wir gestalten eine Datenwelt, die alle gerne nutzen,
-                die begeistert und die tägliche Arbeit erleichtert.
-              </p>
-            </div>
-          </div>
-        </div>
-        <hr class="h-[2px] w-full bg-[#333745]" />
-        <div class="flex w-full py-[35px]">
-          <div>
-            <p class="schritteLabel">Schritt 5</p>
-          </div>
-          <div class="flex flex-col">
-            <div class="accordion flex place-content-between items-center">
-              <button class="font-semibold hover:underline">
-                Und dann noch eine Prise „Magie“.
-              </button>
-              <img
-                class="cross"
-                src="/public/illustrations-and-icons/2023-10-24-annikaSCHULTE-icon-cross.svg"
-              />
-            </div>
-            <div class="panel">
-              <p class="mt-[35px]">
-                Falls die reine Datenvisualisierung noch nicht genug ist, können
-                durch statistische Methoden Erkenntnisse erarbeitet werden, die
-                nicht auf den ersten Blick zu erkennen waren. Das fühlt sich
-                manchmal nach Magie an. Negativ könnte es auch als Black Box
-                bezeichnet werden. Daher ist es wichtig immer nur eine Prise
-                dazuzugeben.
-              </p>
-            </div>
-          </div>
-        </div>
+
         <hr class="h-[2px] w-full bg-[#333745]" />
 
-        <div class="flex w-full items-center py-[35px]">
-          <button class="schritteLabel text-start">Schritt 6</button>
-          <div class="flex w-full flex-col gap-y-[35px]">
-            <div class="flex place-content-between items-center">
-              <button class="font-semibold">Treat your data right.</button>
+        <div class="flex flex-col py-[35px]">
+          <button
+            class="accordion flex justify-between items-center hover:underline font-semibold"
+          >
+            <p>SCHRITT 2: Einmal Abstauben, bitte.</p>
 
-              <img
-                src="/public/illustrations-and-icons/2023-10-24-annikaSCHULTE-icon-cross.svg"
-              />
-            </div>
+            <img
+              class="cross"
+              src="/public/illustrations-and-icons/2023-10-24-annikaSCHULTE-icon-plus.svg"
+            />
+          </button>
 
-            <div class="flex hidden flex-col gap-y-[35px]">
-              <p>
-                Die bessere Datenwelt ist gestaltet und die alltägliche Arbeit
-                mit den Analyseergebnissen beginnt. An diesem Punkt wird es
-                häufig kritisch. Denn ungepflegte Datenbanken, ins Leere
-                laufende Prozesse oder unplausible Reports nutzt – zurecht! -
-                niemand gerne. Das Vertrauen schwindet und im schlimmsten Fall,
-                wandert alles wieder in den Datenkeller.
-              </p>
-              <p>
-                Damit das nicht passiert, fragt mich gerne als eure Begleiterin
-                an und gemeinsam folgen wir dem Motto „Your data deserves a
-                better place.“ Und zwar langfristig!
-              </p>
-            </div>
+          <div class="panel flex flex-col gap-[35px]">
+            <p class="pt-[35px]">
+              Das Ziel ist definiert. Jetzt ist es besonders wichtig, alles im
+              Detail zu durchforsten und einen genauen Überblick über den
+              Datenkeller zu erhalten. Dabei können wir durchaus feststellen,
+              dass die Datenmengen noch nicht ausreichen oder andere Daten
+              notwendig sind. Wir definieren gemeinsam, wie die Datenlücke
+              aufgefüllt werden kann.
+            </p>
           </div>
         </div>
+
+        <hr class="h-[2px] w-full bg-[#333745]" />
+
+        <div class="flex flex-col py-[35px]">
+          <button
+            class="accordion flex justify-between items-center hover:underline font-semibold"
+          >
+            <p>SCHRITT 3: Ordnung ist das halbe Leben.</p>
+
+            <img
+              class="cross"
+              src="/public/illustrations-and-icons/2023-10-24-annikaSCHULTE-icon-plus.svg"
+            />
+          </button>
+
+          <div class="panel flex flex-col gap-[35px]">
+            <p class="pt-[35px]">
+              Damit die neu geschaffene Übersicht auch langfristig erhalten
+              bleibt, kümmern wir uns um Datenmodelle, Datenbanken und
+              Dokumentationen. Auch das extrem wichtige Thema
+              Datenqualitätsmanagement ist Teil dieses Schrittes. Denn wie heißt
+              es so schön: Sh*t in, Sh*t out. Fehlerhafte Daten oder Datenlücken
+              erschüttern das Vertrauen in die Zahlen – oft nachhaltig.
+            </p>
+          </div>
+        </div>
+
+        <hr class="h-[2px] w-full bg-[#333745]" />
+
+        <div class="flex flex-col py-[35px]">
+          <button
+            class="accordion flex justify-between items-center hover:underline font-semibold"
+          >
+            <p>SCHRITT 4: Endlich Farbe.</p>
+
+            <img
+              class="cross"
+              src="/public/illustrations-and-icons/2023-10-24-annikaSCHULTE-icon-plus.svg"
+            />
+          </button>
+
+          <div class="panel flex flex-col gap-[35px]">
+            <p class="pt-[35px]">
+              Nach dem Aufräumen beginnt der Spaß. Die Daten werden zum Leben
+              erweckt. Ich erstelle euch übersichtliche Reports und
+              automatisierte Prozesse und hauche euren Daten Leben ein. So
+              entsteht eine Datenwelt, die alle gerne nutzen, die begeistert und
+              die tägliche Arbeit erleichtert.
+            </p>
+          </div>
+        </div>
+
+        <hr class="h-[2px] w-full bg-[#333745]" />
+
+        <div class="flex flex-col py-[35px]">
+          <button
+            class="accordion flex justify-between items-center hover:underline font-semibold"
+          >
+            <p>SCHRITT 5: Und dann noch eine Prise „Magie“.</p>
+
+            <img
+              class="cross"
+              src="/public/illustrations-and-icons/2023-10-24-annikaSCHULTE-icon-plus.svg"
+            />
+          </button>
+
+          <div class="panel flex flex-col gap-[35px]">
+            <p class="pt-[35px]">
+              Falls die reine Datenvisualisierung noch nicht genug ist, können
+              durch statistische Methoden Erkenntnisse erarbeitet werden, die
+              nicht auf den ersten Blick zu erkennen waren. Das fühlt sich
+              manchmal nach Magie an. Negativ könnte es auch als Black Box
+              bezeichnet werden. Daher ist es wichtig immer nur eine Prise
+              dazuzugeben.
+            </p>
+          </div>
+        </div>
+
+        <hr class="h-[2px] w-full bg-[#333745]" />
+
+        <div class="flex flex-col py-[35px]">
+          <button
+            class="accordion flex justify-between items-center hover:underline font-semibold"
+          >
+            <p>SCHRITT 6: Treat your data right.</p>
+
+            <img
+              class="cross"
+              src="/public/illustrations-and-icons/2023-10-24-annikaSCHULTE-icon-plus.svg"
+            />
+          </button>
+
+          <div class="panel flex flex-col gap-[35px]">
+            <p class="pt-[35px]">
+              Die bessere Datenwelt ist gestaltet und die alltägliche Arbeit mit
+              den Analyseergebnissen beginnt. An diesem Punkt wird es häufig
+              kritisch. Denn ungepflegte Datenbanken, ins Leere laufende
+              Prozesse oder unplausible Reports nutzt – zurecht! - niemand
+              gerne. Das Vertrauen schwindet und im schlimmsten Fall, wandert
+              alles wieder in den Datenkeller.
+            </p>
+            <p>
+              Damit das nicht passiert, fragt mich gerne als eure Begleiterin an
+              und gemeinsam folgen wir dem Motto „Your data deserves a better
+              place.“ Und zwar langfristig!
+            </p>
+          </div>
+        </div>
+
         <hr class="mb-[35px] h-[2px] w-full bg-[#333745]" />
       </div>
 
@@ -550,9 +559,7 @@
 
       <div class="flex w-full gap-[35px] px-[70px]">
         <div class="flex flex-col gap-[35px]">
-          <section
-            class="flex flex-col content-center rounded-[15px] bg-[#F6F792]"
-          >
+          <section class="flex flex-col content-center bg-[#F6F792]">
             <img
               class="my-[70px] max-h-[200px] min-h-[175px]"
               src="/public/illustrations-and-icons/2023-10-24-annikaSCHULTE-illustration-vertriebs-dashboard.svg"
@@ -573,9 +580,7 @@
             </div>
           </section>
 
-          <section
-            class="flex flex-row items-center rounded-[15px] bg-[#F6F792] p-[35px]"
-          >
+          <section class="flex flex-row items-center bg-[#F6F792] p-[35px]">
             <p class="pr-[35px] font-semibold">Magie-Level:</p>
             <div class="flex gap-[15px]">
               <img
@@ -606,9 +611,7 @@
         </div>
 
         <div class="flex flex-col gap-[35px]">
-          <section
-            class="flex flex-col content-center rounded-[15px] bg-[#F6F792]"
-          >
+          <section class="flex flex-col content-center bg-[#F6F792]">
             <img
               class="my-[70px] max-h-[200px] min-h-[175px]"
               src="/public/illustrations-and-icons/2023-10-24-annikaSCHULTE-illustration-marketingerfolgsmessung.svg"
@@ -629,9 +632,7 @@
             </div>
           </section>
 
-          <section
-            class="flex flex-row items-center rounded-[15px] bg-[#F6F792] p-[35px]"
-          >
+          <section class="flex flex-row items-center bg-[#F6F792] p-[35px]">
             <p class="pr-[35px] font-semibold">Magie-Level:</p>
             <div class="flex gap-[15px]">
               <img
@@ -662,9 +663,7 @@
         </div>
 
         <div class="flex flex-col gap-[35px]">
-          <section
-            class="flex flex-col content-center rounded-[15px] bg-[#F6F792]"
-          >
+          <section class="flex flex-col content-center bg-[#F6F792]">
             <img
               class="my-[70px] max-h-[200px] min-h-[175px]"
               src="/public/illustrations-and-icons/2023-10-24-annikaSCHULTE-illustration-segmentierungen.svg"
@@ -685,9 +684,7 @@
             </div>
           </section>
 
-          <section
-            class="flex flex-row items-center rounded-[15px] bg-[#F6F792] p-[35px]"
-          >
+          <section class="flex flex-row items-center bg-[#F6F792] p-[35px]">
             <p class="pr-[35px] font-semibold">Magie-Level:</p>
             <div class="flex gap-[15px]">
               <img
@@ -718,7 +715,7 @@
 
       <div class="mx-[70px] mt-[70px] grid grid-cols-3 gap-[35px]">
         <section
-          class="col-span-1 flex w-full justify-center rounded-[15px] bg-[#DAEDE2] p-[35px]"
+          class="col-span-1 flex w-full justify-center bg-[#DAEDE2] p-[35px]"
         >
           <img
             class="min-h-max"
@@ -726,7 +723,7 @@
           />
         </section>
         <section
-          class="col-span-2 flex h-full items-center rounded-[15px] bg-[#DAEDE2] p-[35px]"
+          class="col-span-2 flex h-full items-center bg-[#DAEDE2] p-[35px]"
         >
           <p>
             Die hier aufgeführten Beispiele dienen lediglich der Inspiration.
@@ -739,7 +736,7 @@
 
       <div class="mx-[70px] my-[35px] grid grid-cols-3 gap-[35px]">
         <section
-          class="col-span-2 flex h-full items-center rounded-[15px] bg-[#DAEDE2] p-[35px]"
+          class="col-span-2 flex h-full items-center bg-[#DAEDE2] p-[35px]"
         >
           <p>
             Die Umsetzbarkeit der „Magie-Level“, also der Einsatzgrad von
@@ -750,7 +747,7 @@
           </p>
         </section>
         <section
-          class="col-span-1 flex w-full justify-center rounded-[15px] bg-[#DAEDE2] p-[35px]"
+          class="col-span-1 flex w-full justify-center bg-[#DAEDE2] p-[35px]"
         >
           <img
             class="min-h-max"
@@ -761,7 +758,7 @@
 
       <div class="mx-[70px] mb-[70px] grid grid-cols-3 gap-[35px]">
         <section
-          class="col-span-1 flex w-full justify-center rounded-[15px] bg-[#DAEDE2] p-[35px]"
+          class="col-span-1 flex w-full justify-center bg-[#DAEDE2] p-[35px]"
         >
           <img
             class="min-h-max"
@@ -769,7 +766,7 @@
           />
         </section>
         <section
-          class="col-span-2 flex h-full items-center rounded-[15px] bg-[#DAEDE2] p-[35px]"
+          class="col-span-2 flex h-full items-center bg-[#DAEDE2] p-[35px]"
         >
           <p>
             Ich arbeite komplett unabhängig und nutze verschiedene Tools und
