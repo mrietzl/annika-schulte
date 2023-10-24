@@ -1,11 +1,370 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="de">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <meta
+      name="description"
+      content="annikaSCHULTE – Your datav deserves a better place"
+    />
+
+    <!-- Here is the script part that is needed for tailwindcss:  -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Here is the customization part for tailwindcss if I wanna change sth: -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            backgroundSize: {
+              auto: "auto",
+              cover: "cover",
+              contain: "contain",
+              "50%": "50%",
+            },
+
+            fontFamily: {
+              montserrat: "'Montserrat',sans-serif",
+            },
+
+            cursor: {
+              dotAccent:
+                "url(/public/cursor/2023-10-24-annikaSCHULTE_cursor-dot-accent.svg), pointer",
+              dotPrimary1:
+                "url(/public/cursor/2023-10-24-annikaSCHULTE_cursor-dot-primary-1.svg), pointer",
+              dotPrimary2:
+                "url(/public/cursor/2023-10-24-annikaSCHULTE_cursor-dot-primary-2.svg), pointer",
+              dotWithArrowPrimary1:
+                "url(/public/cursor/2023-10-24-annikaSCHULTE_cursor-dot-with-arrow-primary-1.svg), pointer",
+              dotWithCrossPrimary1:
+                "url(/public/cursor/2023-10-24-annikaSCHULTE_cursor-dot-with-cross-primary-1.svg), pointer",
+              dotWithPlusPrimary1:
+                "url(/public/cursor/2023-10-24-annikaSCHULTE_cursor-dot-with-plus-primary-1.svg), pointer",
+              logo: "url(/public/cursor/2023-10-24-annikaSCHULTE_cursor-logo.svg), pointer",
+            },
+
+            colors: {
+              /* here an example:
+                clifford: "#da373d", */
+            },
+          },
+        },
+      };
+    </script>
+
+    <title>annikaSCHULTE</title>
+
+    <!-- Not needed anymore since we embeded the font locally:
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    /> -->
+
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        font-family: "montserrat", "sansserif";
+        color: #333745;
+      }
+
+      h2 {
+        text-transform: uppercase;
+      }
+
+      h3 {
+        font-weight: 900;
+      }
+
+      h4 {
+        text-decoration-line: underline;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        gap: 35px;
+        padding: 35px 0px;
+        width: 100vw;
+        margin: 0 140px;
+      }
+
+      .square {
+        background-color: #daede2;
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      /* accordion section; for more info, have a look here: https://www.w3schools.com/howto/howto_js_accordion.asp */
+
+      .accordion {
+        cursor: pointer;
+        width: 100%;
+        outline: none;
+        transition: all 0.5s;
+        cursor: url("/public/cursor/2023-10-24-annikaSCHULTE_cursor-dot-with-plus-primary-1.svg"),
+          pointer;
+      }
+
+      .panel {
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.5s;
+      }
+
+      .active .cross {
+        transform: rotate(45deg);
+        transition: all 0.5s;
+      }
+
+      .cross {
+        transition: all 0.5s;
+      }
+    </style>
+
+    <link rel="stylesheet" href="/style.css" />
   </head>
+
   <body>
-    hier soll das impressum stehen
+    <nav
+      class="sticky top-0 z-20 flex w-full items-center justify-between bg-[#DAEDE2] py-6 drop-shadow"
+    >
+      <a href="#Start" class="hover:cursor-logo">
+        <img
+          class="h-[50px] pl-[30px]"
+          src="/public/logo/annikaSCHULTE-logo.svg"
+      /></a>
+
+      <div
+        class="flex items-center gap-[35px] pr-[70px] font-semibold uppercase"
+      >
+        <a href="#Leistungen" class="hover:underline hover:cursor-dotPrimary1"
+          >Leistungen</a
+        >
+        <a
+          href="#Zusammenarbeit"
+          class="hover:underline hover:cursor-dotPrimary1"
+          >Zusammenarbeit</a
+        >
+        <a href="#UeberMich" class="hover:underline hover:cursor-dotPrimary1"
+          >Über mich</a
+        >
+        <a
+          href="#Projektbeispiele"
+          class="hover:underline hover:cursor-dotPrimary1"
+          >Projektbeispiele</a
+        >
+        <a
+          href="#Kontakt"
+          class="rounded-full bg-[#333745] px-[30px] py-[12px] uppercase text-[#DAEDE2] hover:cursor-dotPrimary2"
+        >
+          Kontakt
+        </a>
+      </div>
+    </nav>
+
+    <main class="pb-[70px]">
+      <div class="mx-[140px] flex flex-col justify-center gap-[35px] py-[35px]">
+        <h1
+          class="relative sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold py-[35px]"
+        >
+          Impressum
+        </h1>
+
+        <div class="flex flex-col gap-[35px]">
+          <section class="flex flex-col gap-[15px]">
+            <p class="text-xs">
+              [ Die Website wurde in Deutschland erstellt. Aus diesem Grund
+              gelten die dortigen gesetzlichen Bestimmungen. ]
+            </p>
+          </section>
+
+          <section class="flex flex-col gap-[15px]">
+            <p>Angaben gemäß § 5 TMG</p>
+          </section>
+
+          <section class="flex flex-col gap-[15px]">
+            <h2 class="font-bold">
+              Einzelunternehmerin & Vertretungsberechtigte
+            </h2>
+
+            <!-- if a h3 is needed:
+          <h3 class="font-semibold">
+          Einzelunternehmerin & Vertretungsberechtigte
+          </h3> -->
+
+            <p>
+              Annika Schulte (Riedel)
+              <br />
+              Sonnenhang 3
+              <br />
+              91749 Wittelshofen
+            </p>
+          </section>
+
+          <section class="flex flex-col gap-[15px]">
+            <h2 class="font-bold">Kontakt</h2>
+
+            <p>
+              Telefon:
+              <br />
+              E-Mail:
+            </p>
+          </section>
+
+          <section class="flex flex-col gap-[15px]">
+            <h2 class="font-bold">Umsatzsteuer-ID</h2>
+
+            <p>
+              Umsatzsteuer-Identifikationsnummer gemäß § 27 a
+              Umsatzsteuergesetz:
+              <br />
+              DEXXX
+            </p>
+          </section>
+
+          <section class="flex flex-col gap-[15px]">
+            <h2 class="font-bold">
+              Verantwortlich für Texte sowie für journalistisch-redaktionelle
+              Inhalte
+            </h2>
+
+            <p>Annika Schulte (Riedel), Sonnenhang 3, 91749 Wittelshofen</p>
+          </section>
+
+          <section class="flex flex-col gap-[15px]">
+            <h2 class="font-bold">
+              Verantwortlich für Konzeption, Gestaltung und Webentwicklung
+            </h2>
+
+            <p>mk rietzl | Michèle Rietzl</p>
+          </section>
+
+          <section class="flex flex-col gap-[15px]">
+            <h2 class="font-bold">Copyright</h2>
+
+            <p>
+              Alle Rechte vorbehalten. Die Urheberrechte aller auf diesem
+              Internetauftritt präsentierten Inhalte und Werke (insbesondere
+              Logo, Corporate Design, abgebildete Projektarbeiten, Grafiken,
+              Texte sowie Bilder und Fotografien) unterliegen – soweit nicht
+              anders gekennzeichnet – ausschließlich bei der Inhaberin dieser
+              Website bzw. bei der Designerin & Webentwicklerin Michèle Rietzl
+              (mk rietzl). Diese Website oder Teile dieser Website dürfen nicht
+              ohne eine schriftliche Genehmigung der Gestalterin bzw. Autorin
+              vervielfältigt, in anderen Datenbanken gespeichert oder in
+              irgendeiner Form übertragen werden.
+            </p>
+          </section>
+
+          <section class="flex flex-col gap-[15px]">
+            <h2 class="font-bold">EU-Streitschlichtung</h2>
+
+            <p>
+              Die Europäische Kommission stellt eine Plattform zur
+              Online-Streitbeteiligung (OS) bereit:
+              https://ec.europa.eu/consumers/odr/. Unsere E-Mail-Adresse finden
+              Sie oben im Impressum.
+            </p>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <footer class="bg-[#333745] p-[70px]">
+      <div>
+        <div class="flex justify-between">
+          <div class="text-[#DAEDE2]">
+            <a
+              href="#Leistungen"
+              class="hover:underline hover:cursor-dotPrimary2"
+              >Leistungen</a
+            >
+            |
+            <a
+              href="#Zusammenarbeit"
+              class="hover:underline hover:cursor-dotPrimary2"
+              >Zusammenarbeit</a
+            >
+            |
+            <a
+              href="#UeberMich"
+              class="hover:underline hover:cursor-dotPrimary2"
+              >Über mich</a
+            >
+            |
+            <a
+              href="#Projektbeispiele"
+              class="hover:underline hover:cursor-dotPrimary2"
+              >Projektbeispiele</a
+            >
+          </div>
+          <div class="text-[#DAEDE2]">
+            <a href="/impressum.html" class="hover:underline">Impressum</a> |
+            <a href="/datenschutz.html" class="hover:underline">Datenschutz</a>
+          </div>
+        </div>
+        <hr class="my-[35px] h-[2px] w-full bg-[#DBEDE2]" />
+        <div class="flex w-full items-center justify-between">
+          <div class="text-[#DAEDE2]">
+            ©
+            <span id="date" class="text-[#DAEDE2]"></span>
+            annikaSCHULTE
+          </div>
+          <div class="flex items-center text-[#DAEDE2]">
+            Design & Development made with
+            <img
+              class="mx-[5px]"
+              src="/public/illustrations-and-icons/2023-10-24-annikaSCHULTE-icon-heart.svg"
+            />by&nbsp;
+            <a
+              href="https://mk-rietzl.de/de/"
+              target="_blank"
+              rel="noreferrer"
+              class="underline"
+            >
+              mk rietzl</a
+            >
+          </div>
+          <a
+            class="hover:cursor-dotWithArrowPrimary1"
+            href="https://www.linkedin.com/in/annika-schulte-02363511a/"
+            target="_blank"
+            rel="noreferrer"
+            ><img
+              src="/public/illustrations-and-icons/2023-10-24-annikaSCHULTE-icon-LinkedIn-2.svg"
+          /></a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Initialization for ES Users
+
+      var acc = document.getElementsByClassName("accordion");
+      var i;
+
+      for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+          this.classList.toggle("active");
+          var panel = this.nextElementSibling;
+          if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+          } else {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+            document
+              .getElementByClassName("accordion")
+              .remove("hover:cursor-dotWithPlusPrimary1");
+          }
+        });
+      }
+
+      document.getElementById("date").innerHTML = new Date().getFullYear();
+    </script>
   </body>
 </html>
