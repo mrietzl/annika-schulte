@@ -26,6 +26,22 @@
               montserrat: "'Montserrat',sans-serif",
             },
 
+            cursor: {
+              dotAccent:
+                "url(/public/cursor/2023-10-24-annikaSCHULTE_cursor-dot-accent.svg), pointer",
+              dotPrimary1:
+                "url(/public/cursor/2023-10-24-annikaSCHULTE_cursor-dot-primary-1.svg), pointer",
+              dotPrimary2:
+                "url(/public/cursor/2023-10-24-annikaSCHULTE_cursor-dot-primary-2.svg), pointer",
+              dotWithArrowPrimary1:
+                "url(/public/cursor/2023-10-24-annikaSCHULTE_cursor-dot-with-arrow-primary-1.svg), pointer",
+              dotWithCrossPrimary1:
+                "url(/public/cursor/2023-10-24-annikaSCHULTE_cursor-dot-with-cross-primary-1.svg), pointer",
+              dotWithPlusPrimary1:
+                "url(/public/cursor/2023-10-24-annikaSCHULTE_cursor-dot-with-plus-primary-1.svg), pointer",
+              logo: "url(/public/cursor/2023-10-24-annikaSCHULTE_cursor-logo.svg), pointer",
+            },
+
             colors: {
               /* here an example:
                 clifford: "#da373d", */
@@ -91,6 +107,8 @@
         width: 100%;
         outline: none;
         transition: all 0.5s;
+        cursor: url("/public/cursor/2023-10-24-annikaSCHULTE_cursor-dot-with-plus-primary-1.svg"),
+          pointer;
       }
 
       .panel {
@@ -116,21 +134,34 @@
     <nav
       class="sticky top-0 z-20 flex w-full items-center justify-between bg-[#DAEDE2] py-6 drop-shadow"
     >
-      <img
-        class="h-[50px] pl-[30px]"
-        src="/public/logo/annikaSCHULTE-logo.svg"
-      />
+      <a href="#Start" class="hover:cursor-logo">
+        <img
+          class="h-[50px] pl-[30px]"
+          src="/public/logo/annikaSCHULTE-logo.svg"
+      /></a>
 
       <div
         class="flex items-center gap-[35px] pr-[70px] font-semibold uppercase"
       >
-        <a href="#Leistungen" class="hover:underline">Leistungen</a>
-        <a href="#Zusammenarbeit" class="hover:underline">Zusammenarbeit</a>
-        <a href="#UeberMich" class="hover:underline">Über mich</a>
-        <a href="#Projektbeispiele" class="hover:underline">Projektbeispiele</a>
+        <a href="#Leistungen" class="hover:underline hover:cursor-dotPrimary1"
+          >Leistungen</a
+        >
+        <a
+          href="#Zusammenarbeit"
+          class="hover:underline hover:cursor-dotPrimary1"
+          >Zusammenarbeit</a
+        >
+        <a href="#UeberMich" class="hover:underline hover:cursor-dotPrimary1"
+          >Über mich</a
+        >
+        <a
+          href="#Projektbeispiele"
+          class="hover:underline hover:cursor-dotPrimary1"
+          >Projektbeispiele</a
+        >
         <a
           href="#Kontakt"
-          class="rounded-full bg-[#333745] px-[30px] py-[12px] uppercase text-[#DAEDE2]"
+          class="rounded-full bg-[#333745] px-[30px] py-[12px] uppercase text-[#DAEDE2] hover:cursor-dotPrimary2"
         >
           Kontakt
         </a>
@@ -151,6 +182,8 @@
           </div>
         </div>
       </div>
+
+      <div id="Start" class="-translate-y-[150px]"></div>
 
       <img
         class="h-[600px] w-full object-cover p-[30px]"
@@ -441,7 +474,7 @@
         </p>
         <a
           href="#Kontakt"
-          class="my-[70px] w-fit place-self-center rounded-full bg-[#333745] px-[30px] py-[12px] font-semibold uppercase text-[#FFFFFF]"
+          class="my-[70px] w-fit place-self-center rounded-full bg-[#333745] px-[30px] py-[12px] font-semibold uppercase text-[#FFFFFF] hover:cursor-dotPrimary2"
         >
           Ich möchte loslegen
         </a>
@@ -494,7 +527,7 @@
               rel="noreferrer"
             >
               <img
-                class="h-[50px] self-start"
+                class="h-[50px] self-start hover:cursor-dotWithArrowPrimary1"
                 src="/public/illustrations-and-icons/2023-10-24-annikaSCHULTE-icon-LinkedIn-1.svg"
             /></a>
           </div>
@@ -798,7 +831,7 @@
               </p>
               Dann buche dir gerne direkt einen
               <a
-                class="font-semibold underline"
+                class="font-semibold underline hover:cursor-dotWithArrowPrimary1"
                 href="https://calendly.com/annikaschulte"
                 target="_blank"
                 rel="noreferrer"
@@ -822,7 +855,7 @@
               <!-- Bei zusätzlichen Verweisen für die E-Mail-Adresse, z.B. einem vordefinierten Betreff o.ä., siehe hier:
             https://wiki.selfhtml.org/wiki/HTML/Tutorials/Links/Verweise_auf_Mailadressen -->
               <a
-                class="font-semibold underline"
+                class="font-semibold underline hover:cursor-dotWithArrowPrimary1"
                 href="mailto:contact@annikaschulte.com"
                 target="_blank"
                 rel="noreferrer"
@@ -898,7 +931,7 @@
             <div class="h-captcha" data-captcha="true"></div> -->
 
             <button
-              class="mt-[70px] rounded-full bg-[#333745] px-[30px] py-[12px] text-[#F6F792]"
+              class="mt-[70px] rounded-full bg-[#333745] px-[30px] py-[12px] text-[#F6F792] hover:cursor-dotAccent"
               type="submit"
             >
               senden
@@ -918,10 +951,27 @@
       <div>
         <div class="flex justify-between">
           <div class="text-[#DAEDE2]">
-            <a href="#Leistungen" class="hover:underline">Leistungen</a> |
-            <a href="#Zusammenarbeit" class="hover:underline">Zusammenarbeit</a>
-            | <a href="#UeberMich" class="hover:underline">Über mich</a> |
-            <a href="#Projektbeispiele" class="hover:underline"
+            <a
+              href="#Leistungen"
+              class="hover:underline hover:cursor-dotPrimary2"
+              >Leistungen</a
+            >
+            |
+            <a
+              href="#Zusammenarbeit"
+              class="hover:underline hover:cursor-dotPrimary2"
+              >Zusammenarbeit</a
+            >
+            |
+            <a
+              href="#UeberMich"
+              class="hover:underline hover:cursor-dotPrimary2"
+              >Über mich</a
+            >
+            |
+            <a
+              href="#Projektbeispiele"
+              class="hover:underline hover:cursor-dotPrimary2"
               >Projektbeispiele</a
             >
           </div>
@@ -953,6 +1003,7 @@
             >
           </div>
           <a
+            class="hover:cursor-dotWithArrowPrimary1"
             href="https://www.linkedin.com/in/annika-schulte-02363511a/"
             target="_blank"
             rel="noreferrer"
@@ -977,7 +1028,9 @@
             panel.style.maxHeight = null;
           } else {
             panel.style.maxHeight = panel.scrollHeight + "px";
-            document.getElementByClassName("cross").add("plus");
+            document
+              .getElementByClassName("accordion")
+              .remove("hover:cursor-dotWithPlusPrimary1");
           }
         });
       }
