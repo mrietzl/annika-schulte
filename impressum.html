@@ -99,32 +99,6 @@
         justify-content: center;
         align-items: center;
       }
-
-      /* accordion section; for more info, have a look here: https://www.w3schools.com/howto/howto_js_accordion.asp */
-
-      .accordion {
-        cursor: pointer;
-        width: 100%;
-        outline: none;
-        transition: all 0.5s;
-        cursor: url("/public/cursor/2023-10-24-annikaSCHULTE_cursor-dot-with-plus-primary-1.svg"),
-          pointer;
-      }
-
-      .panel {
-        max-height: 0;
-        overflow: hidden;
-        transition: all 0.5s;
-      }
-
-      .active .cross {
-        transform: rotate(45deg);
-        transition: all 0.5s;
-      }
-
-      .cross {
-        transition: all 0.5s;
-      }
     </style>
 
     <link rel="stylesheet" href="/style.css" />
@@ -134,7 +108,7 @@
     <nav
       class="sticky top-0 z-20 flex w-full items-center justify-between bg-[#DAEDE2] py-6 drop-shadow"
     >
-      <a href="#Start" class="hover:cursor-logo">
+      <a href="/index.html" class="hover:cursor-logo">
         <img
           class="h-[50px] pl-[30px]"
           src="/public/logo/annikaSCHULTE-logo.svg"
@@ -143,28 +117,9 @@
       <div
         class="flex items-center gap-[35px] pr-[70px] font-semibold uppercase"
       >
-        <a href="#Leistungen" class="hover:underline hover:cursor-dotPrimary1"
-          >Leistungen</a
+        <a href="/index.html" class="hover:underline hover:cursor-dotPrimary1"
+          >zurück</a
         >
-        <a
-          href="#Zusammenarbeit"
-          class="hover:underline hover:cursor-dotPrimary1"
-          >Zusammenarbeit</a
-        >
-        <a href="#UeberMich" class="hover:underline hover:cursor-dotPrimary1"
-          >Über mich</a
-        >
-        <a
-          href="#Projektbeispiele"
-          class="hover:underline hover:cursor-dotPrimary1"
-          >Projektbeispiele</a
-        >
-        <a
-          href="#Kontakt"
-          class="rounded-full bg-[#333745] px-[30px] py-[12px] uppercase text-[#DAEDE2] hover:cursor-dotPrimary2"
-        >
-          Kontakt
-        </a>
       </div>
     </nav>
 
@@ -185,21 +140,10 @@
           </section>
 
           <section class="flex flex-col gap-[15px]">
-            <p>Angaben gemäß § 5 TMG</p>
-          </section>
-
-          <section class="flex flex-col gap-[15px]">
-            <h2 class="font-bold">
-              Einzelunternehmerin & Vertretungsberechtigte
-            </h2>
-
-            <!-- if a h3 is needed:
-          <h3 class="font-semibold">
-          Einzelunternehmerin & Vertretungsberechtigte
-          </h3> -->
+            <h2 class="font-bold">Angaben gemäß § 5 TMG</h2>
 
             <p>
-              Annika Schulte (Riedel)
+              Annika Schulte
               <br />
               Sonnenhang 3
               <br />
@@ -211,9 +155,9 @@
             <h2 class="font-bold">Kontakt</h2>
 
             <p>
-              Telefon:
+              Telefon: +49 (0) 160 92897869
               <br />
-              E-Mail:
+              E-Mail: contact(at)annikaschulte.com
             </p>
           </section>
 
@@ -224,7 +168,7 @@
               Umsatzsteuer-Identifikationsnummer gemäß § 27 a
               Umsatzsteuergesetz:
               <br />
-              DEXXX
+              DE360883571
             </p>
           </section>
 
@@ -268,8 +212,27 @@
             <p>
               Die Europäische Kommission stellt eine Plattform zur
               Online-Streitbeteiligung (OS) bereit:
-              https://ec.europa.eu/consumers/odr/. Unsere E-Mail-Adresse finden
-              Sie oben im Impressum.
+              <a
+                href="https://ec.europa.eu/consumers/odr/main/index.cfm?event=main.home.chooseLanguage"
+                target="_blank"
+                rel="noreferrer"
+              >
+                https://ec.europa.eu/consumers/odr/.
+                <br />
+                Unsere E-Mail-Adresse finden Sie oben im Impressum.</a
+              >
+            </p>
+          </section>
+
+          <section class="flex flex-col gap-[15px]">
+            <h2 class="font-bold">
+              Verbraucherstreitbeilegung/Universalschlichtungsstelle
+            </h2>
+
+            <p>
+              Wir sind nicht bereit oder verpflichtet, an
+              Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle
+              teilzunehmen.
             </p>
           </section>
         </div>
@@ -281,27 +244,9 @@
         <div class="flex justify-between">
           <div class="text-[#DAEDE2]">
             <a
-              href="#Leistungen"
+              href="/index.html"
               class="hover:underline hover:cursor-dotPrimary2"
-              >Leistungen</a
-            >
-            |
-            <a
-              href="#Zusammenarbeit"
-              class="hover:underline hover:cursor-dotPrimary2"
-              >Zusammenarbeit</a
-            >
-            |
-            <a
-              href="#UeberMich"
-              class="hover:underline hover:cursor-dotPrimary2"
-              >Über mich</a
-            >
-            |
-            <a
-              href="#Projektbeispiele"
-              class="hover:underline hover:cursor-dotPrimary2"
-              >Projektbeispiele</a
+              >zurück</a
             >
           </div>
           <div class="text-[#DAEDE2]">
