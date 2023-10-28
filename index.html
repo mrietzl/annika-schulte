@@ -596,6 +596,16 @@
         class="flex flex-col lg:flex-row w-full gap-[70px] lg:gap-[35px] px-[70px]"
       >
         <div class="flex flex-col gap-[35px]">
+          <section>
+            <div class="flex items-center justify-start">
+              <div class="z-10 font-semibold uppercase">
+                Vertriebs-Daschboard
+              </div>
+              <div
+                class="absolute z-0 h-[10px] w-[222px] translate-y-1.5 rounded-full bg-[#F6F792]"
+              ></div>
+            </div>
+          </section>
           <section class="flex flex-col content-center bg-[#F6F792]">
             <img
               class="my-[70px] max-h-[200px] min-h-[175px]"
@@ -634,20 +644,20 @@
               />
             </div>
           </section>
-
-          <section>
-            <div class="flex items-center justify-start">
-              <div class="z-10 font-semibold uppercase">
-                Vertriebs-Daschboard
-              </div>
-              <div
-                class="absolute z-0 h-[10px] w-[222px] translate-y-1.5 rounded-full bg-[#F6F792]"
-              ></div>
-            </div>
-          </section>
         </div>
 
         <div class="flex flex-col gap-[35px]">
+          <section>
+            <div class="flex items-center justify-start">
+              <div class="z-10 font-semibold uppercase">
+                Marketingerfolgsmessung
+              </div>
+              <div
+                class="absolute z-0 h-[10px] w-[264px] translate-y-1.5 rounded-full bg-[#F6F792]"
+              ></div>
+            </div>
+          </section>
+
           <section class="flex flex-col content-center bg-[#F6F792]">
             <img
               class="my-[70px] max-h-[200px] min-h-[175px]"
@@ -686,20 +696,18 @@
               />
             </div>
           </section>
-
-          <section>
-            <div class="flex items-center justify-start">
-              <div class="z-10 font-semibold uppercase">
-                Marketingerfolgsmessung
-              </div>
-              <div
-                class="absolute z-0 h-[10px] w-[264px] translate-y-1.5 rounded-full bg-[#F6F792]"
-              ></div>
-            </div>
-          </section>
         </div>
 
         <div class="flex flex-col gap-[35px]">
+          <section>
+            <div class="flex items-center justify-start">
+              <div class="z-10 font-semibold uppercase">Segmentierungen</div>
+              <div
+                class="absolute z-0 h-[10px] w-[171px] translate-y-1.5 rounded-full bg-[#F6F792]"
+              ></div>
+            </div>
+          </section>
+
           <section class="flex flex-col content-center bg-[#F6F792]">
             <img
               class="my-[70px] max-h-[200px] min-h-[175px]"
@@ -736,15 +744,6 @@
                 class="h-[30px]"
                 src="/public/illustrations-and-icons/2023-10-24-annikaSCHULTE-icon-magie-level.svg"
               />
-            </div>
-          </section>
-
-          <section>
-            <div class="flex items-center justify-start">
-              <div class="z-10 font-semibold uppercase">Segmentierungen</div>
-              <div
-                class="absolute z-0 h-[10px] w-[171px] translate-y-1.5 rounded-full bg-[#F6F792]"
-              ></div>
             </div>
           </section>
         </div>
@@ -889,10 +888,13 @@
             action="https://api.web3forms.com/submit"
             method="POST"
           >
+            <!-- Old key; leads to my mail:
+            0f38ea7c-7b73-42f1-9be1-bb04e90b23e2> -->
+
             <input
               type="hidden"
               name="access_key"
-              value="0f38ea7c-7b73-42f1-9be1-bb04e90b23e2"
+              value="d0226725-9708-4498-bfba-1a8f9863e908"
             />
 
             <div class="grid lg:grid-cols-2 gap-[70px]">
@@ -931,11 +933,13 @@
               </div>
             </div>
 
-            <!-- Ist hier eine Captcha-Abfrage gewünscht?
-            <div class="h-captcha" data-captcha="true"></div> -->
+            <!-- Ist hier eine Captcha-Abfrage gewünscht? -->
+            <div class="pt-[70px]">
+              <div class="h-captcha" data-captcha="true"></div>
+            </div>
 
             <button
-              class="mt-[70px] rounded-full bg-[#333745] px-[30px] py-[12px] text-[#F6F792] hover:cursor-dotAccent"
+              class="mt-[35px] rounded-full bg-[#333745] px-[30px] py-[12px] text-[#F6F792] hover:cursor-dotAccent"
               type="submit"
             >
               senden
