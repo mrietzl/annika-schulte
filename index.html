@@ -7,6 +7,21 @@
       content="annikaSCHULTE – Your datav deserves a better place"
     />
 
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-M62BRP53");
+    </script>
+    <!-- End Google Tag Manager -->
+
     <!-- Here is the script part that is needed for tailwindcss:  -->
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -48,19 +63,25 @@
 
     <title>annikaSCHULTE</title>
 
-    <!-- Not needed anymore since we embeded the font locally:
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- these are the favicons; for light and dark scheme -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    /> -->
+      rel="icon"
+      type="image/svg"
+      href="/public/favicon/2023-10-24-annikaSCHULTE_favicon-primary-1.svg"
+      media="(prefers-color-scheme:light)"
+    />
+    <link
+      rel="icon"
+      type="image/svg"
+      href="/public/favicon/2023-10-24-annikaSCHULTE_favicon-primary-2.svg"
+      media="(prefers-color-scheme:dark)"
+    />
 
     <style>
       * {
         box-sizing: border-box;
         margin: 0;
-        font-family: "montserrat", "sans-serif";
+        font-family: "montserrat", sans-serif;
         color: #333745;
       }
 
@@ -126,6 +147,17 @@
   </head>
 
   <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-M62BRP53"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
     <nav
       class="sticky top-0 z-20 flex w-full items-center justify-between bg-[#DAEDE2] py-6 drop-shadow"
     >
@@ -163,32 +195,32 @@
       </div>
     </nav>
 
-    <header class="relative flex justify-center">
-      <div class="absolute mb-[70px] self-end">
-        <div class="flex justify-center">
-          <div class="h-[300px] w-[70vw] bg-[#FFFFFF] opacity-25"></div>
-          <div class="absolute self-center">
-            <h1
-              class="relative z-10 sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold"
-            >
-              Your data deserves a better place.
-            </h1>
-            <div
-              class="absolute sm:h-[15px] md:h-[20px] lg:h-[25px] xl:h-[30px] sm:w-[400px] md:w-[523px] lg:w-[628px] xl:w-[836px] -translate-y-4 rounded-full bg-[#F6F792] opacity-50"
-            ></div>
+    <main>
+      <header class="relative flex justify-center">
+        <div class="absolute mb-[70px] self-end">
+          <div class="flex justify-center">
+            <div class="h-[300px] w-[70vw] bg-[#FFFFFF] opacity-25"></div>
+            <div class="absolute self-center">
+              <h1
+                class="relative z-10 sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold"
+              >
+                Your data deserves a better place.
+              </h1>
+              <div
+                class="absolute sm:h-[15px] md:h-[20px] lg:h-[25px] xl:h-[30px] sm:w-[400px] md:w-[523px] lg:w-[628px] xl:w-[836px] -translate-y-4 rounded-full bg-[#F6F792] opacity-50"
+              ></div>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div id="Start" class="-translate-y-[150px]"></div>
+        <div id="Start" class="-translate-y-[150px]"></div>
 
-      <img
-        class="h-[600px] w-full object-cover p-[30px]"
-        src="/public/images/annikaSCHULTE-image-1.jpg"
-      />
-    </header>
+        <img
+          class="h-[600px] w-full object-cover p-[30px]"
+          src="/public/images/annikaSCHULTE-image-1.jpg"
+        />
+      </header>
 
-    <main>
       <div class="mx-[140px] flex flex-col justify-center gap-[35px] py-[35px]">
         <div class="flex items-center justify-center">
           <div id="Leistungen" class="-translate-y-[150px]"></div>
