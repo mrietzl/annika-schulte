@@ -103,14 +103,23 @@
         margin: 0 140px;
       }
 
-      .square {
+      .rectangle {
         background-color: #daede2;
         width: 100%;
-        aspect-ratio: 1 / 1;
         display: flex;
         justify-content: center;
         align-items: center;
+        min-height: 280px;
       }
+
+      /* .square {
+        background-color: #daede2;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: none;
+      } */
 
       /* accordion section; for more info, have a look here: https://www.w3schools.com/howto/howto_js_accordion.asp */
 
@@ -205,6 +214,14 @@
               <div
                 class="absolute sm:h-[15px] md:h-[20px] lg:h-[25px] xl:h-[30px] sm:w-[400px] md:w-[523px] lg:w-[628px] xl:w-[836px] -translate-y-4 rounded-full bg-[#F6F792] opacity-50"
               ></div>
+              <div class="flex mt-[35px] justify-center">
+                <a
+                  href="#Kontakt"
+                  class="w-fit rounded-full bg-[#333745] px-[40px] lg:px-[35px] xl:px-[30px] py-[18px] lg:py-[15px] xl:py-[12px] font-semibold text-2xl lg:text-xl xl:text-base uppercase text-[#FFFFFF] hover:cursor-dotPrimary2"
+                >
+                  Mehr erfahren
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -441,7 +458,7 @@
           Was ihr also von der Zusammenarbeit mit mir erwarten könnt:
         </h3>
         <div class="flex flex-col xl:flex-row w-full gap-[35px]">
-          <div class="square group relative">
+          <div class="rectangle lg:square group relative">
             <div
               class="z-10 font-semibold text-center text-2xl lg:text-xl xl:text-base uppercase group-hover:hidden"
             >
@@ -458,7 +475,7 @@
             </p>
           </div>
 
-          <div class="square group relative">
+          <div class="rectangle lg:square group relative">
             <div
               class="z-10 font-semibold text-center text-2xl lg:text-xl xl:text-base uppercase group-hover:hidden"
             >
@@ -475,7 +492,7 @@
             </p>
           </div>
 
-          <div class="square group relative">
+          <div class="rectangle lg:square group relative">
             <div
               class="z-10 font-semibold text-center text-2xl lg:text-xl xl:text-base uppercase group-hover:hidden"
             >
@@ -492,7 +509,7 @@
             </p>
           </div>
 
-          <div class="square group relative">
+          <div class="rectangle lg:square group relative">
             <div
               class="z-10 font-semibold text-center text-2xl lg:text-xl xl:text-base uppercase group-hover:hidden"
             >
@@ -674,7 +691,7 @@
       </div>
 
       <div
-        class="flex flex-col xl:flex-row w-full gap-[70px] lg:gap-[35px] px-[70px]"
+        class="flex flex-col xl:flex-row w-full gap-[35px] px-[35px] lg:px-[70px]"
       >
         <div class="flex flex-col gap-[35px]">
           <section class="flex flex-col content-center bg-[#F6F792]">
@@ -815,7 +832,7 @@
       </div>
 
       <div
-        class="mx-[70px] mt-[70px] grid grid-cols-3 gap-[35px] text-2xl lg:text-xl xl:text-base"
+        class="mx-[35px] lg:mx-[70px] mt-[70px] grid grid-cols-3 gap-[35px] text-2xl lg:text-xl xl:text-base"
       >
         <section
           class="col-span-1 flex w-full justify-center bg-[#DAEDE2] p-[35px]"
@@ -838,7 +855,7 @@
       </div>
 
       <div
-        class="mx-[70px] my-[35px] grid grid-cols-3 gap-[35px] text-2xl lg:text-xl xl:text-base"
+        class="mx-[35px] lg:mx-[70px] my-[35px] grid grid-cols-3 gap-[35px] text-2xl lg:text-xl xl:text-base"
       >
         <section
           class="col-span-2 flex h-full items-center bg-[#DAEDE2] p-[35px]"
@@ -862,7 +879,7 @@
       </div>
 
       <div
-        class="mx-[70px] mb-[70px] grid grid-cols-3 gap-[35px] text-2xl lg:text-xl xl:text-base"
+        class="mx-[35px] lg:mx-[70px] mb-[70px] grid grid-cols-3 gap-[35px] text-2xl lg:text-xl xl:text-base"
       >
         <section
           class="col-span-1 flex w-full justify-center bg-[#DAEDE2] p-[35px]"
