@@ -1,0 +1,1288 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="annikaSCHULTE – Your datav deserves a better place"
+    />
+
+    <!-- Cookie Consent Tool -->
+    <!-- … for faster performance: -->
+    <link rel="preconnect" href="//app.eu.usercentrics.eu" />
+    <link rel="preconnect" href="//api.eu.usercentrics.eu" />
+    <link rel="preconnect" href="//sdp.eu.usercentrics.eu" />
+    <link
+      rel="preload"
+      href="//app.eu.usercentrics.eu/browser-ui/latest/loader.js"
+      as="script"
+    />
+    <link
+      rel="preload"
+      href="//sdp.eu.usercentrics.eu/latest/uc-block.bundle.js"
+      as="script"
+    />
+    <!-- … general part: -->
+    <script
+      id="usercentrics-cmp"
+      data-language="de"
+      async
+      data-eu-mode="true"
+      data-settings-id="U91sFMsKBHS3n8"
+      src="https://app.eu.usercentrics.eu/browser-ui/latest/loader.js"
+    ></script>
+    <script
+      type="application/javascript"
+      src="https://sdp.eu.usercentrics.eu/latest/uc-block.bundle.js"
+    ></script>
+
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-M62BRP53");
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Here is the script part that is needed for tailwindcss:  -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Here is the customization part for tailwindcss if I wanna change sth: -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            backgroundSize: {
+              auto: "auto",
+              cover: "cover",
+              contain: "contain",
+              "50%": "50%",
+            },
+
+            fontFamily: {
+              montserrat: "'Montserrat',sans-serif",
+            },
+
+            cursor: {
+              dotAccent:
+                "url(/public/cursor/2023-10-24-annikaSCHULTE_cursor-dot-accent.svg), pointer",
+              dotPrimary1:
+                "url(/public/cursor/2023-10-24-annikaSCHULTE_cursor-dot-primary-1.svg), pointer",
+              dotPrimary2:
+                "url(/public/cursor/2023-10-24-annikaSCHULTE_cursor-dot-primary-2.svg), pointer",
+              dotWithArrowPrimary1:
+                "url(/public/cursor/2023-10-24-annikaSCHULTE_cursor-dot-with-arrow-primary-1.svg), pointer",
+              dotWithCrossPrimary1:
+                "url(/public/cursor/2023-10-24-annikaSCHULTE_cursor-dot-with-cross-primary-1.svg), pointer",
+              dotWithPlusPrimary1:
+                "url(/public/cursor/2023-10-24-annikaSCHULTE_cursor-dot-with-plus-primary-1.svg), pointer",
+              logo: "url(/public/cursor/2023-10-24-annikaSCHULTE_cursor-logo.svg), pointer",
+            },
+          },
+        },
+      };
+    </script>
+
+    <title>annikaSCHULTE</title>
+
+    <!-- these are the favicons; for light and dark scheme -->
+    <link
+      rel="icon"
+      type="image/svg"
+      href="/public/favicon/2023-10-24-annikaSCHULTE_favicon-primary-1.svg"
+      media="(prefers-color-scheme:light)"
+    />
+    <link
+      rel="icon"
+      type="image/svg"
+      href="/public/favicon/2023-10-24-annikaSCHULTE_favicon-primary-2.svg"
+      media="(prefers-color-scheme:dark)"
+    />
+
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        font-family: "montserrat", sans-serif;
+        color: #333745;
+      }
+
+      h3 {
+        font-weight: 900;
+      }
+
+      h4 {
+        text-decoration-line: underline;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        gap: 35px;
+        padding: 35px 0px;
+        width: 100vw;
+        margin: 0 140px;
+      }
+
+      .rectangle {
+        background-color: #daede2;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 280px;
+      }
+
+      /* .square {
+        background-color: #daede2;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: none;
+      } */
+
+      /* accordion section; for more info, have a look here: https://www.w3schools.com/howto/howto_js_accordion.asp */
+
+      .accordion {
+        cursor: pointer;
+        width: 100%;
+        outline: none;
+        transition: all 0.5s;
+        cursor: url("/public/cursor/2023-10-24-annikaSCHULTE_cursor-dot-with-plus-primary-1.svg"),
+          pointer;
+      }
+
+      .panel {
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.5s;
+      }
+
+      .active .cross {
+        transform: rotate(45deg);
+        transition: all 0.5s;
+      }
+
+      .cross {
+        transition: all 0.5s;
+      }
+    </style>
+
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-M62BRP53"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <nav class="bg-[#DAEDE2] drop-shadow">
+      <div class="mx-auto px-[30px] py-[15px]">
+        <div class="relative flex h-16 items-center justify-between">
+          <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+            <!-- Mobile menu button-->
+            <button
+              type="button"
+              class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+              aria-controls="mobile-menu"
+              aria-expanded="false"
+            >
+              <span class="absolute -inset-0.5"></span>
+              <span class="sr-only">Open main menu</span>
+              <!--
+                Icon when menu is closed.
+    
+                Menu open: "hidden", Menu closed: "block"
+              -->
+              <svg
+                class="block h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                />
+              </svg>
+              <!--
+                Icon when menu is open.
+    
+                Menu open: "block", Menu closed: "hidden"
+              -->
+              <svg
+                class="hidden h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          </div>
+          <div
+            class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start"
+          >
+            <div class="flex flex-shrink-0 items-center">
+              <img
+                class="h-8 w-auto"
+                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+                alt="Your Company"
+              />
+            </div>
+            <div class="hidden sm:ml-6 sm:block">
+              <div class="flex space-x-4">
+                <a
+                  href="#Leistungen"
+                  class="text-[#333745] hover:underline px-3 py-2 text-sm font-semibold uppercase"
+                  >Leistungen</a
+                >
+                <a
+                  href="#"
+                  class="text-[#333745] hover:underline px-3 py-2 text-sm font-semibold uppercase"
+                  >Zusammenarbeit</a
+                >
+                <a
+                  href="#"
+                  class="text-[#333745] hover:underline px-3 py-2 text-sm font-semibold uppercase"
+                  >Über mich</a
+                >
+                <a
+                  href="#"
+                  class="text-[#333745] hover:underline px-3 py-2 text-sm font-semibold uppercase"
+                  >Projektbeispiele</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile menu, show/hide based on menu state. -->
+      <div class="sm:hidden" id="mobile-menu">
+        <div class="space-y-1 px-2 pb-3 pt-2">
+          <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+          <a
+            href="#"
+            class="bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium"
+            aria-current="page"
+            >Leistungen</a
+          >
+          <a
+            href="#"
+            class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
+            >Zusammenarbeit</a
+          >
+          <a
+            href="#"
+            class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
+            >Über mich</a
+          >
+          <a
+            href="#"
+            class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
+            >Projektbeispiele</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <header class="relative flex justify-center">
+        <div class="absolute mb-[70px] self-end">
+          <div class="flex justify-center">
+            <div class="h-[300px] w-[70vw] bg-[#FFFFFF] opacity-25"></div>
+            <div class="absolute self-center">
+              <h1
+                class="relative z-10 sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold"
+              >
+                Your data deserves a better place.
+              </h1>
+              <div
+                class="absolute sm:h-[15px] md:h-[20px] lg:h-[25px] xl:h-[30px] sm:w-[400px] md:w-[523px] lg:w-[628px] xl:w-[836px] -translate-y-4 rounded-full bg-[#F6F792] opacity-50"
+              ></div>
+              <div class="flex mt-[35px] justify-center">
+                <a
+                  href="#Kontakt"
+                  class="w-fit rounded-full bg-[#333745] px-[40px] lg:px-[35px] xl:px-[30px] py-[18px] lg:py-[15px] xl:py-[12px] font-semibold text-2xl lg:text-xl xl:text-base uppercase text-[#FFFFFF] hover:cursor-dotPrimary2"
+                >
+                  Mehr erfahren
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="Start" class="-translate-y-[150px]"></div>
+
+        <img
+          class="h-[600px] w-full object-cover p-[30px]"
+          src="/public/images/annikaSCHULTE-image-1.jpg"
+        />
+      </header>
+
+      <div
+        class="mx-[35px] lg:mx-[70px] xl:mx-[140px] flex flex-col justify-center gap-[35px] py-[35px]"
+      >
+        <div class="flex items-center justify-center">
+          <div id="Leistungen" class="-translate-y-[150px]"></div>
+          <h2
+            class="absolute z-10 text-2xl lg:text-xl xl:text-base font-bold uppercase"
+          >
+            Leistungen
+          </h2>
+          <div
+            class="absolute z-0 h-[15px] lg:h-[12.5px] xl:h-[10px] w-[161px] lg:w-[134px] xl:w-[107px] translate-y-2.5 lg:translate-y-2 xl:translate-y-1.5 rounded-full bg-[#DAEDE2]"
+          ></div>
+        </div>
+
+        <section class="text-center text-2xl lg:text-xl xl:text-base">
+          Daten sind einfach überall. Die reine Existenz von Daten schafft
+          allerdings noch keinen Mehrwert für euer Geschäft. Ich helfe euch
+          euren Datenkeller zu entrümpeln, Farbe ins Spiel zu bringen und die
+          Taschenlampe nur auf Relevantes zu richten.
+        </section>
+      </div>
+
+      <div
+        class="mx-[35px] lg:mx-[70px] xl:mx-[140px] flex flex-col items-center"
+      >
+        <h3 class="font-semibold text-2xl lg:text-xl xl:text-base">
+          Die einzelnen Schritte zur besseren Datenwelt findet ihr hier:
+        </h3>
+        <hr class="mt-[35px] h-[2px] w-full bg-[#333745]" />
+        <div class="flex flex-col py-[35px]">
+          <button
+            class="accordion flex justify-between items-center hover:underline font-semibold"
+          >
+            <p class="text-2xl lg:text-xl xl:text-base">
+              SCHRITT 1: Im Datenkeller.
+            </p>
+
+            <img
+              class="cross"
+              src="/public/illustrations-and-icons/2023-10-24-annikaSCHULTE-icon-plus.svg"
+            />
+          </button>
+
+          <div class="panel flex flex-col gap-[35px]">
+            <p class="pt-[35px] text-2xl lg:text-xl xl:text-base">
+              Im Datenkeller ist es dunkel und verstaubt. Ständig stolpert ihr
+              über herumliegende Daten. Außerdem gibt es viele Momente in eurem
+              Arbeitsalltag, in denen die Arbeit mit Daten hohe manuelle
+              Aufwände verursacht. Zusammen formulieren wir eure
+              Fragestellungen, erarbeiten eure Anwendungsfälle, konzipieren
+              Lösungswege und richten so die Taschenlampe auf alles Relevante.
+            </p>
+          </div>
+        </div>
+
+        <hr class="h-[2px] w-full bg-[#333745]" />
+
+        <div class="flex flex-col py-[35px]">
+          <button
+            class="accordion flex justify-between items-center hover:underline font-semibold"
+          >
+            <p class="text-2xl lg:text-xl xl:text-base">
+              SCHRITT 2: Einmal Abstauben, bitte.
+            </p>
+
+            <img
+              class="cross"
+              src="/public/illustrations-and-icons/2023-10-24-annikaSCHULTE-icon-plus.svg"
+            />
+          </button>
+
+          <div class="panel flex flex-col gap-[35px]">
+            <p class="pt-[35px] text-2xl lg:text-xl xl:text-base">
+              Das Ziel ist definiert. Jetzt ist es besonders wichtig, alles im
+              Detail zu durchforsten und einen genauen Überblick über den
+              Datenkeller zu erhalten. Dabei können wir durchaus feststellen,
+              dass die Datenmengen noch nicht ausreichen oder andere Daten
+              notwendig sind. Wir definieren gemeinsam, wie die Datenlücke
+              aufgefüllt werden kann.
+            </p>
+          </div>
+        </div>
+
+        <hr class="h-[2px] w-full bg-[#333745]" />
+
+        <div class="flex flex-col py-[35px]">
+          <button
+            class="accordion flex justify-between items-center hover:underline font-semibold"
+          >
+            <p class="text-2xl lg:text-xl xl:text-base">
+              SCHRITT 3: Ordnung ist das halbe Leben.
+            </p>
+
+            <img
+              class="cross"
+              src="/public/illustrations-and-icons/2023-10-24-annikaSCHULTE-icon-plus.svg"
+            />
+          </button>
+
+          <div
+            class="panel text-2xl lg:text-xl xl:text-base flex flex-col gap-[35px]"
+          >
+            <p class="pt-[35px]">
+              Damit die neu geschaffene Übersicht auch langfristig erhalten
+              bleibt, kümmern wir uns um Datenmodelle, Datenbanken und
+              Dokumentationen. Auch das extrem wichtige Thema
+              Datenqualitätsmanagement ist Teil dieses Schrittes. Denn wie heißt
+              es so schön: Sh*t in, Sh*t out. Fehlerhafte Daten oder Datenlücken
+              erschüttern das Vertrauen in die Zahlen – oft nachhaltig.
+            </p>
+          </div>
+        </div>
+
+        <hr class="h-[2px] w-full bg-[#333745]" />
+
+        <div class="flex flex-col py-[35px]">
+          <button
+            class="accordion flex justify-between items-center hover:underline font-semibold"
+          >
+            <p class="text-2xl lg:text-xl xl:text-base">
+              SCHRITT 4: Endlich Farbe.
+            </p>
+
+            <img
+              class="cross"
+              src="/public/illustrations-and-icons/2023-10-24-annikaSCHULTE-icon-plus.svg"
+            />
+          </button>
+
+          <div class="panel flex flex-col gap-[35px]">
+            <p class="pt-[35px] text-2xl lg:text-xl xl:text-base">
+              Nach dem Aufräumen beginnt der Spaß. Die Daten werden zum Leben
+              erweckt. Ich erstelle euch übersichtliche Reports und
+              automatisierte Prozesse und hauche euren Daten Leben ein. So
+              entsteht eine Datenwelt, die alle gerne nutzen, die begeistert und
+              die tägliche Arbeit erleichtert.
+            </p>
+          </div>
+        </div>
+
+        <hr class="h-[2px] w-full bg-[#333745]" />
+
+        <div class="flex flex-col py-[35px]">
+          <button
+            class="accordion flex justify-between items-center hover:underline font-semibold"
+          >
+            <p class="text-2xl lg:text-xl xl:text-base">
+              SCHRITT 5: Und dann noch eine Prise „Magie“.
+            </p>
+
+            <img
+              class="cross"
+              src="/public/illustrations-and-icons/2023-10-24-annikaSCHULTE-icon-plus.svg"
+            />
+          </button>
+
+          <div class="panel flex flex-col gap-[35px]">
+            <p class="pt-[35px] text-2xl lg:text-xl xl:text-base">
+              Falls die reine Datenvisualisierung noch nicht genug ist, können
+              durch statistische Methoden Erkenntnisse erarbeitet werden, die
+              nicht auf den ersten Blick zu erkennen waren. Das fühlt sich
+              manchmal nach Magie an. Negativ könnte es auch als Black Box
+              bezeichnet werden. Daher ist es wichtig immer nur eine Prise
+              dazuzugeben.
+            </p>
+          </div>
+        </div>
+
+        <hr class="h-[2px] w-full bg-[#333745]" />
+
+        <div class="flex flex-col py-[35px]">
+          <button
+            class="accordion flex justify-between items-center hover:underline font-semibold"
+          >
+            <p class="text-2xl lg:text-xl xl:text-base">
+              SCHRITT 6: Treat your data right.
+            </p>
+
+            <img
+              class="cross"
+              src="/public/illustrations-and-icons/2023-10-24-annikaSCHULTE-icon-plus.svg"
+            />
+          </button>
+
+          <div class="panel flex flex-col gap-[35px]">
+            <p class="pt-[35px] text-2xl lg:text-xl xl:text-base">
+              Die bessere Datenwelt ist gestaltet und die alltägliche Arbeit mit
+              den Analyseergebnissen beginnt. An diesem Punkt wird es häufig
+              kritisch. Denn ungepflegte Datenbanken, ins Leere laufende
+              Prozesse oder unplausible Reports nutzt – zurecht! - niemand
+              gerne. Das Vertrauen schwindet und im schlimmsten Fall, wandert
+              alles wieder in den Datenkeller.
+            </p>
+            <p class="text-2xl lg:text-xl xl:text-base">
+              Damit das nicht passiert, fragt mich gerne als eure Begleiterin an
+              und gemeinsam folgen wir dem Motto „Your data deserves a better
+              place.“ Und zwar langfristig!
+            </p>
+          </div>
+        </div>
+
+        <hr class="mb-[35px] h-[2px] w-full bg-[#333745]" />
+      </div>
+
+      <div
+        class="mx-[35px] lg:mx-[70px] xl:mx-[140px] flex flex-col justify-center gap-[35px] py-[35px]"
+      >
+        <div class="flex items-center justify-center">
+          <div id="Zusammenarbeit" class="-translate-y-[150px]"></div>
+          <h2
+            class="absolute z-10 text-2xl lg:text-xl xl:text-base font-bold uppercase"
+          >
+            Zusammenarbeit
+          </h2>
+          <div
+            class="absolute z-0 h-[15px] lg:h-[12.5px] xl:h-[10px] w-[244px] lg:w-[203px] xl:w-[163px] translate-y-2.5 lg:translate-y-2 xl:translate-y-1.5 rounded-full bg-[#DAEDE2]"
+          ></div>
+        </div>
+
+        <h3 class="font-semibold text-center text-2xl lg:text-xl xl:text-base">
+          Was ihr also von der Zusammenarbeit mit mir erwarten könnt:
+        </h3>
+        <div class="flex flex-col xl:flex-row w-full gap-[35px]">
+          <div class="rectangle lg:square group relative">
+            <div
+              class="z-10 font-semibold text-center text-2xl lg:text-xl xl:text-base uppercase group-hover:hidden"
+            >
+              Klarheit
+            </div>
+            <div
+              class="absolute z-0 h-[15px] lg:h-[12.5px] xl:h-[10px] w-[125px] lg:w-[105px] xl:w-[84px] translate-y-2.5 lg:translate-y-2 xl:translate-y-1.5 rounded-full bg-[#F2D544] group-hover:hidden"
+            ></div>
+            <p
+              class="absolute hidden text-center text-2xl lg:text-xl xl:text-base p-[35px] text-center group-hover:inline-flex"
+            >
+              Ihr werdet Klarheit über eure gesamte Datenwelt und die
+              dazugehörigen Prozesse erlangen.
+            </p>
+          </div>
+
+          <div class="rectangle lg:square group relative">
+            <div
+              class="z-10 font-semibold text-center text-2xl lg:text-xl xl:text-base uppercase group-hover:hidden"
+            >
+              Autonomie
+            </div>
+            <div
+              class="absolute z-0 h-[15px] lg:h-[12.5px] xl:h-[10px] w-[157px] lg:w-[131px] xl:w-[105px] translate-y-2.5 lg:translate-y-2 xl:translate-y-1.5 rounded-full bg-[#F2D544] group-hover:hidden"
+            ></div>
+            <p
+              class="absolute hidden text-center text-2xl lg:text-xl xl:text-base p-[35px] text-center group-hover:inline-flex"
+            >
+              Ihr seid auf die selbständige Nutzung der Software-Infrastruktur &
+              der Analyseergbnisse vorbereitet.
+            </p>
+          </div>
+
+          <div class="rectangle lg:square group relative">
+            <div
+              class="z-10 font-semibold text-center text-2xl lg:text-xl xl:text-base uppercase group-hover:hidden"
+            >
+              Effizienz
+            </div>
+            <div
+              class="absolute z-0 h-[15px] lg:h-[12.5px] xl:h-[10px] w-[130px] lg:w-[108px] xl:w-[87px] translate-y-2.5 lg:translate-y-2 xl:translate-y-1.5 rounded-full bg-[#F2D544] group-hover:hidden"
+            ></div>
+            <p
+              class="absolute hidden text-center text-2xl lg:text-xl xl:text-base p-[35px] text-center group-hover:inline-flex"
+            >
+              Ihr werdet deutlich effizienter arbeiten und dadurch langfristig
+              Zeit sparen.
+            </p>
+          </div>
+
+          <div class="rectangle lg:square group relative">
+            <div
+              class="z-10 font-semibold text-center text-2xl lg:text-xl xl:text-base uppercase group-hover:hidden"
+            >
+              Fokus
+            </div>
+            <div
+              class="absolute z-0 h-[15px] lg:h-[12.5px] xl:h-[10px] w-[87px] lg:w-[73px] xl:w-[58px] translate-y-2.5 lg:translate-y-2 xl:translate-y-1.5 rounded-full bg-[#F2D544] group-hover:hidden"
+            ></div>
+            <p
+              class="absolute hidden text-center text-2xl lg:text-xl xl:text-base p-[35px] text-center group-hover:inline-flex"
+            >
+              Ihr werdet von euren Daten optimal unterstützt, sodass ihr euch
+              ganz auf euer Hauptgeschäft konzentrieren könnt.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mx-[35px] lg:mx-[70px] xl:mx-[140px] flex flex-col">
+        <section>
+          <div class="text-2xl lg:text-xl xl:text-base">
+            <p class="inline font-semibold">Klingt gut?</p>
+            Dann meldet euch bei mir für ein erstes, unverbindliches Gespräch.
+            Dabei werden wir herausfinden, ob der beschriebene Weg etwas für
+            euch ist oder an welchem Punkt des Weges ihr aktuell steht.
+          </div>
+        </section>
+        <section class="my-[35px]">
+          <div class="text-2xl lg:text-xl xl:text-base">
+            <p class="inline font-semibold">
+              Eine Sache möchte ich noch loswerden.
+            </p>
+            Eventuell habt ihr euch gefragt, warum ich immer wieder von
+            „gemeinsam“ und „zusammen“ schreibe? Ganz einfach. Beim Thema Daten
+            kommen wir nur kooperativ ans Ziel. Eine fertige Lösung oder meine
+            persönliche Meinung, die den Anwendern vorgesetzt wird, kann nicht
+            zum Ziel führen. Alle Beteiligten müssen von Anfang an die
+            Möglichkeit haben, ihre Arbeitswelt rund um die Datennutzung
+            mitzugestalten.
+          </div>
+        </section>
+        <p class="inline text-2xl lg:text-xl xl:text-base font-semibold">
+          Lasst uns also gemeinsam losgehen, ich zeige euch die Richtung und wir
+          finden zusammen den passenden Weg aus dem Datenkeller!
+        </p>
+        <a
+          href="#Kontakt"
+          class="my-[70px] w-fit place-self-center rounded-full bg-[#333745] px-[40px] lg:px-[35px] xl:px-[30px] py-[18px] lg:py-[15px] xl:py-[12px] font-semibold text-2xl lg:text-xl xl:text-base uppercase text-[#FFFFFF] hover:cursor-dotPrimary2"
+        >
+          Ich möchte loslegen
+        </a>
+      </div>
+
+      <div class="my-0 bg-[#F2D544] py-[70px]">
+        <div class="flex items-center justify-center">
+          <div id="UeberMich" class="-translate-y-[150px]"></div>
+          <h2
+            class="absolute z-10 text-2xl lg:text-xl xl:text-base font-bold uppercase"
+          >
+            Über mich
+          </h2>
+          <div
+            class="absolute z-0 h-[15px] lg:h-[12.5px] xl:h-[10px] w-[146px] lg:w-[122px] xl:w-[98px] translate-y-2.5 lg:translate-y-2 xl:translate-y-1.5 rounded-full bg-[#DAEDE2]"
+          ></div>
+        </div>
+
+        <div
+          class="mx-[35px] lg:mx-[70px] xl:mx-[140px] mt-[35px] flex items-center justify-start gap-[35px] xl:gap-[70px]"
+        >
+          <img
+            class="aspect-square max-h-[300px] lg:max-h-[450px] xl:max-h-[600px] object-cover"
+            src="/public/images/annikaSCHULTE-image-2.jpg"
+          />
+          <div class="flex flex-col gap-[15px] lg:gap-[35px] xl:gap-[70px]">
+            <h4 class="text-xl lg:text-3xl xl:text-5xl font-semibold">
+              Hi, ich bin Annika.
+            </h4>
+            <div class="flex flex-col gap-[35px]">
+              <div class="z-10 w-fit lg:text-2xl xl:text-4xl font-medium">
+                Wissensdurstig
+              </div>
+              <div
+                class="absolute z-0 h-[10px] lg:h-[15px] xl:h-[20px] w-[126px] lg:w-[189px] xl:w-[283px] translate-y-3 lg:translate-y-4 xl:translate-y-6 rounded-full bg-[#F6F792]"
+              ></div>
+            </div>
+
+            <div class="flex flex-col gap-[35px]">
+              <div class="z-10 w-fit lg:text-2xl xl:text-4xl font-medium">
+                Begeisterungsfähig
+              </div>
+              <div
+                class="absolute z-0 h-[10px] lg:h-[15px] xl:h-[20px] w-[161px] lg:w-[241px] xl:w-[361px] translate-y-3 lg:translate-y-4 xl:translate-y-6 rounded-full bg-[#F6F792]"
+              ></div>
+            </div>
+
+            <div class="flex flex-col gap-[35px]">
+              <div class="z-10 w-fit lg:text-2xl xl:text-4xl font-medium">
+                Verlässlich
+              </div>
+              <div
+                class="absolute z-0 h-[10px] lg:h-[15px] xl:h-[20px] w-[86px] lg:w-[129px] xl:w-[193px] translate-y-3 lg:translate-y-4 xl:translate-y-6 rounded-full bg-[#F6F792]"
+              ></div>
+            </div>
+
+            <a
+              href="https://www.linkedin.com/in/annika-schulte-02363511a/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                class="h-[36px] lg:h-[40px] xl:h-[50px] self-start hover:cursor-dotWithArrowPrimary1"
+                src="/public/illustrations-and-icons/2023-10-24-annikaSCHULTE-icon-LinkedIn-1.svg"
+            /></a>
+          </div>
+        </div>
+
+        <div
+          class="mx-[35px] lg:mx-[70px] xl:mx-[140px] mt-[70px] flex flex-col"
+        >
+          <section class="text-2xl lg:text-xl xl:text-base">
+            <p class="inline font-semibold">
+              Ich bin Datenanalystin und Beraterin.
+            </p>
+            Seit 2018 arbeite ich als Datenanalystin und habe schon die
+            unterschiedlichsten Projekte betreut. Von Vertrieb über Marketing
+            bis hin zum Einkauf. Vom ersten Beratungsgespräch über Data Audits
+            bis hin zum fertigen Dashboard. Ich kann die gesamte Bandbreite der
+            Datenanalyse abdecken.
+          </section>
+          <section class="text-2xl lg:text-xl xl:text-base my-[35px]">
+            <p class="inline font-semibold">Ich bin Software-Trainerin.</p>
+            Seit Anfang 2023 bin ich Software-Trainerin. Damit kultiviere ich
+            meine Fähigkeit, Menschen zur Nutzung von Technik und Daten zu
+            befähigen und sie dafür zu begeistern. Ich nutze gerne einfaches
+            Vokabular, um Missverständnissen vorzubeugen und kann mich
+            empathisch auf unterschiedliche Persönlichkeiten einstellen.
+          </section>
+          <section class="text-2xl lg:text-xl xl:text-base">
+            <p class="inline font-semibold">
+              Ich arbeite am liebsten an der Schnittstelle zwischen Technik und
+              Mensch.
+            </p>
+            Ich habe meinen beruflichen Weg im Jahr 2008 als „IT-Fachberaterin“
+            bei Siemens begonnen. Hier habe ich gelernt zwischen technischen und
+            fachlichen Abteilungen zu vermitteln. Denn manchmal spricht man zwar
+            die gleiche Sprache, aber versteht sich trotzdem nicht.
+          </section>
+          <section class="text-2xl lg:text-xl xl:text-base my-[35px]">
+            <p class="inline font-semibold">Ich bin begeisterungsfähig.</p>
+            Mit Freude und ehrlichem Interesse suche ich nach den bestmöglichen
+            Lösungen. Dabei kann ich motivieren und ermuntern. Denn mit Freude
+            und einer positiven Einstellung geht doch alles leichter von der
+            Hand.
+          </section>
+
+          <section class="text-2xl lg:text-xl xl:text-base">
+            <p class="inline font-semibold">Ich liebe das Lernen.</p>
+            Mein fast unstillbarer Wissensdurst führt dazu, dass ich mich
+            selbständig und zügig in die verschiedensten Themen einarbeiten und
+            eindenken kann. So gelingt es mir zielgruppenorientiert zu arbeiten
+            und die Bedürfnisse aller Beteiligten in meinen Konzepten zu
+            berücksichtigen.
+          </section>
+        </div>
+      </div>
+
+      <div class="pb-[35px] pt-[70px]">
+        <div class="flex items-center justify-center">
+          <div id="Projektbeispiele" class="-translate-y-[150px]"></div>
+          <h2
+            class="absolute z-10 text-2xl lg:text-xl xl:text-base font-bold uppercase"
+          >
+            Projektbeispiele
+          </h2>
+          <div
+            class="absolute z-0 h-[15px] lg:h-[12.5px] xl:h-[10px] w-[255px] lg:w-[205px] xl:w-[164px] translate-y-2.5 lg:translate-y-2 xl:translate-y-1.5 rounded-full bg-[#DAEDE2]"
+          ></div>
+        </div>
+      </div>
+
+      <div
+        class="flex flex-col xl:flex-row w-full gap-[35px] px-[35px] lg:px-[70px]"
+      >
+        <div class="flex flex-col gap-[35px]">
+          <section class="flex flex-col content-center bg-[#F6F792]">
+            <img
+              class="my-[70px] max-h-[200px] min-h-[175px]"
+              src="/public/illustrations-and-icons/2023-10-24-annikaSCHULTE-illustration-vertriebs-dashboard.svg"
+            />
+            <div
+              class="mx-[35px] mb-[35px] flex flex-col gap-[35px] text-2xl lg:text-xl xl:text-base"
+            >
+              <p class="z-10 font-semibold uppercase">Vertriebs-Daschboard</p>
+              <p>
+                <span class="font-semibold">Mein Ergebnis:</span> Ich stelle
+                eure wichtigsten Vertriebskennzahlen, wie Umsatz, Angebotshöhen
+                usw. dar und mache euren Vertriebsprozess durch Funnel von der
+                Lead-Quelle bis hin zum gewonnenen Kunden sichtbar.
+              </p>
+              <p>
+                <span class="font-semibold">Euer Mehrwert:</span> Der
+                Vertriebserfolg wird sofort sichtbar und das Vertriebsteam wird
+                motiviert und spart Zeit durch geringeren Abstimmungs- und
+                Reportingaufwand.
+              </p>
+              <div
+                class="flex flex-row items-center bg-[#F6F792] text-2xl lg:text-xl xl:text-base"
+              >
+                <p class="pr-[35px] font-semibold">Magie-Level:</p>
+                <div class="flex gap-[15px]">
+                  <img
+                    class="h-[30px]"
+                    src="/public/illustrations-and-icons/2023-10-24-annikaSCHULTE-icon-magie-level.svg"
+                  />
+                  <img
+                    class="h-[30px] opacity-50"
+                    src="/public/illustrations-and-icons/2023-10-24-annikaSCHULTE-icon-magie-level.svg"
+                  />
+                  <img
+                    class="h-[30px] opacity-50"
+                    src="/public/illustrations-and-icons/2023-10-24-annikaSCHULTE-icon-magie-level.svg"
+                  />
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div class="flex flex-col gap-[35px]">
+          <section class="flex flex-col content-center bg-[#F6F792]">
+            <img
+              class="my-[70px] max-h-[200px] min-h-[175px]"
+              src="/public/illustrations-and-icons/2023-10-24-annikaSCHULTE-illustration-marketingerfolgsmessung.svg"
+            />
+            <div
+              class="mx-[35px] mb-[35px] flex flex-col gap-[35px] text-2xl lg:text-xl xl:text-base"
+            >
+              <p class="z-10 font-semibold uppercase">
+                Marketingerfolgsmessung
+              </p>
+              <p>
+                <span class="font-semibold">Mein Ergebnis:</span> Ich analysiere
+                und bewerte mithilfe von statistischen Methoden eure digitalen
+                Marketingmaßnahmen und stelle die erzielten Effekte und
+                wichtigsten Kennzahlen anschaulich dar.
+              </p>
+              <p>
+                <span class="font-semibold">Euer Mehrwert:</span> Ihr könnt
+                nachweisen, welche Marketingkampagnen erfolgreich waren und habt
+                somit eine solide Entscheidungsgrundlage für die nächste
+                Planungsphase eurer Marketingmaßnahmen.
+              </p>
+              <div
+                class="flex flex-row items-center bg-[#F6F792] text-2xl lg:text-xl xl:text-base"
+              >
+                <p class="pr-[35px] font-semibold">Magie-Level:</p>
+                <div class="flex gap-[15px]">
+                  <img
+                    class="h-[30px]"
+                    src="/public/illustrations-and-icons/2023-10-24-annikaSCHULTE-icon-magie-level.svg"
+                  />
+                  <img
+                    class="h-[30px]"
+                    src="/public/illustrations-and-icons/2023-10-24-annikaSCHULTE-icon-magie-level.svg"
+                  />
+                  <img
+                    class="h-[30px] opacity-50"
+                    src="/public/illustrations-and-icons/2023-10-24-annikaSCHULTE-icon-magie-level.svg"
+                  />
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div class="flex flex-col gap-[35px]">
+          <section class="flex flex-col content-center bg-[#F6F792]">
+            <img
+              class="my-[70px] max-h-[200px] min-h-[175px]"
+              src="/public/illustrations-and-icons/2023-10-24-annikaSCHULTE-illustration-segmentierungen.svg"
+            />
+            <div
+              class="mx-[35px] mb-[35px] flex flex-col gap-[35px] text-2xl lg:text-xl xl:text-base"
+            >
+              <p class="z-10 font-semibold uppercase">Segmentierungen</p>
+              <p>
+                <span class="font-semibold">Mein Ergebnis:</span> Ob Kunden,
+                Märkte, Nutzer, Produkte, ich ermittle euch mithilfe von
+                statistischen Methoden strukturgleiche Gruppen und beschreibe
+                diese mit den entscheidenden Kennzahlen.
+              </p>
+              <p>
+                <span class="font-semibold">Euer Mehrwert:</span> Die
+                ermittelten Segmente bilden eine fundierte Basis für die
+                strukturierte Weiterentwicklung eurer Produkte und
+                Marketingmaßnahmen.
+              </p>
+              <div
+                class="flex flex-row items-center bg-[#F6F792] text-2xl lg:text-xl xl:text-base"
+              >
+                <p class="pr-[35px] font-semibold">Magie-Level:</p>
+                <div class="flex gap-[15px]">
+                  <img
+                    class="h-[30px]"
+                    src="/public/illustrations-and-icons/2023-10-24-annikaSCHULTE-icon-magie-level.svg"
+                  />
+                  <img
+                    class="h-[30px]"
+                    src="/public/illustrations-and-icons/2023-10-24-annikaSCHULTE-icon-magie-level.svg"
+                  />
+                  <img
+                    class="h-[30px]"
+                    src="/public/illustrations-and-icons/2023-10-24-annikaSCHULTE-icon-magie-level.svg"
+                  />
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <div
+        class="mx-[35px] lg:mx-[70px] mt-[70px] grid grid-cols-3 gap-[35px] text-2xl lg:text-xl xl:text-base"
+      >
+        <section
+          class="col-span-1 flex w-full justify-center bg-[#DAEDE2] p-[35px]"
+        >
+          <img
+            class="max-h-[200px] min-h-[175px]"
+            src="/public/illustrations-and-icons/2023-10-24-annikaSCHULTE-illustration-individualitaet.svg"
+          />
+        </section>
+        <section
+          class="col-span-2 flex h-full items-center bg-[#DAEDE2] p-[35px]"
+        >
+          <p>
+            Die hier aufgeführten Beispiele dienen lediglich der Inspiration.
+            Die Darstellung und Analyse von Daten ist sehr individuell. Deswegen
+            meldet euch am besten direkt bei mir, um über euren konkreten
+            Anwendungsfall zu sprechen.
+          </p>
+        </section>
+      </div>
+
+      <div
+        class="mx-[35px] lg:mx-[70px] my-[35px] grid grid-cols-3 gap-[35px] text-2xl lg:text-xl xl:text-base"
+      >
+        <section
+          class="col-span-2 flex h-full items-center bg-[#DAEDE2] p-[35px]"
+        >
+          <p>
+            Die Umsetzbarkeit der „Magie-Level“, also der Einsatzgrad von
+            statistischen Methoden ist immer abhängig von der Datenmenge. Ich
+            berate euch gerne, was für euch und eure vorliegende Datenbasis
+            möglich ist oder was ihr benötigt, um in Zukunft ausreichend Daten
+            zu sammeln.
+          </p>
+        </section>
+        <section
+          class="col-span-1 flex w-full justify-center bg-[#DAEDE2] p-[35px]"
+        >
+          <img
+            class="max-h-[200px] min-h-[175px]"
+            src="/public/illustrations-and-icons/2023-10-24-annikaSCHULTE-illustration-datenmenge.svg"
+          />
+        </section>
+      </div>
+
+      <div
+        class="mx-[35px] lg:mx-[70px] mb-[70px] grid grid-cols-3 gap-[35px] text-2xl lg:text-xl xl:text-base"
+      >
+        <section
+          class="col-span-1 flex w-full justify-center bg-[#DAEDE2] p-[35px]"
+        >
+          <img
+            class="max-h-[200px] min-h-[175px]"
+            src="/public/illustrations-and-icons/2023-10-24-annikaSCHULTE-illustration-tools.svg"
+          />
+        </section>
+        <section
+          class="col-span-2 flex h-full items-center bg-[#DAEDE2] p-[35px]"
+        >
+          <p>
+            Ich arbeite komplett unabhängig und nutze verschiedene Tools und
+            Infrastrukturen. Einige Beispiele sind Zoho Analytics, Excel,
+            Tableau, Google Analytics, Power BI, … Im Beratungsprozess wählen
+            wir gemeinsam die für euch passende Software oder Plattform aus.
+          </p>
+        </section>
+      </div>
+
+      <div class="my-0 bg-[#F6F792] py-[70px]">
+        <div class="flex items-center justify-start pl-[140px]">
+          <div id="Kontakt" class="-translate-y-[150px]"></div>
+          <h2
+            class="absolute z-10 text-2xl lg:text-xl xl:text-base font-bold uppercase"
+          >
+            Kontakt
+          </h2>
+          <div
+            class="absolute z-0 h-[15px] lg:h-[12.5px] xl:h-[10px] w-[121px] lg:w-[100px] xl:w-[81px] translate-y-2.5 lg:translate-y-2 xl:translate-y-1.5 rounded-full bg-[#DAEDE2]"
+          ></div>
+        </div>
+
+        <div
+          class="mx-[35px] lg:mx-[70px] xl:mx-[140px] mt-[70px] flex flex-col text-2xl lg:text-xl xl:text-base"
+        >
+          <div class="flex">
+            <img
+              class="h-[35px] xl:h-[25px] pb-px pr-[10px]"
+              src="/public/illustrations-and-icons/2023-10-24-annikaSCHULTE-icon-calender.svg"
+            />
+            <section>
+              <p class="inline font-semibold">
+                Du möchtest mit mir durchstarten?
+              </p>
+              Dann buche dir gerne direkt einen
+              <a
+                class="font-semibold underline hover:cursor-dotWithArrowPrimary1"
+                href="https://calendly.com/annikaschulte"
+                target="_blank"
+                rel="noreferrer"
+                >Termin</a
+              >
+              mit mir.
+            </section>
+          </div>
+
+          <div class="flex">
+            <img
+              class="h-[35px] xl:h-[25px] pr-[10px] my-[35px]"
+              src="/public/illustrations-and-icons/2023-10-24-annikaSCHULTE-icon-mail.svg"
+            />
+            <section class="py-[35px]">
+              <p class="inline font-semibold">
+                Du möchtest mich per E-Mail kontaktieren?
+              </p>
+              Schreib mir gerne an
+
+              <!-- Bei zusätzlichen Verweisen für die E-Mail-Adresse, z.B. einem vordefinierten Betreff o.ä., siehe hier:
+            https://wiki.selfhtml.org/wiki/HTML/Tutorials/Links/Verweise_auf_Mailadressen -->
+              <a
+                class="font-semibold underline hover:cursor-dotWithArrowPrimary1"
+                href="mailto:contact@annikaschulte.com"
+                target="_blank"
+                rel="noreferrer"
+                >contact@annikaschulte.com</a
+              >
+            </section>
+          </div>
+
+          <div class="flex">
+            <img
+              class="h-[35px] xl:h-[25px] pr-[10px]"
+              src="/public/illustrations-and-icons/2023-10-24-annikaSCHULTE-icon-message.svg"
+            />
+            <section>
+              <p class="inline font-semibold">
+                Du hast eine Challenge für mich?
+              </p>
+              Die Nutzung von Daten ist sehr individuell! Wie sieht Eure
+              Challenge für mich aus? Sendet mir hier eure Herausforderung oder
+              eure brennendsten Fragen und ich melde mich mit Ideen bei euch,
+              wie eine Lösung mithilfe von Daten aussehen könnte.
+            </section>
+          </div>
+
+          <form
+            class="mt-[35px]"
+            action="https://api.web3forms.com/submit"
+            method="POST"
+          >
+            <!-- Old key; leads to my mail:
+            0f38ea7c-7b73-42f1-9be1-bb04e90b23e2> -->
+
+            <input
+              type="hidden"
+              name="access_key"
+              value="d0226725-9708-4498-bfba-1a8f9863e908"
+            />
+
+            <div class="grid lg:grid-cols-2 gap-[70px]">
+              <div class="flex flex-col gap-[35px]">
+                <div>
+                  <p>Name</p>
+                  <input
+                    autocomplete="off"
+                    class="h-full min-h-[50px] w-full rounded-[5px] bg-[#DAEDE2] pl-[15px] focus:bg-[#DAEDE2] focus:text-[#333745] focus:outline-1 focus:outline-[#333745]"
+                    type="text"
+                    name="name"
+                    required
+                  />
+                </div>
+
+                <div>
+                  <p>Email</p>
+                  <input
+                    autocomplete="off"
+                    class="h-full min-h-[50px] w-full rounded-[5px] bg-[#DAEDE2] pl-[15px] focus:bg-[#DAEDE2] focus:text-[#333745] focus:outline-1 focus:outline-[#333745]"
+                    type="email"
+                    name="email"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="h-full">
+                <p>Nachricht, Challenge oder Fragen</p>
+                <textarea
+                  autocomplete="off"
+                  class="h-full w-full rounded-[5px] bg-[#DAEDE2] pl-[15px] pt-[15px] focus:bg-[#DAEDE2] focus:text-[#333745] focus:outline-1 focus:outline-[#333745]"
+                  name="message"
+                  required
+                  value="Nachricht, Challenge oder Fragen"
+                ></textarea>
+              </div>
+            </div>
+
+            <div class="flex flex-row items-center pt-[50px]">
+              <input
+                type="checkbox"
+                name="privacy check"
+                ckecked="{privacy}"
+                class="accent-[#333745] w-[28px]"
+                required
+              />
+
+              <p class="pl-[5px]">
+                Ich habe die
+                <a
+                  class="font-semibold underline"
+                  href="/datenschutz.html"
+                  target="_blank"
+                  rel="noreferrer"
+                  >Datenschutzbestimmungen</a
+                >
+                gelesen und akzeptiere diese hiermit. *
+              </p>
+            </div>
+
+            <!-- captcha implementation -->
+            <div class="pt-[35px]">
+              <div class="h-captcha" data-captcha="true"></div>
+            </div>
+
+            <button
+              class="my-[70px] w-fit place-self-center rounded-full bg-[#333745] px-[40px] lg:px-[35px] xl:px-[30px] py-[18px] lg:py-[15px] xl:py-[12px] text-2xl lg:text-xl xl:text-base uppercase text-[#F6F792] hover:cursor-dotPrimary2"
+              type="submit"
+            >
+              senden
+            </button>
+          </form>
+
+          <script
+            src="https://web3forms.com/client/script.js"
+            async
+            defer
+          ></script>
+        </div>
+      </div>
+    </main>
+
+    <footer class="bg-[#333745] p-[70px]">
+      <div>
+        <div class="flex flex-col xl:flex-row justify-between">
+          <div
+            class="text-[#DAEDE2] flex flex-col xl:flex-row items-center gap-[15px] xl:gap-0 xl:text-base lg:text-xl text-2xl"
+          >
+            <a
+              href="#Leistungen"
+              class="hover:underline hover:cursor-dotPrimary2"
+              >Leistungen </a
+            ><span class="hidden xl:inline-flex text-[#DAEDE2]"
+              >&nbsp;|&nbsp;</span
+            >
+
+            <a
+              href="#Zusammenarbeit"
+              class="hover:underline hover:cursor-dotPrimary2"
+              >Zusammenarbeit</a
+            ><span class="hidden xl:inline-flex text-[#DAEDE2]"
+              >&nbsp;|&nbsp;</span
+            >
+
+            <a
+              href="#UeberMich"
+              class="hover:underline hover:cursor-dotPrimary2"
+              >Über mich</a
+            ><span class="hidden xl:inline-flex text-[#DAEDE2]"
+              >&nbsp;|&nbsp;</span
+            >
+
+            <a
+              href="#Projektbeispiele"
+              class="hover:underline hover:cursor-dotPrimary2"
+              >Projektbeispiele</a
+            >
+          </div>
+          <div class="text-[#DAEDE2] flex justify-center pt-[35px] xl:pt-0">
+            <a href="javascript:UC_UI.showSecondLayer();">Cookies</a>
+            <span class="text-[#DAEDE2]">&nbsp;|&nbsp;</span
+            ><a href="/impressum.html" class="hover:underline">Impressum</a>
+            <span class="text-[#DAEDE2]">&nbsp;|&nbsp;</span>
+            <a href="/datenschutz.html" class="hover:underline">Datenschutz</a>
+          </div>
+        </div>
+        <hr class="my-[35px] h-[2px] w-full bg-[#DBEDE2]" />
+        <div class="flex w-full items-center justify-between">
+          <div class="text-[#DAEDE2]">
+            ©
+            <span id="date" class="text-[#DAEDE2]"></span>
+            annikaSCHULTE
+          </div>
+          <div class="flex items-center text-[#DAEDE2]">
+            Design & Development made with
+            <img
+              class="mx-[5px]"
+              src="/public/illustrations-and-icons/2023-10-24-annikaSCHULTE-icon-heart.svg"
+            />by&nbsp;
+            <a
+              href="https://mk-rietzl.de/de/"
+              target="_blank"
+              rel="noreferrer"
+              class="underline"
+            >
+              mk rietzl</a
+            >
+          </div>
+          <a
+            class="hover:cursor-dotWithArrowPrimary1"
+            href="https://www.linkedin.com/in/annika-schulte-02363511a/"
+            target="_blank"
+            rel="noreferrer"
+            ><img
+              src="/public/illustrations-and-icons/2023-10-24-annikaSCHULTE-icon-LinkedIn-2.svg"
+          /></a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Initialization for ES Users
+
+      var acc = document.getElementsByClassName("accordion");
+      var i;
+
+      for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+          this.classList.toggle("active");
+          var panel = this.nextElementSibling;
+          if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+          } else {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+            document
+              .getElementByClassName("accordion")
+              .remove("hover:cursor-dotWithPlusPrimary1");
+          }
+        });
+      }
+
+      document.getElementById("date").innerHTML = new Date().getFullYear();
+    </script>
+  </body>
+</html>
