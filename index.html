@@ -8,17 +8,7 @@
     />
 
     <!-- Cookie Consent Tool -->
-    <script
-      id="usercentrics-cmp"
-      async
-      data-eu-mode="true"
-      data-settings-id="U91sFMsKBHS3n8"
-      src="https://app.eu.usercentrics.eu/browser-ui/latest/loader.js"
-    ></script>
-    <script
-      type="application/javascript"
-      src="https://sdp.eu.usercentrics.eu/latest/uc-block.bundle.js"
-    ></script>
+    <!-- … for faster performance: -->
     <link rel="preconnect" href="//app.eu.usercentrics.eu" />
     <link rel="preconnect" href="//api.eu.usercentrics.eu" />
     <link rel="preconnect" href="//sdp.eu.usercentrics.eu" />
@@ -32,6 +22,18 @@
       href="//sdp.eu.usercentrics.eu/latest/uc-block.bundle.js"
       as="script"
     />
+    <!-- … general part: -->
+    <script
+      id="usercentrics-cmp"
+      async
+      data-eu-mode="true"
+      data-settings-id="U91sFMsKBHS3n8"
+      src="https://app.eu.usercentrics.eu/browser-ui/latest/loader.js"
+    ></script>
+    <script
+      type="application/javascript"
+      src="https://sdp.eu.usercentrics.eu/latest/uc-block.bundle.js"
+    ></script>
 
     <!-- Google Tag Manager -->
     <script>
@@ -941,7 +943,7 @@
         </div>
 
         <div
-          class="mx-[140px] mt-[70px] flex flex-col text-2xl lg:text-xl xl:text-base"
+          class="mx-[35px] lg:mx-[70px] xl:mx-[140px] mt-[70px] flex flex-col text-2xl lg:text-xl xl:text-base"
         >
           <div class="flex">
             <img
@@ -1099,34 +1101,45 @@
 
     <footer class="bg-[#333745] p-[70px]">
       <div>
-        <div class="flex justify-between">
-          <div class="text-[#DAEDE2]">
+        <div class="flex flex-col xl:flex-row justify-between">
+          <div
+            class="text-[#DAEDE2] flex flex-col xl:flex-row items-center gap-[15px] xl:gap-0 xl:text-base lg:text-xl text-2xl"
+          >
             <a
               href="#Leistungen"
               class="hover:underline hover:cursor-dotPrimary2"
-              >Leistungen</a
+              >Leistungen </a
+            ><span class="hidden xl:inline-flex text-[#DAEDE2]"
+              >&nbsp;|&nbsp;</span
             >
-            |
+
             <a
               href="#Zusammenarbeit"
               class="hover:underline hover:cursor-dotPrimary2"
               >Zusammenarbeit</a
+            ><span class="hidden xl:inline-flex text-[#DAEDE2]"
+              >&nbsp;|&nbsp;</span
             >
-            |
+
             <a
               href="#UeberMich"
               class="hover:underline hover:cursor-dotPrimary2"
               >Über mich</a
+            ><span class="hidden xl:inline-flex text-[#DAEDE2]"
+              >&nbsp;|&nbsp;</span
             >
-            |
+
             <a
               href="#Projektbeispiele"
               class="hover:underline hover:cursor-dotPrimary2"
               >Projektbeispiele</a
             >
           </div>
-          <div class="text-[#DAEDE2]">
-            <a href="/impressum.html" class="hover:underline">Impressum</a> |
+          <div class="text-[#DAEDE2] flex justify-center pt-[70px] xl:pt-0">
+            <a href="javascript:UC_UI.showSecondLayer();">Cookies</a>
+            <span class="text-[#DAEDE2]">&nbsp;|&nbsp;</span
+            ><a href="/impressum.html" class="hover:underline">Impressum</a>
+            <span class="text-[#DAEDE2]">&nbsp;|&nbsp;</span>
             <a href="/datenschutz.html" class="hover:underline">Datenschutz</a>
           </div>
         </div>

@@ -19,6 +19,7 @@
       type="application/javascript"
       src="https://sdp.eu.usercentrics.eu/latest/uc-block.bundle.js"
     ></script>
+    <!-- … for faster performance: -->
     <link rel="preconnect" href="//app.eu.usercentrics.eu" />
     <link rel="preconnect" href="//api.eu.usercentrics.eu" />
     <link rel="preconnect" href="//sdp.eu.usercentrics.eu" />
@@ -27,6 +28,10 @@
       href="//app.eu.usercentrics.eu/browser-ui/latest/loader.js"
       as="script"
     />
+    <!-- … only for imprint & privacy: -->
+    <script type="application/javascript">
+      var UC_UI_SUPPRESS_CMP_DISPLAY = true;
+    </script>
 
     <!-- Google Tag Manager -->
     <script>
@@ -149,16 +154,18 @@
     </nav>
 
     <main class="pb-[70px]">
-      <div class="mx-[140px] flex flex-col justify-center gap-[35px] py-[35px]">
+      <div
+        class="mx-[35px] lg:mx-[70px] xl:mx-[140px] flex flex-col justify-center gap-[35px] py-[35px]"
+      >
         <h1
           class="relative sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold py-[35px]"
         >
           Impressum
         </h1>
 
-        <div class="flex flex-col gap-[35px]">
+        <div class="flex flex-col gap-[35px] text-2xl lg:text-xl xl:text-base">
           <section class="flex flex-col gap-[15px]">
-            <p class="text-xs">
+            <p class="text-base lg:text-s xl:text-xs">
               [ Die Website wurde in Deutschland erstellt. Aus diesem Grund
               gelten die dortigen gesetzlichen Bestimmungen. ]
             </p>
@@ -290,6 +297,8 @@
             >
           </div>
           <div class="text-[#DAEDE2]">
+            <a href="javascript:UC_UI.showSecondLayer();">Cookies</a>
+            |
             <a href="/impressum.html" class="hover:underline">Impressum</a> |
             <a href="/datenschutz.html" class="hover:underline">Datenschutz</a>
             |
