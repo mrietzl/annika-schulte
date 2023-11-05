@@ -2,6 +2,7 @@
 <html lang="de">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
       content="annikaSCHULTE – Your datav deserves a better place"
@@ -114,6 +115,99 @@
         color: #333745;
       }
 
+      main {
+        padding-top: 98px;
+      }
+
+      /* this is for the navbar section */
+
+      .topnav {
+        overflow: hidden;
+        background-color: #daede2;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 24px;
+        font-weight: 600;
+        text-transform: uppercase;
+        position: fixed;
+        width: 100%;
+        z-index: 20;
+        filter: drop-shadow(0 1px 2px rgb(0 0 0 / 0.1))
+          drop-shadow(0 1px 1px rgb(0 0 0 / 0.06));
+      }
+
+      .topnav .second {
+        float: left;
+        display: block;
+        color: #333745;
+        text-align: center;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 35px;
+      }
+
+      .topnav .second a {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .topnav .second a:hover {
+        text-decoration: underline;
+      }
+
+      .topnav .second a.contactbutton {
+        color: #daede2;
+      }
+
+      .topnav div .icon {
+        display: none;
+      }
+
+      @media screen and (max-width: 1200px) {
+        .topnav .second a {
+          display: none;
+        }
+        .topnav .first a.icon {
+          float: right;
+          display: block;
+        }
+      }
+
+      @media screen and (max-width: 1200px) {
+        .first {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 100%;
+        }
+
+        .topnav.responsive {
+          display: flex;
+          flex-direction: column;
+          align-items: start;
+        }
+
+        .topnav.responsive .second {
+          display: flex;
+          flex-direction: column;
+          align-items: start;
+          gap: 24px;
+          padding-top: 48px;
+        }
+        .topnav.responsive .second a {
+          float: none;
+          display: flex;
+          flex-direction: column;
+          text-align: left;
+        }
+      }
+
+      /* this is for general text and visual elements */
+
       h3 {
         font-weight: 900;
       }
@@ -182,37 +276,25 @@
     ></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
-    <nav
-      class="sticky top-0 z-20 flex w-full items-center justify-between bg-[#DAEDE2] py-6 drop-shadow"
-    >
-      <a href="#Start" class="hover:cursor-logo">
-        <img
-          class="h-[50px] pl-[30px]"
-          src="/public/logo/annikaSCHULTE-logo.svg"
-      /></a>
+    <div class="topnav" id="myTopnav">
+      <div class="first">
+        <a href="#Start" class="active">
+          <img class="h-[50px]" src="/public/logo/annikaSCHULTE-logo.svg"
+        /></a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <img
+            src="public/illustrations-and-icons/2023-10-24-annikaSCHULTE-icon-cross.svg"
+        /></a>
+      </div>
 
-      <div
-        class="flex items-center gap-[35px] pr-[70px] font-semibold uppercase"
-      >
-        <a href="#Leistungen" class="hover:underline hover:cursor-dotPrimary1"
-          >Leistungen</a
-        >
-        <a
-          href="#Zusammenarbeit"
-          class="hover:underline hover:cursor-dotPrimary1"
-          >Zusammenarbeit</a
-        >
-        <a href="#UeberMich" class="hover:underline hover:cursor-dotPrimary1"
-          >Über mich</a
-        >
-        <a
-          href="#Projektbeispiele"
-          class="hover:underline hover:cursor-dotPrimary1"
-          >Projektbeispiele</a
-        >
+      <div class="second">
+        <a href="#Leistungen">Leistungen</a>
+        <a href="#Zusammenarbeit">Zusammenarbeit</a>
+        <a href="#UeberMich">Über Mich</a>
+        <a href="#Projektbeispiele">Projektbeispiele</a>
         <a
           href="#Kontakt"
-          class="rounded-full bg-[#333745] px-[30px] py-[12px] uppercase text-[#DAEDE2] hover:cursor-dotPrimary2"
+          class="contactbutton rounded-full bg-[#333745] px-[30px] py-[12px] uppercase text-[#daede2] hover:cursor-dotPrimary2"
         >
           Kontakt
         </a>
@@ -222,7 +304,7 @@
           >EN</a
         >
       </div>
-    </nav>
+    </div>
 
     <main>
       <header class="relative flex justify-center">
@@ -1184,7 +1266,18 @@
     </footer>
 
     <script>
-      // Initialization for ES Users
+      // navbar section:
+
+      function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        } else {
+          x.className = "topnav";
+        }
+      }
+
+      // accordion section:
 
       var acc = document.getElementsByClassName("accordion");
       var i;

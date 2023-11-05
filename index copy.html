@@ -2,6 +2,7 @@
 <html lang="de">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
       content="annikaSCHULTE – Your datav deserves a better place"
@@ -114,6 +115,97 @@
         color: #333745;
       }
 
+      main {
+        padding-top: 98px;
+      }
+
+      /* this is for the navbar section */
+
+      .topnav {
+        overflow: hidden;
+        background-color: #daede2;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 24px;
+        font-weight: 600;
+        text-transform: uppercase;
+        position: fixed;
+        width: 100%;
+        z-index: 20;
+      }
+
+      .topnav .second {
+        float: left;
+        display: block;
+        color: #333745;
+        text-align: center;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 35px;
+      }
+
+      .topnav .second a {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .topnav .second a:hover {
+        text-decoration: underline;
+      }
+
+      .topnav .second a.contactbutton {
+        color: #daede2;
+      }
+
+      .topnav div .icon {
+        display: none;
+      }
+
+      @media screen and (max-width: 1200px) {
+        .topnav .second a {
+          display: none;
+        }
+        .topnav .first a.icon {
+          float: right;
+          display: block;
+        }
+      }
+
+      @media screen and (max-width: 1200px) {
+        .first {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 100%;
+        }
+
+        .topnav.responsive {
+          display: flex;
+          flex-direction: column;
+          align-items: start;
+        }
+
+        .topnav.responsive .second {
+          display: flex;
+          flex-direction: column;
+          align-items: start;
+          gap: 24px;
+          padding-top: 48px;
+        }
+        .topnav.responsive .second a {
+          float: none;
+          display: flex;
+          flex-direction: column;
+          text-align: left;
+        }
+      }
+
+      /* this is for general text and visual elements */
+
       h3 {
         font-weight: 900;
       }
@@ -132,23 +224,13 @@
         margin: 0 140px;
       }
 
-      .rectangle {
+      .boxes {
         background-color: #daede2;
         width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
-        min-height: 280px;
       }
-
-      /* .square {
-        background-color: #daede2;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: none;
-      } */
 
       /* accordion section; for more info, have a look here: https://www.w3schools.com/howto/howto_js_accordion.asp */
 
@@ -192,125 +274,35 @@
     ></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
-    <nav class="bg-[#DAEDE2] drop-shadow">
-      <div class="mx-auto px-[30px] py-[15px]">
-        <div class="relative flex h-16 items-center justify-between">
-          <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
-            <!-- Mobile menu button-->
-            <button
-              type="button"
-              class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
-              aria-controls="mobile-menu"
-              aria-expanded="false"
-            >
-              <span class="absolute -inset-0.5"></span>
-              <span class="sr-only">Open main menu</span>
-              <!--
-                Icon when menu is closed.
-    
-                Menu open: "hidden", Menu closed: "block"
-              -->
-              <svg
-                class="block h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-                />
-              </svg>
-              <!--
-                Icon when menu is open.
-    
-                Menu open: "block", Menu closed: "hidden"
-              -->
-              <svg
-                class="hidden h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </button>
-          </div>
-          <div
-            class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start"
-          >
-            <div class="flex flex-shrink-0 items-center">
-              <img
-                class="h-8 w-auto"
-                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-                alt="Your Company"
-              />
-            </div>
-            <div class="hidden sm:ml-6 sm:block">
-              <div class="flex space-x-4">
-                <a
-                  href="#Leistungen"
-                  class="text-[#333745] hover:underline px-3 py-2 text-sm font-semibold uppercase"
-                  >Leistungen</a
-                >
-                <a
-                  href="#"
-                  class="text-[#333745] hover:underline px-3 py-2 text-sm font-semibold uppercase"
-                  >Zusammenarbeit</a
-                >
-                <a
-                  href="#"
-                  class="text-[#333745] hover:underline px-3 py-2 text-sm font-semibold uppercase"
-                  >Über mich</a
-                >
-                <a
-                  href="#"
-                  class="text-[#333745] hover:underline px-3 py-2 text-sm font-semibold uppercase"
-                  >Projektbeispiele</a
-                >
-              </div>
-            </div>
-          </div>
-        </div>
+    <div class="topnav" id="myTopnav">
+      <div class="first">
+        <a href="#Start" class="active">
+          <img class="h-[50px]" src="/public/logo/annikaSCHULTE-logo.svg"
+        /></a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <img
+            src="public/illustrations-and-icons/2023-10-24-annikaSCHULTE-icon-cross.svg"
+        /></a>
       </div>
 
-      <!-- Mobile menu, show/hide based on menu state. -->
-      <div class="sm:hidden" id="mobile-menu">
-        <div class="space-y-1 px-2 pb-3 pt-2">
-          <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-          <a
-            href="#"
-            class="bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium"
-            aria-current="page"
-            >Leistungen</a
-          >
-          <a
-            href="#"
-            class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
-            >Zusammenarbeit</a
-          >
-          <a
-            href="#"
-            class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
-            >Über mich</a
-          >
-          <a
-            href="#"
-            class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
-            >Projektbeispiele</a
-          >
-        </div>
+      <div class="second">
+        <a href="#Leistungen">Leistungen</a>
+        <a href="#Zusammenarbeit">Zusammenarbeit</a>
+        <a href="#UeberMich">Über Mich</a>
+        <a href="#Projektbeispiele">Projektbeispiele</a>
+        <a
+          href="#Kontakt"
+          class="contactbutton rounded-full bg-[#333745] px-[30px] py-[12px] uppercase text-[#daede2] hover:cursor-dotPrimary2"
+        >
+          Kontakt
+        </a>
+        <a
+          href="/indexEn.html"
+          class="hover:underline hover:cursor-dotPrimary1 font-normal"
+          >EN</a
+        >
       </div>
-    </nav>
+    </div>
 
     <main>
       <header class="relative flex justify-center">
@@ -567,10 +559,12 @@
         </div>
 
         <h3 class="font-semibold text-center text-2xl lg:text-xl xl:text-base">
-          Was ihr also von der Zusammenarbeit mit mir erwarten könnt:
+          Was ihr von der Zusammenarbeit mit mir erwarten könnt:
         </h3>
         <div class="flex flex-col xl:flex-row w-full gap-[35px]">
-          <div class="rectangle lg:square group relative">
+          <div
+            class="boxes min-h-[280px] xl:min-h-0 xl:aspect-square group relative"
+          >
             <div
               class="z-10 font-semibold text-center text-2xl lg:text-xl xl:text-base uppercase group-hover:hidden"
             >
@@ -587,7 +581,9 @@
             </p>
           </div>
 
-          <div class="rectangle lg:square group relative">
+          <div
+            class="boxes min-h-[280px] xl:min-h-0 xl:aspect-square group relative"
+          >
             <div
               class="z-10 font-semibold text-center text-2xl lg:text-xl xl:text-base uppercase group-hover:hidden"
             >
@@ -604,7 +600,9 @@
             </p>
           </div>
 
-          <div class="rectangle lg:square group relative">
+          <div
+            class="boxes min-h-[280px] xl:min-h-0 xl:aspect-square group relative"
+          >
             <div
               class="z-10 font-semibold text-center text-2xl lg:text-xl xl:text-base uppercase group-hover:hidden"
             >
@@ -621,7 +619,9 @@
             </p>
           </div>
 
-          <div class="rectangle lg:square group relative">
+          <div
+            class="boxes min-h-[280px] xl:min-h-0 xl:aspect-square group relative"
+          >
             <div
               class="z-10 font-semibold text-center text-2xl lg:text-xl xl:text-base uppercase group-hover:hidden"
             >
@@ -700,29 +700,29 @@
               Hi, ich bin Annika.
             </h4>
             <div class="flex flex-col gap-[35px]">
-              <div class="z-10 w-fit lg:text-2xl xl:text-4xl font-medium">
+              <div class="z-10 w-fit lg:text-2xl xl:text-3xl font-medium">
                 Wissensdurstig
               </div>
               <div
-                class="absolute z-0 h-[10px] lg:h-[15px] xl:h-[20px] w-[126px] lg:w-[189px] xl:w-[283px] translate-y-3 lg:translate-y-4 xl:translate-y-6 rounded-full bg-[#F6F792]"
+                class="absolute z-0 h-[10px] lg:h-[15px] xl:h-[20px] w-[126px] lg:w-[189px] xl:w-[236px] translate-y-3 lg:translate-y-4 xl:translate-y-5 rounded-full bg-[#F6F792]"
               ></div>
             </div>
 
             <div class="flex flex-col gap-[35px]">
-              <div class="z-10 w-fit lg:text-2xl xl:text-4xl font-medium">
+              <div class="z-10 w-fit lg:text-2xl xl:text-3xl font-medium">
                 Begeisterungsfähig
               </div>
               <div
-                class="absolute z-0 h-[10px] lg:h-[15px] xl:h-[20px] w-[161px] lg:w-[241px] xl:w-[361px] translate-y-3 lg:translate-y-4 xl:translate-y-6 rounded-full bg-[#F6F792]"
+                class="absolute z-0 h-[10px] lg:h-[15px] xl:h-[20px] w-[161px] lg:w-[241px] xl:w-[301px] translate-y-3 lg:translate-y-4 xl:translate-y-5 rounded-full bg-[#F6F792]"
               ></div>
             </div>
 
             <div class="flex flex-col gap-[35px]">
-              <div class="z-10 w-fit lg:text-2xl xl:text-4xl font-medium">
+              <div class="z-10 w-fit lg:text-2xl xl:text-3xl font-medium">
                 Verlässlich
               </div>
               <div
-                class="absolute z-0 h-[10px] lg:h-[15px] xl:h-[20px] w-[86px] lg:w-[129px] xl:w-[193px] translate-y-3 lg:translate-y-4 xl:translate-y-6 rounded-full bg-[#F6F792]"
+                class="absolute z-0 h-[10px] lg:h-[15px] xl:h-[20px] w-[86px] lg:w-[129px] xl:w-[161px] translate-y-3 lg:translate-y-4 xl:translate-y-5 rounded-full bg-[#F6F792]"
               ></div>
             </div>
 
@@ -814,7 +814,7 @@
             <div
               class="mx-[35px] mb-[35px] flex flex-col gap-[35px] text-2xl lg:text-xl xl:text-base"
             >
-              <p class="z-10 font-semibold uppercase">Vertriebs-Daschboard</p>
+              <p class="z-10 font-semibold uppercase">Vertriebs-Dashboard</p>
               <p>
                 <span class="font-semibold">Mein Ergebnis:</span> Ich stelle
                 eure wichtigsten Vertriebskennzahlen, wie Umsatz, Angebotshöhen
@@ -909,7 +909,7 @@
               <p class="z-10 font-semibold uppercase">Segmentierungen</p>
               <p>
                 <span class="font-semibold">Mein Ergebnis:</span> Ob Kunden,
-                Märkte, Nutzer, Produkte, ich ermittle euch mithilfe von
+                Märkte, Nutzer, Produkte – ich ermittle euch mithilfe von
                 statistischen Methoden strukturgleiche Gruppen und beschreibe
                 diese mit den entscheidenden Kennzahlen.
               </p>
@@ -973,8 +973,8 @@
           class="col-span-2 flex h-full items-center bg-[#DAEDE2] p-[35px]"
         >
           <p>
-            Die Umsetzbarkeit der „Magie-Level“, also der Einsatzgrad von
-            statistischen Methoden ist immer abhängig von der Datenmenge. Ich
+            Die Umsetzbarkeit der „Magie-Level“ – also der Einsatzgrad von
+            statistischen Methoden – ist immer abhängig von der Datenmenge. Ich
             berate euch gerne, was für euch und eure vorliegende Datenbasis
             möglich ist oder was ihr benötigt, um in Zukunft ausreichend Daten
             zu sammeln.
@@ -1014,7 +1014,9 @@
       </div>
 
       <div class="my-0 bg-[#F6F792] py-[70px]">
-        <div class="flex items-center justify-start pl-[140px]">
+        <div
+          class="flex items-center justify-start mx-[35px] lg:mx-[70px] xl:mx-[140px]"
+        >
           <div id="Kontakt" class="-translate-y-[150px]"></div>
           <h2
             class="absolute z-10 text-2xl lg:text-xl xl:text-base font-bold uppercase"
@@ -1082,9 +1084,9 @@
               <p class="inline font-semibold">
                 Du hast eine Challenge für mich?
               </p>
-              Die Nutzung von Daten ist sehr individuell! Wie sieht Eure
-              Challenge für mich aus? Sendet mir hier eure Herausforderung oder
-              eure brennendsten Fragen und ich melde mich mit Ideen bei euch,
+              Die Nutzung von Daten ist sehr individuell! Wie sieht deine
+              Challenge für mich aus? Sende mir hier deine Herausforderung oder
+              deine brennendsten Fragen und ich melde mich mit Ideen bei dir,
               wie eine Lösung mithilfe von Daten aussehen könnte.
             </section>
           </div>
@@ -1094,9 +1096,6 @@
             action="https://api.web3forms.com/submit"
             method="POST"
           >
-            <!-- Old key; leads to my mail:
-            0f38ea7c-7b73-42f1-9be1-bb04e90b23e2> -->
-
             <input
               type="hidden"
               name="access_key"
@@ -1117,7 +1116,7 @@
                 </div>
 
                 <div>
-                  <p>Email</p>
+                  <p>E-mail</p>
                   <input
                     autocomplete="off"
                     class="h-full min-h-[50px] w-full rounded-[5px] bg-[#DAEDE2] pl-[15px] focus:bg-[#DAEDE2] focus:text-[#333745] focus:outline-1 focus:outline-[#333745]"
@@ -1157,7 +1156,7 @@
                   rel="noreferrer"
                   >Datenschutzbestimmungen</a
                 >
-                gelesen und akzeptiere diese hiermit. *
+                gelesen und akzeptiere diese hiermit.
               </p>
             </div>
 
@@ -1225,8 +1224,11 @@
             ><a href="/impressum.html" class="hover:underline">Impressum</a>
             <span class="text-[#DAEDE2]">&nbsp;|&nbsp;</span>
             <a href="/datenschutz.html" class="hover:underline">Datenschutz</a>
+            <span class="text-[#DAEDE2]">&nbsp;|&nbsp;</span>
+            <a href="/indexEn.html" class="hover:underline">EN</a>
           </div>
         </div>
+
         <hr class="my-[35px] h-[2px] w-full bg-[#DBEDE2]" />
         <div class="flex w-full items-center justify-between">
           <div class="text-[#DAEDE2]">
@@ -1262,7 +1264,18 @@
     </footer>
 
     <script>
-      // Initialization for ES Users
+      // navbar section:
+
+      function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        } else {
+          x.className = "topnav";
+        }
+      }
+
+      // accordion section:
 
       var acc = document.getElementsByClassName("accordion");
       var i;
