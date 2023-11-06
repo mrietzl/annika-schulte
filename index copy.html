@@ -108,6 +108,8 @@
                 "url(/public/cursor/2023-10-24-annikaSCHULTE_cursor-dot-primary-2.svg), pointer",
               dotWithArrowPrimary1:
                 "url(/public/cursor/2023-10-24-annikaSCHULTE_cursor-dot-with-arrow-primary-1.svg), pointer",
+              dotWithArrowPrimary2:
+                "url(/public/cursor/2023-10-24-annikaSCHULTE_cursor-dot-with-arrow-primary-2.svg), pointer",
               dotWithCrossPrimary1:
                 "url(/public/cursor/2023-10-24-annikaSCHULTE_cursor-dot-with-cross-primary-1.svg), pointer",
               dotWithPlusPrimary1:
@@ -143,10 +145,6 @@
         color: #333745;
       }
 
-      main {
-        padding-top: 98px;
-      }
-
       /* this is for the navbar section */
 
       .topnav {
@@ -160,8 +158,10 @@
         font-weight: 600;
         text-transform: uppercase;
         position: fixed;
-        width: 100%;
+        width: 100vw;
         z-index: 20;
+        filter: drop-shadow(0 1px 2px rgb(0 0 0 / 0.1))
+          drop-shadow(0 1px 1px rgb(0 0 0 / 0.06));
       }
 
       .topnav .second {
@@ -201,6 +201,10 @@
           float: right;
           display: block;
         }
+
+        .cross {
+          max-height: 30px;
+        }
       }
 
       @media screen and (max-width: 1200px) {
@@ -208,13 +212,17 @@
           display: flex;
           align-items: center;
           justify-content: space-between;
-          width: 100%;
+          width: 100vw;
         }
 
         .topnav.responsive {
           display: flex;
           flex-direction: column;
           align-items: start;
+        }
+
+        .topnav.responsive .first a.icon {
+          padding-right: 48px;
         }
 
         .topnav.responsive .second {
@@ -224,6 +232,7 @@
           gap: 24px;
           padding-top: 48px;
         }
+
         .topnav.responsive .second a {
           float: none;
           display: flex;
@@ -293,54 +302,81 @@
   <body>
     <div class="topnav" id="myTopnav">
       <div class="first">
-        <a href="#Start" class="active">
-          <img class="h-[50px]" src="/public/logo/annikaSCHULTE-logo.svg"
-        /></a>
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <a href="#Start" onclick="homeFunction()" class="active">
           <img
-            src="public/illustrations-and-icons/2023-10-24-annikaSCHULTE-icon-cross.svg"
+            class="h-[40px] hover:cursor-dotPrimary1"
+            src="/public/logo/annikaSCHULTE-logo.svg"
+        /></a>
+        <a class="icon hover:cursor-dotPrimary1" onclick="menuFunction()">
+          <img
+            class="h-[40px]"
+            src="public/illustrations-and-icons/2023-10-24-annikaSCHULTE-icon-menu.svg"
         /></a>
       </div>
 
-      <div class="second">
-        <a href="#Leistungen">Leistungen</a>
-        <a href="#Zusammenarbeit">Zusammenarbeit</a>
-        <a href="#UeberMich">Über Mich</a>
-        <a href="#Projektbeispiele">Projektbeispiele</a>
+      <div class="second text-sm lg:text-base">
+        <a
+          class="hover:cursor-dotPrimary1"
+          href="#Leistungen"
+          onclick="leistungenFunction()"
+          >Services</a
+        >
+        <a
+          class="hover:cursor-dotPrimary1"
+          href="#Zusammenarbeit"
+          onclick="zusammenarbeitFunction()"
+          >Collaboration</a
+        >
+        <a
+          class="hover:cursor-dotPrimary1"
+          href="#UeberMich"
+          onclick="uebermichFunction()"
+          >About Me</a
+        >
+        <a
+          class="hover:cursor-dotPrimary1"
+          href="#Projektbeispiele"
+          onclick="projektbeispieleFunction()"
+          >Project examples</a
+        >
         <a
           href="#Kontakt"
-          class="contactbutton rounded-full bg-[#333745] px-[30px] py-[12px] uppercase text-[#daede2] hover:cursor-dotPrimary2"
+          onclick="contactFunction()"
+          class="contactbutton rounded-full bg-[#333745] px-[20px] lg:px-[35px] py-[10px] lg:py-[15px] uppercase text-[#daede2] hover:cursor-dotPrimary2"
         >
-          Kontakt
+          Contact
         </a>
         <a
-          href="/indexEn.html"
+          href="/index.html"
+          onclick="enFunction()"
           class="hover:underline hover:cursor-dotPrimary1 font-normal"
-          >EN</a
+          >DE</a
         >
       </div>
     </div>
 
-    <main>
-      <header class="relative flex justify-center">
+    <main class="pt-[88px] lg:pt-[96px]">
+      <header class="elative flex justify-center">
         <div class="absolute mb-[70px] self-end">
           <div class="flex justify-center">
-            <div class="h-[300px] w-[70vw] bg-[#FFFFFF] opacity-25"></div>
+            <div
+              class="min-h-[200px] max-h-[300px] w-[70vw] bg-[#FFFFFF] opacity-25"
+            ></div>
             <div class="absolute self-center">
               <h1
-                class="relative z-10 sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold"
+                class="relative z-10 text-sm lg:text-lg xl:text-2xl text-center font-semibold"
               >
                 Your data deserves a better place.
               </h1>
               <div
-                class="absolute sm:h-[15px] md:h-[20px] lg:h-[25px] xl:h-[30px] sm:w-[400px] md:w-[523px] lg:w-[628px] xl:w-[836px] -translate-y-4 rounded-full bg-[#F6F792] opacity-50"
+                class="absolute h-[10px] lg:h-[14px] xl:h-[16px] w-[245px] lg:w-[314px] xl:w-[419px] -translate-y-2.5 lg:-translate-y-4 rounded-full bg-[#F6F792] opacity-50"
               ></div>
               <div class="flex mt-[35px] justify-center">
                 <a
-                  href="#Kontakt"
-                  class="w-fit rounded-full bg-[#333745] px-[40px] lg:px-[35px] xl:px-[30px] py-[18px] lg:py-[15px] xl:py-[12px] font-semibold text-2xl lg:text-xl xl:text-base uppercase text-[#FFFFFF] hover:cursor-dotPrimary2"
+                  href="#Leistungen"
+                  class="w-fit rounded-full bg-[#333745] px-[20px] lg:px-[35px] py-[10px] lg:py-[15px] text-sm lg:text-base font-semibold uppercase text-[#FFFFFF] hover:cursor-dotPrimary2"
                 >
-                  Mehr erfahren
+                  Learn more
                 </a>
               </div>
             </div>
@@ -350,7 +386,7 @@
         <div id="Start" class="-translate-y-[150px]"></div>
 
         <img
-          class="h-[600px] w-full object-cover p-[30px]"
+          class="min-h-[400px] max-h-[600px] w-full object-cover p-[30px]"
           src="/public/images/annikaSCHULTE-image-1.jpg"
         />
       </header>
@@ -360,38 +396,32 @@
       >
         <div class="flex items-center justify-center">
           <div id="Leistungen" class="-translate-y-[150px]"></div>
-          <h2
-            class="absolute z-10 text-2xl lg:text-xl xl:text-base font-bold uppercase"
-          >
-            Leistungen
-          </h2>
+          <h2 class="absolute z-10 text-base font-bold uppercase">Services</h2>
           <div
-            class="absolute z-0 h-[15px] lg:h-[12.5px] xl:h-[10px] w-[161px] lg:w-[134px] xl:w-[107px] translate-y-2.5 lg:translate-y-2 xl:translate-y-1.5 rounded-full bg-[#DAEDE2]"
+            class="absolute z-0 h-[12px] w-[107px] translate-y-1.5 rounded-full bg-[#DAEDE2]"
           ></div>
         </div>
 
-        <section class="text-center text-2xl lg:text-xl xl:text-base">
-          Daten sind einfach überall. Die reine Existenz von Daten schafft
-          allerdings noch keinen Mehrwert für euer Geschäft. Ich helfe euch
-          euren Datenkeller zu entrümpeln, Farbe ins Spiel zu bringen und die
-          Taschenlampe nur auf Relevantes zu richten.
+        <section class="text-center text-base">
+          Data is simply everywhere. However, the more existence of data does
+          not create added value for your business. I help you to clear out your
+          data cellar, bring color into play and focus the spotlight only on
+          what is relevant.
         </section>
       </div>
 
       <div
-        class="mx-[35px] lg:mx-[70px] xl:mx-[140px] flex flex-col items-center"
+        class="mx-[35px] lg:mx-[70px] xl:mx-[140px] flex flex-col text-start"
       >
-        <h3 class="font-semibold text-2xl lg:text-xl xl:text-base">
-          Die einzelnen Schritte zur besseren Datenwelt findet ihr hier:
+        <h3 class="font-semibold text-center">
+          The individual steps to a better data world can be found here:
         </h3>
         <hr class="mt-[35px] h-[2px] w-full bg-[#333745]" />
         <div class="flex flex-col py-[35px]">
           <button
-            class="accordion flex justify-between items-center hover:underline font-semibold"
+            class="accordion flex justify-between gap-[35px] items-center text-start hover:underline font-semibold"
           >
-            <p class="text-2xl lg:text-xl xl:text-base">
-              SCHRITT 1: Im Datenkeller.
-            </p>
+            <p>STEP 1: In the data cellar.</p>
 
             <img
               class="cross"
@@ -400,71 +430,13 @@
           </button>
 
           <div class="panel flex flex-col gap-[35px]">
-            <p class="pt-[35px] text-2xl lg:text-xl xl:text-base">
-              Im Datenkeller ist es dunkel und verstaubt. Ständig stolpert ihr
-              über herumliegende Daten. Außerdem gibt es viele Momente in eurem
-              Arbeitsalltag, in denen die Arbeit mit Daten hohe manuelle
-              Aufwände verursacht. Zusammen formulieren wir eure
-              Fragestellungen, erarbeiten eure Anwendungsfälle, konzipieren
-              Lösungswege und richten so die Taschenlampe auf alles Relevante.
-            </p>
-          </div>
-        </div>
-
-        <hr class="h-[2px] w-full bg-[#333745]" />
-
-        <div class="flex flex-col py-[35px]">
-          <button
-            class="accordion flex justify-between items-center hover:underline font-semibold"
-          >
-            <p class="text-2xl lg:text-xl xl:text-base">
-              SCHRITT 2: Einmal Abstauben, bitte.
-            </p>
-
-            <img
-              class="cross"
-              src="/public/illustrations-and-icons/2023-10-24-annikaSCHULTE-icon-plus.svg"
-            />
-          </button>
-
-          <div class="panel flex flex-col gap-[35px]">
-            <p class="pt-[35px] text-2xl lg:text-xl xl:text-base">
-              Das Ziel ist definiert. Jetzt ist es besonders wichtig, alles im
-              Detail zu durchforsten und einen genauen Überblick über den
-              Datenkeller zu erhalten. Dabei können wir durchaus feststellen,
-              dass die Datenmengen noch nicht ausreichen oder andere Daten
-              notwendig sind. Wir definieren gemeinsam, wie die Datenlücke
-              aufgefüllt werden kann.
-            </p>
-          </div>
-        </div>
-
-        <hr class="h-[2px] w-full bg-[#333745]" />
-
-        <div class="flex flex-col py-[35px]">
-          <button
-            class="accordion flex justify-between items-center hover:underline font-semibold"
-          >
-            <p class="text-2xl lg:text-xl xl:text-base">
-              SCHRITT 3: Ordnung ist das halbe Leben.
-            </p>
-
-            <img
-              class="cross"
-              src="/public/illustrations-and-icons/2023-10-24-annikaSCHULTE-icon-plus.svg"
-            />
-          </button>
-
-          <div
-            class="panel text-2xl lg:text-xl xl:text-base flex flex-col gap-[35px]"
-          >
             <p class="pt-[35px]">
-              Damit die neu geschaffene Übersicht auch langfristig erhalten
-              bleibt, kümmern wir uns um Datenmodelle, Datenbanken und
-              Dokumentationen. Auch das extrem wichtige Thema
-              Datenqualitätsmanagement ist Teil dieses Schrittes. Denn wie heißt
-              es so schön: Sh*t in, Sh*t out. Fehlerhafte Daten oder Datenlücken
-              erschüttern das Vertrauen in die Zahlen – oft nachhaltig.
+              The data cellar is dark and dusty. You constantly stumble across
+              data lying around. In addition, there are many moments in your
+              daily work where working with data requires a lot of manual
+              effort. Together, we formulate your questions, work out your use
+              cases, design solutions and point the flashlight on everything
+              relevant.
             </p>
           </div>
         </div>
@@ -473,11 +445,9 @@
 
         <div class="flex flex-col py-[35px]">
           <button
-            class="accordion flex justify-between items-center hover:underline font-semibold"
+            class="accordion flex justify-between gap-[35px] items-center text-start hover:underline font-semibold"
           >
-            <p class="text-2xl lg:text-xl xl:text-base">
-              SCHRITT 4: Endlich Farbe.
-            </p>
+            <p>STEP 2: Dusting off, please.</p>
 
             <img
               class="cross"
@@ -486,12 +456,12 @@
           </button>
 
           <div class="panel flex flex-col gap-[35px]">
-            <p class="pt-[35px] text-2xl lg:text-xl xl:text-base">
-              Nach dem Aufräumen beginnt der Spaß. Die Daten werden zum Leben
-              erweckt. Ich erstelle euch übersichtliche Reports und
-              automatisierte Prozesse und hauche euren Daten Leben ein. So
-              entsteht eine Datenwelt, die alle gerne nutzen, die begeistert und
-              die tägliche Arbeit erleichtert.
+            <p class="pt-[35px]">
+              The goal is deﬁned. Now it is particularly important to go through
+              everything in detail and get a precise overview of the data
+              cellar. In the process, we may ﬁnd out that the data volumes are
+              not yet suﬃcient or that other data is needed. Together, we deﬁne
+              how the data gap can be ﬁlled.
             </p>
           </div>
         </div>
@@ -500,11 +470,9 @@
 
         <div class="flex flex-col py-[35px]">
           <button
-            class="accordion flex justify-between items-center hover:underline font-semibold"
+            class="accordion flex justify-between gap-[35px] items-center text-start hover:underline font-semibold"
           >
-            <p class="text-2xl lg:text-xl xl:text-base">
-              SCHRITT 5: Und dann noch eine Prise „Magie“.
-            </p>
+            <p>STEP 3: Order is half the battle.</p>
 
             <img
               class="cross"
@@ -513,13 +481,13 @@
           </button>
 
           <div class="panel flex flex-col gap-[35px]">
-            <p class="pt-[35px] text-2xl lg:text-xl xl:text-base">
-              Falls die reine Datenvisualisierung noch nicht genug ist, können
-              durch statistische Methoden Erkenntnisse erarbeitet werden, die
-              nicht auf den ersten Blick zu erkennen waren. Das fühlt sich
-              manchmal nach Magie an. Negativ könnte es auch als Black Box
-              bezeichnet werden. Daher ist es wichtig immer nur eine Prise
-              dazuzugeben.
+            <p class="pt-[35px]">
+              To ensure that the newly created overview is maintained long term,
+              we take care of data models, databases and documentation. The
+              extremely important topic of data quality management is also part
+              of this step. Because as the saying goes: Sh*t in, sh*t out.
+              Faulty data or data gaps shake conﬁdence in the numbers – often
+              permanently.
             </p>
           </div>
         </div>
@@ -528,11 +496,9 @@
 
         <div class="flex flex-col py-[35px]">
           <button
-            class="accordion flex justify-between items-center hover:underline font-semibold"
+            class="accordion flex justify-between gap-[35px] items-center text-start hover:underline font-semibold"
           >
-            <p class="text-2xl lg:text-xl xl:text-base">
-              SCHRITT 6: Treat your data right.
-            </p>
+            <p>STEP 4: Finally color.</p>
 
             <img
               class="cross"
@@ -541,18 +507,68 @@
           </button>
 
           <div class="panel flex flex-col gap-[35px]">
-            <p class="pt-[35px] text-2xl lg:text-xl xl:text-base">
-              Die bessere Datenwelt ist gestaltet und die alltägliche Arbeit mit
-              den Analyseergebnissen beginnt. An diesem Punkt wird es häufig
-              kritisch. Denn ungepflegte Datenbanken, ins Leere laufende
-              Prozesse oder unplausible Reports nutzt – zurecht! - niemand
-              gerne. Das Vertrauen schwindet und im schlimmsten Fall, wandert
-              alles wieder in den Datenkeller.
+            <p class="pt-[35px]">
+              After the cleanup, the fun begins. The data is brought to life. I
+              create clear reports, automated processes and breathe life into
+              your data. The result is a data world that everyone loves to use,
+              that inspires and makes daily work easier.
             </p>
-            <p class="text-2xl lg:text-xl xl:text-base">
-              Damit das nicht passiert, fragt mich gerne als eure Begleiterin an
-              und gemeinsam folgen wir dem Motto „Your data deserves a better
-              place.“ Und zwar langfristig!
+          </div>
+        </div>
+
+        <hr class="h-[2px] w-full bg-[#333745]" />
+
+        <div class="flex flex-col py-[35px]">
+          <button
+            class="accordion flex justify-between gap-[35px] items-center text-start hover:underline font-semibold"
+          >
+            <p>STEP 5: And then a pinch of "magic".</p>
+
+            <img
+              class="cross"
+              src="/public/illustrations-and-icons/2023-10-24-annikaSCHULTE-icon-plus.svg"
+            />
+          </button>
+
+          <div class="panel flex flex-col gap-[35px]">
+            <p class="pt-[35px]">
+              If pure data visualization is still not enough, statistical
+              methods can be used to develop insights that were not apparent at
+              ﬁrst glance. This sometimes feels like magic. Negatively, it could
+              also be called a black box. Therefore, it is important to always
+              add just a pinch.
+            </p>
+          </div>
+        </div>
+
+        <hr class="h-[2px] w-full bg-[#333745]" />
+
+        <div class="flex flex-col py-[35px]">
+          <button
+            class="accordion flex justify-between gap-[35px] items-center text-start hover:underline font-semibold"
+          >
+            <p>STEP 6: Treat your data right.</p>
+
+            <img
+              class="cross"
+              src="/public/illustrations-and-icons/2023-10-24-annikaSCHULTE-icon-plus.svg"
+            />
+          </button>
+
+          <div class="panel flex flex-col gap-[35px]">
+            <p class="pt-[35px]">
+              The better data world has been finally created and the day-to-day
+              work with the analysis results begins. At this point, things often
+              become critical. Unmaintained databases, processes that go nowhere
+              or implausible reports need to be avoided because – rightly! – no
+              one wants to use that. Trust disappears and, in the worst case,
+              everything goes back into the data cellar.
+            </p>
+            <p>
+              To make sure this doesn't happen, ask me to accompany you and
+              together we'll follow the motto
+              <span class="italic">"Your data deserves a better place."</span>
+              In the long run!
             </p>
           </div>
         </div>
@@ -565,36 +581,32 @@
       >
         <div class="flex items-center justify-center">
           <div id="Zusammenarbeit" class="-translate-y-[150px]"></div>
-          <h2
-            class="absolute z-10 text-2xl lg:text-xl xl:text-base font-bold uppercase"
-          >
-            Zusammenarbeit
-          </h2>
+          <h2 class="absolute z-10 font-bold uppercase">Collaboration</h2>
           <div
-            class="absolute z-0 h-[15px] lg:h-[12.5px] xl:h-[10px] w-[244px] lg:w-[203px] xl:w-[163px] translate-y-2.5 lg:translate-y-2 xl:translate-y-1.5 rounded-full bg-[#DAEDE2]"
+            class="absolute z-0 h-[12px] w-[163px] translate-y-1.5 rounded-full bg-[#DAEDE2]"
           ></div>
         </div>
 
-        <h3 class="font-semibold text-center text-2xl lg:text-xl xl:text-base">
-          Was ihr von der Zusammenarbeit mit mir erwarten könnt:
+        <h3 class="font-semibold text-center">
+          What you can expect from working with me:
         </h3>
         <div class="flex flex-col xl:flex-row w-full gap-[35px]">
           <div
             class="boxes min-h-[280px] xl:min-h-0 xl:aspect-square group relative"
           >
             <div
-              class="z-10 font-semibold text-center text-2xl lg:text-xl xl:text-base uppercase group-hover:hidden"
+              class="z-10 font-semibold text-center uppercase group-hover:hidden"
             >
-              Klarheit
+              Clarity
             </div>
             <div
-              class="absolute z-0 h-[15px] lg:h-[12.5px] xl:h-[10px] w-[125px] lg:w-[105px] xl:w-[84px] translate-y-2.5 lg:translate-y-2 xl:translate-y-1.5 rounded-full bg-[#F2D544] group-hover:hidden"
+              class="absolute z-0 h-[12px] w-[84px] translate-y-1.5 rounded-full bg-[#F2D544] group-hover:hidden"
             ></div>
             <p
-              class="absolute hidden text-center text-2xl lg:text-xl xl:text-base p-[35px] text-center group-hover:inline-flex"
+              class="absolute hidden text-center group-hover:inline-flex p-[35px]"
             >
-              Ihr werdet Klarheit über eure gesamte Datenwelt und die
-              dazugehörigen Prozesse erlangen.
+              You will gain clarity about your entire data world and its
+              processes.
             </p>
           </div>
 
@@ -602,18 +614,18 @@
             class="boxes min-h-[280px] xl:min-h-0 xl:aspect-square group relative"
           >
             <div
-              class="z-10 font-semibold text-center text-2xl lg:text-xl xl:text-base uppercase group-hover:hidden"
+              class="z-10 font-semibold text-center uppercase group-hover:hidden"
             >
-              Autonomie
+              Autonomy
             </div>
             <div
-              class="absolute z-0 h-[15px] lg:h-[12.5px] xl:h-[10px] w-[157px] lg:w-[131px] xl:w-[105px] translate-y-2.5 lg:translate-y-2 xl:translate-y-1.5 rounded-full bg-[#F2D544] group-hover:hidden"
+              class="absolute z-0 h-[15px] w-[105px] translate-y-1.5 rounded-full bg-[#F2D544] group-hover:hidden"
             ></div>
             <p
-              class="absolute hidden text-center text-2xl lg:text-xl xl:text-base p-[35px] text-center group-hover:inline-flex"
+              class="absolute hidden text-center group-hover:inline-flex p-[35px]"
             >
-              Ihr seid auf die selbständige Nutzung der Software-Infrastruktur &
-              der Analyseergbnisse vorbereitet.
+              You are prepared to use the software infrastructure & analysis
+              results independently.
             </p>
           </div>
 
@@ -621,18 +633,18 @@
             class="boxes min-h-[280px] xl:min-h-0 xl:aspect-square group relative"
           >
             <div
-              class="z-10 font-semibold text-center text-2xl lg:text-xl xl:text-base uppercase group-hover:hidden"
+              class="z-10 font-semibold text-center uppercase group-hover:hidden"
             >
-              Effizienz
+              Eﬃciency
             </div>
             <div
-              class="absolute z-0 h-[15px] lg:h-[12.5px] xl:h-[10px] w-[130px] lg:w-[108px] xl:w-[87px] translate-y-2.5 lg:translate-y-2 xl:translate-y-1.5 rounded-full bg-[#F2D544] group-hover:hidden"
+              class="absolute z-0 h-[12px] w-[87px] translate-y-1.5 rounded-full bg-[#F2D544] group-hover:hidden"
             ></div>
             <p
-              class="absolute hidden text-center text-2xl lg:text-xl xl:text-base p-[35px] text-center group-hover:inline-flex"
+              class="absolute hidden text-center group-hover:inline-flex p-[35px]"
             >
-              Ihr werdet deutlich effizienter arbeiten und dadurch langfristig
-              Zeit sparen.
+              You will work much more eﬃciently and therefore save time in the
+              long term.
             </p>
           </div>
 
@@ -640,18 +652,18 @@
             class="boxes min-h-[280px] xl:min-h-0 xl:aspect-square group relative"
           >
             <div
-              class="z-10 font-semibold text-center text-2xl lg:text-xl xl:text-base uppercase group-hover:hidden"
+              class="z-10 font-semibold text-center uppercase group-hover:hidden"
             >
-              Fokus
+              Focus
             </div>
             <div
-              class="absolute z-0 h-[15px] lg:h-[12.5px] xl:h-[10px] w-[87px] lg:w-[73px] xl:w-[58px] translate-y-2.5 lg:translate-y-2 xl:translate-y-1.5 rounded-full bg-[#F2D544] group-hover:hidden"
+              class="absolute z-0 h-[12px] w-[58px] translate-y-1.5 rounded-full bg-[#F2D544] group-hover:hidden"
             ></div>
             <p
-              class="absolute hidden text-center text-2xl lg:text-xl xl:text-base p-[35px] text-center group-hover:inline-flex"
+              class="absolute hidden text-center group-hover:inline-flex p-[35px]"
             >
-              Ihr werdet von euren Daten optimal unterstützt, sodass ihr euch
-              ganz auf euer Hauptgeschäft konzentrieren könnt.
+              You are optimally supported by your data, so that you can fully
+              concentrate on your main business.
             </p>
           </div>
         </div>
@@ -659,87 +671,78 @@
 
       <div class="mx-[35px] lg:mx-[70px] xl:mx-[140px] flex flex-col">
         <section>
-          <div class="text-2xl lg:text-xl xl:text-base">
-            <p class="inline font-semibold">Klingt gut?</p>
-            Dann meldet euch bei mir für ein erstes, unverbindliches Gespräch.
-            Dabei werden wir herausfinden, ob der beschriebene Weg etwas für
-            euch ist oder an welchem Punkt des Weges ihr aktuell steht.
+          <div>
+            <p class="inline font-semibold">Sounds good?</p>
+            Then get in touch with me for an initial, non-binding conversation.
+            We will ﬁnd out if the described path is something for you or where
+            you are at the moment and how I can support most effectively.
           </div>
         </section>
         <section class="my-[35px]">
-          <div class="text-2xl lg:text-xl xl:text-base">
+          <div>
             <p class="inline font-semibold">
-              Eine Sache möchte ich noch loswerden.
+              There is one more thing I would like to say.
             </p>
-            Eventuell habt ihr euch gefragt, warum ich immer wieder von
-            „gemeinsam“ und „zusammen“ schreibe? Ganz einfach. Beim Thema Daten
-            kommen wir nur kooperativ ans Ziel. Eine fertige Lösung oder meine
-            persönliche Meinung, die den Anwendern vorgesetzt wird, kann nicht
-            zum Ziel führen. Alle Beteiligten müssen von Anfang an die
-            Möglichkeit haben, ihre Arbeitswelt rund um die Datennutzung
-            mitzugestalten.
+            You may have asked yourself why I keep writing about "together"?
+            It's simple. When it comes to data, we can only reach our goal
+            cooperatively. A ready-made solution or my personal opinion, which
+            is presented to the users, cannot lead to the goal. Everyone
+            involved must have the opportunity to help shape their working
+            environment around data right from the start.
           </div>
         </section>
-        <p class="inline text-2xl lg:text-xl xl:text-base font-semibold">
-          Lasst uns also gemeinsam losgehen, ich zeige euch die Richtung und wir
-          finden zusammen den passenden Weg aus dem Datenkeller!
+        <p class="inline font-semibold">
+          So let's get going together, I'll show you the direction and together
+          we'll ﬁnd the right way out of the data cellar!
         </p>
         <a
           href="#Kontakt"
-          class="my-[70px] w-fit place-self-center rounded-full bg-[#333745] px-[40px] lg:px-[35px] xl:px-[30px] py-[18px] lg:py-[15px] xl:py-[12px] font-semibold text-2xl lg:text-xl xl:text-base uppercase text-[#FFFFFF] hover:cursor-dotPrimary2"
+          class="my-[70px] place-self-center w-fit rounded-full bg-[#333745] px-[20px] lg:px-[35px] py-[10px] lg:py-[15px] text-sm lg:text-base font-semibold uppercase text-[#FFFFFF] hover:cursor-dotPrimary2"
         >
-          Ich möchte loslegen
+          I want to start
         </a>
       </div>
 
       <div class="my-0 bg-[#F2D544] py-[70px]">
         <div class="flex items-center justify-center">
           <div id="UeberMich" class="-translate-y-[150px]"></div>
-          <h2
-            class="absolute z-10 text-2xl lg:text-xl xl:text-base font-bold uppercase"
-          >
-            Über mich
-          </h2>
+          <h2 class="absolute z-10 font-bold uppercase">About me</h2>
           <div
-            class="absolute z-0 h-[15px] lg:h-[12.5px] xl:h-[10px] w-[146px] lg:w-[122px] xl:w-[98px] translate-y-2.5 lg:translate-y-2 xl:translate-y-1.5 rounded-full bg-[#DAEDE2]"
+            class="absolute z-0 h-[12px] w-[98px] translate-y-1.5 rounded-full bg-[#DAEDE2]"
           ></div>
         </div>
 
         <div
-          class="mx-[35px] lg:mx-[70px] xl:mx-[140px] mt-[35px] flex items-center justify-start gap-[35px] xl:gap-[70px]"
+          class="mx-[35px] lg:mx-[70px] xl:mx-[140px] mt-[35px] flex flex-col md:flex-row items-center justify-start gap-[35px] xl:gap-[70px]"
         >
           <img
-            class="aspect-square max-h-[300px] lg:max-h-[450px] xl:max-h-[600px] object-cover"
+            class="aspect-square max-h-[450px] object-cover"
             src="/public/images/annikaSCHULTE-image-2.jpg"
           />
-          <div class="flex flex-col gap-[15px] lg:gap-[35px] xl:gap-[70px]">
-            <h4 class="text-xl lg:text-3xl xl:text-5xl font-semibold">
-              Hi, ich bin Annika.
-            </h4>
+          <div
+            class="flex flex-col gap-[15px] lg:gap-[35px] items-center md:items-start"
+          >
+            <h4 class="font-semibold text-2xl">Hi, my name is Annika.</h4>
             <div class="flex flex-col gap-[35px]">
-              <div class="z-10 w-fit lg:text-2xl xl:text-3xl font-medium">
-                Wissensdurstig
+              <div class="z-10 w-fit font-medium text-lg">
+                Thirsty for knowledge
               </div>
               <div
-                class="absolute z-0 h-[10px] lg:h-[15px] xl:h-[20px] w-[126px] lg:w-[189px] xl:w-[236px] translate-y-3 lg:translate-y-4 xl:translate-y-5 rounded-full bg-[#F6F792]"
+                class="absolute z-0 h-[12px] w-[142px] translate-y-3 rounded-full bg-[#F6F792]"
               ></div>
             </div>
 
             <div class="flex flex-col gap-[35px]">
-              <div class="z-10 w-fit lg:text-2xl xl:text-3xl font-medium">
-                Begeisterungsfähig
-              </div>
+              <div class="z-10 w-fit font-medium text-lg">Enthusiastic</div>
               <div
-                class="absolute z-0 h-[10px] lg:h-[15px] xl:h-[20px] w-[161px] lg:w-[241px] xl:w-[301px] translate-y-3 lg:translate-y-4 xl:translate-y-5 rounded-full bg-[#F6F792]"
+                class="absolute z-0 h-[12px] w-[181px] translate-y-3 rounded-full bg-[#F6F792]"
               ></div>
             </div>
 
             <div class="flex flex-col gap-[35px]">
-              <div class="z-10 w-fit lg:text-2xl xl:text-3xl font-medium">
-                Verlässlich
-              </div>
+              <div class="z-10 w-fit font-medium text-lg">Reliable</div>
               <div
-                class="absolute z-0 h-[10px] lg:h-[15px] xl:h-[20px] w-[86px] lg:w-[129px] xl:w-[161px] translate-y-3 lg:translate-y-4 xl:translate-y-5 rounded-full bg-[#F6F792]"
+                class="absolute z-0 h-[12px] w-[97px] translate-y-3 rounded-full bg-[#F6F792]"
               ></div>
             </div>
 
@@ -749,58 +752,53 @@
               rel="noreferrer"
             >
               <img
-                class="h-[36px] lg:h-[40px] xl:h-[50px] self-start hover:cursor-dotWithArrowPrimary1"
+                class="h-[36px] lg:h-[40px] self-start hover:cursor-dotWithArrowPrimary1"
                 src="/public/illustrations-and-icons/2023-10-24-annikaSCHULTE-icon-LinkedIn-1.svg"
             /></a>
           </div>
         </div>
 
         <div
-          class="mx-[35px] lg:mx-[70px] xl:mx-[140px] mt-[70px] flex flex-col"
+          class="mx-[35px] lg:mx-[70px] xl:mx-[140px] mt-[35px] flex flex-col"
         >
-          <section class="text-2xl lg:text-xl xl:text-base">
+          <section>
             <p class="inline font-semibold">
-              Ich bin Datenanalystin und Beraterin.
+              I am a data analyst and consultant.
             </p>
-            Seit 2018 arbeite ich als Datenanalystin und habe schon die
-            unterschiedlichsten Projekte betreut. Von Vertrieb über Marketing
-            bis hin zum Einkauf. Vom ersten Beratungsgespräch über Data Audits
-            bis hin zum fertigen Dashboard. Ich kann die gesamte Bandbreite der
-            Datenanalyse abdecken.
+            I have been working as a data analyst since 2018 and have been
+            involved in a wide variety of projects. From sales and marketing to
+            purchasing. From initial consultations trough data audits to ﬁnished
+            dashboards. I can cover the entire spectrum of data analysis.
           </section>
-          <section class="text-2xl lg:text-xl xl:text-base my-[35px]">
-            <p class="inline font-semibold">Ich bin Software-Trainerin.</p>
-            Seit Anfang 2023 bin ich Software-Trainerin. Damit kultiviere ich
-            meine Fähigkeit, Menschen zur Nutzung von Technik und Daten zu
-            befähigen und sie dafür zu begeistern. Ich nutze gerne einfaches
-            Vokabular, um Missverständnissen vorzubeugen und kann mich
-            empathisch auf unterschiedliche Persönlichkeiten einstellen.
+          <section class="my-[35px]">
+            <p class="inline font-semibold">I am software trainer.</p>
+            I have been a software trainer since the beginning of 2023. This
+            cultivates my ability to empower and inspire people by using
+            technology and data. I like to use simple vocabulary to prevent
+            misunderstandings and empathize with diﬀerent personalities.
           </section>
-          <section class="text-2xl lg:text-xl xl:text-base">
+          <section>
             <p class="inline font-semibold">
-              Ich arbeite am liebsten an der Schnittstelle zwischen Technik und
-              Mensch.
+              I preferably unite the combination of technology and humans.
             </p>
-            Ich habe meinen beruflichen Weg im Jahr 2008 als „IT-Fachberaterin“
-            bei Siemens begonnen. Hier habe ich gelernt zwischen technischen und
-            fachlichen Abteilungen zu vermitteln. Denn manchmal spricht man zwar
-            die gleiche Sprache, aber versteht sich trotzdem nicht.
+            I started my career in 2008 as an "IT specialist consultant" at
+            Siemens. Here I learned to mediate between the IT and several
+            departments. Because sometimes you speak the same language, but
+            still don't understand each other.
           </section>
-          <section class="text-2xl lg:text-xl xl:text-base my-[35px]">
-            <p class="inline font-semibold">Ich bin begeisterungsfähig.</p>
-            Mit Freude und ehrlichem Interesse suche ich nach den bestmöglichen
-            Lösungen. Dabei kann ich motivieren und ermuntern. Denn mit Freude
-            und einer positiven Einstellung geht doch alles leichter von der
-            Hand.
+          <section class="my-[35px]">
+            <p class="inline font-semibold">I am enthusiastic.</p>
+            I look for the best possible solutions with joy and honest interest.
+            In doing so, I can motivate and encourage. Because with joy and a
+            positive atitude, everything is easier.
           </section>
 
-          <section class="text-2xl lg:text-xl xl:text-base">
-            <p class="inline font-semibold">Ich liebe das Lernen.</p>
-            Mein fast unstillbarer Wissensdurst führt dazu, dass ich mich
-            selbständig und zügig in die verschiedensten Themen einarbeiten und
-            eindenken kann. So gelingt es mir zielgruppenorientiert zu arbeiten
-            und die Bedürfnisse aller Beteiligten in meinen Konzepten zu
-            berücksichtigen.
+          <section>
+            <p class="inline font-semibold">I love learning.</p>
+            My almost unquenchable thirst for knowledge means that I can
+            independently and quickly familiarize myself with a wide variety of
+            topics. This enables me to work in a target group-oriented manner
+            and to consider the needs of all participants in my concepts.
           </section>
         </div>
       </div>
@@ -808,13 +806,9 @@
       <div class="pb-[35px] pt-[70px]">
         <div class="flex items-center justify-center">
           <div id="Projektbeispiele" class="-translate-y-[150px]"></div>
-          <h2
-            class="absolute z-10 text-2xl lg:text-xl xl:text-base font-bold uppercase"
-          >
-            Projektbeispiele
-          </h2>
+          <h2 class="absolute z-10 font-bold uppercase">Project examples</h2>
           <div
-            class="absolute z-0 h-[15px] lg:h-[12.5px] xl:h-[10px] w-[255px] lg:w-[205px] xl:w-[164px] translate-y-2.5 lg:translate-y-2 xl:translate-y-1.5 rounded-full bg-[#DAEDE2]"
+            class="absolute z-0 h-[12px] w-[164px] translate-y-1.5 rounded-full bg-[#DAEDE2]"
           ></div>
         </div>
       </div>
@@ -825,40 +819,37 @@
         <div class="flex flex-col gap-[35px]">
           <section class="flex flex-col content-center bg-[#F6F792]">
             <img
-              class="my-[70px] max-h-[200px] min-h-[175px]"
+              class="my-[35px] max-h-[150px] lg:max-h-[200px] min-h-[100px] lg:min-h-[175px]"
               src="/public/illustrations-and-icons/2023-10-24-annikaSCHULTE-illustration-vertriebs-dashboard.svg"
             />
-            <div
-              class="mx-[35px] mb-[35px] flex flex-col gap-[35px] text-2xl lg:text-xl xl:text-base"
-            >
-              <p class="z-10 font-semibold uppercase">Vertriebs-Dashboard</p>
+            <div class="mx-[35px] mb-[35px] flex flex-col gap-[35px]">
+              <p class="z-10 font-semibold uppercase">Sales Dashboard</p>
               <p>
-                <span class="font-semibold">Mein Ergebnis:</span> Ich stelle
-                eure wichtigsten Vertriebskennzahlen, wie Umsatz, Angebotshöhen
-                usw. dar und mache euren Vertriebsprozess durch Funnel von der
-                Lead-Quelle bis hin zum gewonnenen Kunden sichtbar.
+                <span class="font-semibold">My result:</span> I present your
+                most important sales key ﬁgures, such as turnover, offer levels
+                etc. and make your sales process visible through funnels from
+                the lead source to the acquired customer.
               </p>
               <p>
-                <span class="font-semibold">Euer Mehrwert:</span> Der
-                Vertriebserfolg wird sofort sichtbar und das Vertriebsteam wird
-                motiviert und spart Zeit durch geringeren Abstimmungs- und
-                Reportingaufwand.
+                <span class="font-semibold">Your added value:</span> The sales
+                success is immediately visible and the sales team is motivated
+                and saves time to less coordination and reporting effort.
               </p>
               <div
-                class="flex flex-row items-center bg-[#F6F792] text-2xl lg:text-xl xl:text-base"
+                class="flex flex-row justify-between items-center bg-[#F6F792]"
               >
-                <p class="pr-[35px] font-semibold">Magie-Level:</p>
+                <p class="pr-[35px] font-semibold">Magic level:</p>
                 <div class="flex gap-[15px]">
                   <img
-                    class="h-[30px]"
+                    class="h-[25px] md:h-[30px]"
                     src="/public/illustrations-and-icons/2023-10-24-annikaSCHULTE-icon-magie-level.svg"
                   />
                   <img
-                    class="h-[30px] opacity-50"
+                    class="h-[25px] md:h-[30px] opacity-50"
                     src="/public/illustrations-and-icons/2023-10-24-annikaSCHULTE-icon-magie-level.svg"
                   />
                   <img
-                    class="h-[30px] opacity-50"
+                    class="h-[25px] md:h-[30px] opacity-50"
                     src="/public/illustrations-and-icons/2023-10-24-annikaSCHULTE-icon-magie-level.svg"
                   />
                 </div>
@@ -870,42 +861,40 @@
         <div class="flex flex-col gap-[35px]">
           <section class="flex flex-col content-center bg-[#F6F792]">
             <img
-              class="my-[70px] max-h-[200px] min-h-[175px]"
+              class="my-[35px] max-h-[150px] lg:max-h-[200px] min-h-[100px] lg:min-h-[175px]"
               src="/public/illustrations-and-icons/2023-10-24-annikaSCHULTE-illustration-marketingerfolgsmessung.svg"
             />
-            <div
-              class="mx-[35px] mb-[35px] flex flex-col gap-[35px] text-2xl lg:text-xl xl:text-base"
-            >
+            <div class="mx-[35px] mb-[35px] flex flex-col gap-[35px]">
               <p class="z-10 font-semibold uppercase">
-                Marketingerfolgsmessung
+                Marketing success measurement
               </p>
               <p>
-                <span class="font-semibold">Mein Ergebnis:</span> Ich analysiere
-                und bewerte mithilfe von statistischen Methoden eure digitalen
-                Marketingmaßnahmen und stelle die erzielten Effekte und
-                wichtigsten Kennzahlen anschaulich dar.
+                <span class="font-semibold">My result:</span> I analyze and
+                evaluate your digital marketing measures using statistical
+                methods and clearly present the effects achieved as well as the
+                most important key ﬁgures.
               </p>
               <p>
-                <span class="font-semibold">Euer Mehrwert:</span> Ihr könnt
-                nachweisen, welche Marketingkampagnen erfolgreich waren und habt
-                somit eine solide Entscheidungsgrundlage für die nächste
-                Planungsphase eurer Marketingmaßnahmen.
+                <span class="font-semibold">Your added value:</span> You can
+                prove which marketing campaigns were successful and thus have a
+                solid basis for the next decision-making marketing planning
+                phase.
               </p>
               <div
-                class="flex flex-row items-center bg-[#F6F792] text-2xl lg:text-xl xl:text-base"
+                class="flex flex-row justify-between items-center bg-[#F6F792]"
               >
-                <p class="pr-[35px] font-semibold">Magie-Level:</p>
+                <p class="pr-[35px] font-semibold">Magic level:</p>
                 <div class="flex gap-[15px]">
                   <img
-                    class="h-[30px]"
+                    class="h-[25px] md:h-[30px]"
                     src="/public/illustrations-and-icons/2023-10-24-annikaSCHULTE-icon-magie-level.svg"
                   />
                   <img
-                    class="h-[30px]"
+                    class="h-[25px] md:h-[30px]"
                     src="/public/illustrations-and-icons/2023-10-24-annikaSCHULTE-icon-magie-level.svg"
                   />
                   <img
-                    class="h-[30px] opacity-50"
+                    class="h-[25px] md:h-[30px] opacity-50"
                     src="/public/illustrations-and-icons/2023-10-24-annikaSCHULTE-icon-magie-level.svg"
                   />
                 </div>
@@ -917,40 +906,37 @@
         <div class="flex flex-col gap-[35px]">
           <section class="flex flex-col content-center bg-[#F6F792]">
             <img
-              class="my-[70px] max-h-[200px] min-h-[175px]"
+              class="my-[35px] max-h-[150px] lg:max-h-[200px] min-h-[100px] lg:min-h-[175px]"
               src="/public/illustrations-and-icons/2023-10-24-annikaSCHULTE-illustration-segmentierungen.svg"
             />
-            <div
-              class="mx-[35px] mb-[35px] flex flex-col gap-[35px] text-2xl lg:text-xl xl:text-base"
-            >
-              <p class="z-10 font-semibold uppercase">Segmentierungen</p>
+            <div class="mx-[35px] mb-[35px] flex flex-col gap-[35px]">
+              <p class="z-10 font-semibold uppercase">Segmentations</p>
               <p>
-                <span class="font-semibold">Mein Ergebnis:</span> Ob Kunden,
-                Märkte, Nutzer, Produkte – ich ermittle euch mithilfe von
-                statistischen Methoden strukturgleiche Gruppen und beschreibe
-                diese mit den entscheidenden Kennzahlen.
+                <span class="font-semibold">My result:</span> Whether customers,
+                markets, users, or products – I determine structurally identical
+                groups for you with the help of statistical methods and describe
+                them with the decisive key ﬁgures.
               </p>
               <p>
-                <span class="font-semibold">Euer Mehrwert:</span> Die
-                ermittelten Segmente bilden eine fundierte Basis für die
-                strukturierte Weiterentwicklung eurer Produkte und
-                Marketingmaßnahmen.
+                <span class="font-semibold">Your added value:</span> The
+                identiﬁed segments form a basis for the structured further
+                development of your products and marketing measures.
               </p>
               <div
-                class="flex flex-row items-center bg-[#F6F792] text-2xl lg:text-xl xl:text-base"
+                class="flex flex-row justify-between items-center bg-[#F6F792]"
               >
-                <p class="pr-[35px] font-semibold">Magie-Level:</p>
+                <p class="pr-[35px] font-semibold">Magic level:</p>
                 <div class="flex gap-[15px]">
                   <img
-                    class="h-[30px]"
+                    class="h-[25px] md:h-[30px]"
                     src="/public/illustrations-and-icons/2023-10-24-annikaSCHULTE-icon-magie-level.svg"
                   />
                   <img
-                    class="h-[30px]"
+                    class="h-[25px] md:h-[30px]"
                     src="/public/illustrations-and-icons/2023-10-24-annikaSCHULTE-icon-magie-level.svg"
                   />
                   <img
-                    class="h-[30px]"
+                    class="h-[25px] md:h-[30px]"
                     src="/public/illustrations-and-icons/2023-10-24-annikaSCHULTE-icon-magie-level.svg"
                   />
                 </div>
@@ -961,7 +947,7 @@
       </div>
 
       <div
-        class="mx-[35px] lg:mx-[70px] mt-[70px] grid grid-cols-3 gap-[35px] text-2xl lg:text-xl xl:text-base"
+        class="hidden mx-[35px] lg:mx-[70px] mt-[35px] md:grid grid-cols-3 gap-[35px]"
       >
         <section
           class="col-span-1 flex w-full justify-center bg-[#DAEDE2] p-[35px]"
@@ -975,26 +961,39 @@
           class="col-span-2 flex h-full items-center bg-[#DAEDE2] p-[35px]"
         >
           <p>
-            Die hier aufgeführten Beispiele dienen lediglich der Inspiration.
-            Die Darstellung und Analyse von Daten ist sehr individuell. Deswegen
-            meldet euch am besten direkt bei mir, um über euren konkreten
-            Anwendungsfall zu sprechen.
+            The examples listed here are for inspiration only. The presentation
+            and analysis of data is very individual. That's why it's best to
+            contact me directly to talk about your speciﬁc use case.
           </p>
         </section>
       </div>
 
       <div
-        class="mx-[35px] lg:mx-[70px] my-[35px] grid grid-cols-3 gap-[35px] text-2xl lg:text-xl xl:text-base"
+        class="md:hidden mx-[35px] lg:mx-[70px] mt-[35px] flex flex-col gap-[35px] bg-[#DAEDE2] p-[35px]"
+      >
+        <img
+          class="max-h-[150px] min-h-[100px]"
+          src="/public/illustrations-and-icons/2023-10-24-annikaSCHULTE-illustration-individualitaet.svg"
+        />
+        <p>
+          The examples listed here are for inspiration only. The presentation
+          and analysis of data is very individual. That's why it's best to
+          contact me directly to talk about your speciﬁc use case.
+        </p>
+      </div>
+
+      <div
+        class="hidden mx-[35px] lg:mx-[70px] my-[35px] md:grid grid-cols-3 gap-[35px]"
       >
         <section
           class="col-span-2 flex h-full items-center bg-[#DAEDE2] p-[35px]"
         >
           <p>
-            Die Umsetzbarkeit der „Magie-Level“ – also der Einsatzgrad von
-            statistischen Methoden – ist immer abhängig von der Datenmenge. Ich
-            berate euch gerne, was für euch und eure vorliegende Datenbasis
-            möglich ist oder was ihr benötigt, um in Zukunft ausreichend Daten
-            zu sammeln.
+            The feasibility of the "magic level" – i.e. the degree of
+            application of statistical methods – always depends on the amount of
+            data. I would be happy to advise you on what is possible for you and
+            your existing database or what you need to collect suﬃcient data in
+            the future.
           </p>
         </section>
         <section
@@ -1008,7 +1007,22 @@
       </div>
 
       <div
-        class="mx-[35px] lg:mx-[70px] mb-[70px] grid grid-cols-3 gap-[35px] text-2xl lg:text-xl xl:text-base"
+        class="md:hidden mx-[35px] lg:mx-[70px] my-[35px] flex flex-col gap-[35px] bg-[#DAEDE2] p-[35px]"
+      >
+        <img
+          class="max-h-[150px] min-h-[100px]"
+          src="/public/illustrations-and-icons/2023-10-24-annikaSCHULTE-illustration-datenmenge.svg"
+        />
+        <p>
+          The feasibility of the "magic level" – i.e. the degree of application
+          of statistical methods – always depends on the amount of data. I would
+          be happy to advise you on what is possible for you and your existing
+          database or what you need to collect suﬃcient data in the future.
+        </p>
+      </div>
+
+      <div
+        class="hidden mx-[35px] lg:mx-[70px] mb-[70px] md:grid grid-cols-3 gap-[35px]"
       >
         <section
           class="col-span-1 flex w-full justify-center bg-[#DAEDE2] p-[35px]"
@@ -1022,12 +1036,27 @@
           class="col-span-2 flex h-full items-center bg-[#DAEDE2] p-[35px]"
         >
           <p>
-            Ich arbeite komplett unabhängig und nutze verschiedene Tools und
-            Infrastrukturen. Einige Beispiele sind Zoho Analytics, Excel,
-            Tableau, Google Analytics, Power BI, … Im Beratungsprozess wählen
-            wir gemeinsam die für euch passende Software oder Plattform aus.
+            I work completely independently and use different tools and
+            infrastructures. Some examples are Zoho Analytics, Excel, Tableau,
+            Google Analytics, Power BI, … Within the consulting process,
+            together we choose the fitting software or plattorm for you.
           </p>
         </section>
+      </div>
+
+      <div
+        class="md:hidden mx-[35px] lg:mx-[70px] mb-[70px] flex flex-col gap-[35px] bg-[#DAEDE2] p-[35px]"
+      >
+        <img
+          class="max-h-[150px] min-h-[100px]"
+          src="/public/illustrations-and-icons/2023-10-24-annikaSCHULTE-illustration-tools.svg"
+        />
+        <p>
+          I work completely independently and use different tools and
+          infrastructures. Some examples are Zoho Analytics, Excel, Tableau,
+          Google Analytics, Power BI, … Within the consulting process, together
+          we choose the fitting software or plattorm for you.
+        </p>
       </div>
 
       <div class="my-0 bg-[#F6F792] py-[70px]">
@@ -1035,50 +1064,44 @@
           class="flex items-center justify-start mx-[35px] lg:mx-[70px] xl:mx-[140px]"
         >
           <div id="Kontakt" class="-translate-y-[150px]"></div>
-          <h2
-            class="absolute z-10 text-2xl lg:text-xl xl:text-base font-bold uppercase"
-          >
-            Kontakt
-          </h2>
+          <h2 class="absolute z-10 font-bold uppercase">Contact</h2>
           <div
-            class="absolute z-0 h-[15px] lg:h-[12.5px] xl:h-[10px] w-[121px] lg:w-[100px] xl:w-[81px] translate-y-2.5 lg:translate-y-2 xl:translate-y-1.5 rounded-full bg-[#DAEDE2]"
+            class="absolute z-0 h-[12px] w-[81px] translate-y-1.5 rounded-full bg-[#DAEDE2]"
           ></div>
         </div>
 
         <div
-          class="mx-[35px] lg:mx-[70px] xl:mx-[140px] mt-[70px] flex flex-col text-2xl lg:text-xl xl:text-base"
+          class="mx-[35px] lg:mx-[70px] xl:mx-[140px] mt-[70px] flex flex-col"
         >
           <div class="flex">
             <img
-              class="h-[35px] xl:h-[25px] pb-px pr-[10px]"
+              class="h-[25px] pb-px pr-[10px]"
               src="/public/illustrations-and-icons/2023-10-24-annikaSCHULTE-icon-calender.svg"
             />
             <section>
-              <p class="inline font-semibold">
-                Du möchtest mit mir durchstarten?
-              </p>
-              Dann buche dir gerne direkt einen
+              <p class="inline font-semibold">You want to start with me?</p>
+              Then book an
               <a
                 class="font-semibold underline hover:cursor-dotWithArrowPrimary1"
                 href="https://calendly.com/annikaschulte"
                 target="_blank"
                 rel="noreferrer"
-                >Termin</a
+                >appointment</a
               >
-              mit mir.
+              with me directly.
             </section>
           </div>
 
           <div class="flex">
             <img
-              class="h-[35px] xl:h-[25px] pr-[10px] my-[35px]"
+              class="h-[25px] pr-[10px] my-[35px]"
               src="/public/illustrations-and-icons/2023-10-24-annikaSCHULTE-icon-mail.svg"
             />
             <section class="py-[35px]">
               <p class="inline font-semibold">
-                Du möchtest mich per E-Mail kontaktieren?
+                You want to contact me by e-mail?
               </p>
-              Schreib mir gerne an
+              Feel free to write me at
 
               <!-- Bei zusätzlichen Verweisen für die E-Mail-Adresse, z.B. einem vordefinierten Betreff o.ä., siehe hier:
             https://wiki.selfhtml.org/wiki/HTML/Tutorials/Links/Verweise_auf_Mailadressen -->
@@ -1094,17 +1117,15 @@
 
           <div class="flex">
             <img
-              class="h-[35px] xl:h-[25px] pr-[10px]"
+              class="h-[25px] pr-[10px]"
               src="/public/illustrations-and-icons/2023-10-24-annikaSCHULTE-icon-message.svg"
             />
             <section>
-              <p class="inline font-semibold">
-                Du hast eine Challenge für mich?
-              </p>
-              Die Nutzung von Daten ist sehr individuell! Wie sieht deine
-              Challenge für mich aus? Sende mir hier deine Herausforderung oder
-              deine brennendsten Fragen und ich melde mich mit Ideen bei dir,
-              wie eine Lösung mithilfe von Daten aussehen könnte.
+              <p class="inline font-semibold">You have a challenge for me?</p>
+              The use of data is very individual! What does your challenge look
+              like? Send me your most burning questions here and I'll get back
+              to you with my ideas on what a solution using data could look
+              like.
             </section>
           </div>
 
@@ -1119,13 +1140,13 @@
               value="d0226725-9708-4498-bfba-1a8f9863e908"
             />
 
-            <div class="grid lg:grid-cols-2 gap-[70px]">
+            <div class="grid lg:grid-cols-2 gap-[35px] text-sm">
               <div class="flex flex-col gap-[35px]">
                 <div>
                   <p>Name</p>
                   <input
                     autocomplete="off"
-                    class="h-full min-h-[50px] w-full rounded-[5px] bg-[#DAEDE2] pl-[15px] focus:bg-[#DAEDE2] focus:text-[#333745] focus:outline-1 focus:outline-[#333745]"
+                    class="h-full w-full rounded-[5px] bg-[#DAEDE2] focus:bg-[#DAEDE2] focus:text-[#333745] focus:outline-1 focus:outline-[#333745]"
                     type="text"
                     name="name"
                     required
@@ -1136,7 +1157,7 @@
                   <p>E-mail</p>
                   <input
                     autocomplete="off"
-                    class="h-full min-h-[50px] w-full rounded-[5px] bg-[#DAEDE2] pl-[15px] focus:bg-[#DAEDE2] focus:text-[#333745] focus:outline-1 focus:outline-[#333745]"
+                    class="h-full w-full rounded-[5px] bg-[#DAEDE2] focus:bg-[#DAEDE2] focus:text-[#333745] focus:outline-1 focus:outline-[#333745]"
                     type="email"
                     name="email"
                     required
@@ -1144,13 +1165,13 @@
                 </div>
               </div>
               <div class="h-full">
-                <p>Nachricht, Challenge oder Fragen</p>
+                <p>Message, challenge or questions</p>
                 <textarea
                   autocomplete="off"
-                  class="h-full w-full rounded-[5px] bg-[#DAEDE2] pl-[15px] pt-[15px] focus:bg-[#DAEDE2] focus:text-[#333745] focus:outline-1 focus:outline-[#333745]"
+                  class="h-full w-full rounded-[5px] bg-[#DAEDE2] focus:bg-[#DAEDE2] focus:text-[#333745] focus:outline-1 focus:outline-[#333745]"
                   name="message"
                   required
-                  value="Nachricht, Challenge oder Fragen"
+                  value="Message, challenge or questions"
                 ></textarea>
               </div>
             </div>
@@ -1165,15 +1186,15 @@
               />
 
               <p class="pl-[5px]">
-                Ich habe die
+                I have read the
                 <a
                   class="font-semibold underline"
                   href="/datenschutz.html"
                   target="_blank"
                   rel="noreferrer"
-                  >Datenschutzbestimmungen</a
+                  >privacy policy</a
                 >
-                gelesen und akzeptiere diese hiermit.
+                and hereby accept it.
               </p>
             </div>
 
@@ -1183,10 +1204,10 @@
             </div>
 
             <button
-              class="my-[70px] w-fit place-self-center rounded-full bg-[#333745] px-[40px] lg:px-[35px] xl:px-[30px] py-[18px] lg:py-[15px] xl:py-[12px] text-2xl lg:text-xl xl:text-base uppercase text-[#F6F792] hover:cursor-dotPrimary2"
+              class="mt-[35px] w-fit rounded-full bg-[#333745] px-[20px] lg:px-[35px] py-[10px] lg:py-[15px] text-sm lg:text-base font-normal uppercase text-[#F6F792] hover:cursor-dotAccent"
               type="submit"
             >
-              senden
+              send
             </button>
           </form>
 
@@ -1199,16 +1220,16 @@
       </div>
     </main>
 
-    <footer class="bg-[#333745] p-[70px]">
+    <footer class="bg-[#333745] p-[35px] lg:p-[70px]">
       <div>
         <div class="flex flex-col xl:flex-row justify-between">
           <div
-            class="text-[#DAEDE2] flex flex-col xl:flex-row items-center gap-[15px] xl:gap-0 xl:text-base lg:text-xl text-2xl"
+            class="text-[#DAEDE2] flex flex-col xl:flex-row items-center gap-[15px] xl:gap-0"
           >
             <a
               href="#Leistungen"
               class="hover:underline hover:cursor-dotPrimary2"
-              >Leistungen </a
+              >Services </a
             ><span class="hidden xl:inline-flex text-[#DAEDE2]"
               >&nbsp;|&nbsp;</span
             >
@@ -1216,7 +1237,7 @@
             <a
               href="#Zusammenarbeit"
               class="hover:underline hover:cursor-dotPrimary2"
-              >Zusammenarbeit</a
+              >Collaboration</a
             ><span class="hidden xl:inline-flex text-[#DAEDE2]"
               >&nbsp;|&nbsp;</span
             >
@@ -1224,7 +1245,7 @@
             <a
               href="#UeberMich"
               class="hover:underline hover:cursor-dotPrimary2"
-              >Über mich</a
+              >About me</a
             ><span class="hidden xl:inline-flex text-[#DAEDE2]"
               >&nbsp;|&nbsp;</span
             >
@@ -1232,22 +1253,42 @@
             <a
               href="#Projektbeispiele"
               class="hover:underline hover:cursor-dotPrimary2"
-              >Projektbeispiele</a
+              >Project examples</a
             >
           </div>
-          <div class="text-[#DAEDE2] flex justify-center pt-[35px] xl:pt-0">
-            <a href="javascript:UC_UI.showSecondLayer();">Cookies</a>
+          <div
+            class="text-[#DAEDE2] flex justify-center pt-[35px] xl:pt-0 text-[10px] md:text-sm lg:text-base"
+          >
+            <a
+              href="javascript:UC_UI.showSecondLayer();"
+              class="hover:underline hover:cursor-dotPrimary2"
+              >Cookies</a
+            >
             <span class="text-[#DAEDE2]">&nbsp;|&nbsp;</span
-            ><a href="/impressum.html" class="hover:underline">Impressum</a>
+            ><a
+              href="/impressum.html"
+              class="hover:underline hover:cursor-dotPrimary2"
+              >Imprint</a
+            >
             <span class="text-[#DAEDE2]">&nbsp;|&nbsp;</span>
-            <a href="/datenschutz.html" class="hover:underline">Datenschutz</a>
+            <a
+              href="/datenschutz.html"
+              class="hover:underline hover:cursor-dotPrimary2"
+              >Privacy</a
+            >
             <span class="text-[#DAEDE2]">&nbsp;|&nbsp;</span>
-            <a href="/indexEn.html" class="hover:underline">EN</a>
+            <a
+              href="/index.html"
+              class="hover:underline hover:cursor-dotPrimary2"
+              >DE</a
+            >
           </div>
         </div>
 
-        <hr class="my-[35px] h-[2px] w-full bg-[#DBEDE2]" />
-        <div class="flex w-full items-center justify-between">
+        <hr class="my-[35px] h-[1.5px] lg:h-[2px] w-full bg-[#DBEDE2]" />
+        <div
+          class="flex flex-col md:flex-row w-full items-center justify-between text-[10px] md:text-sm lg:text-base gap-[10px] md:gap-[15px] xl:gap-0"
+        >
           <div class="text-[#DAEDE2]">
             ©
             <span id="date" class="text-[#DAEDE2]"></span>
@@ -1256,24 +1297,25 @@
           <div class="flex items-center text-[#DAEDE2]">
             Design & Development made with
             <img
-              class="mx-[5px]"
+              class="mx-[5px] max-h-[25px] md:max-h-[36px]"
               src="/public/illustrations-and-icons/2023-10-24-annikaSCHULTE-icon-heart.svg"
             />by&nbsp;
             <a
               href="https://mk-rietzl.de/de/"
               target="_blank"
               rel="noreferrer"
-              class="underline"
+              class="underline hover:cursor-dotWithArrowPrimary2"
             >
               mk rietzl</a
             >
           </div>
           <a
-            class="hover:cursor-dotWithArrowPrimary1"
+            class="hover:cursor-dotWithArrowPrimary2"
             href="https://www.linkedin.com/in/annika-schulte-02363511a/"
             target="_blank"
             rel="noreferrer"
             ><img
+              class="h-[20px] md:h-[30px] lg:h-[36px]"
               src="/public/illustrations-and-icons/2023-10-24-annikaSCHULTE-icon-LinkedIn-2.svg"
           /></a>
         </div>
@@ -1283,7 +1325,70 @@
     <script>
       // navbar section:
 
-      function myFunction() {
+      function homeFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        } else {
+          x.className = "topnav";
+        }
+      }
+
+      function menuFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        } else {
+          x.className = "topnav";
+        }
+      }
+
+      function leistungenFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        } else {
+          x.className = "topnav";
+        }
+      }
+
+      function zusammenarbeitFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        } else {
+          x.className = "topnav";
+        }
+      }
+
+      function uebermichFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        } else {
+          x.className = "topnav";
+        }
+      }
+
+      function projektbeispieleFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        } else {
+          x.className = "topnav";
+        }
+      }
+
+      function contactFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        } else {
+          x.className = "topnav";
+        }
+      }
+
+      function enFunction() {
         var x = document.getElementById("myTopnav");
         if (x.className === "topnav") {
           x.className += " responsive";
