@@ -8,6 +8,20 @@
       content="annikaSCHULTE – Your datav deserves a better place"
     />
 
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-PMLKHMYMZ2"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-PMLKHMYMZ2");
+    </script>
+
     <!-- Cookie Consent Tool -->
     <!-- … for faster performance: -->
     <link rel="preconnect" href="//app.eu.usercentrics.eu" />
@@ -37,20 +51,34 @@
       src="https://sdp.eu.usercentrics.eu/latest/uc-block.bundle.js"
     ></script>
 
-    <!-- Google Tag Manager -->
-    <script>
-      (function (w, d, s, l, i) {
-        w[l] = w[l] || [];
-        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
-        var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s),
-          dl = l != "dataLayer" ? "&l=" + l : "";
-        j.async = true;
-        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
-        f.parentNode.insertBefore(j, f);
-      })(window, document, "script", "dataLayer", "GTM-M62BRP53");
+    <!-- … Manuelle Anpassung der Dienste für das Cookie Consent Tool: Google Analytics 4: -->
+    <!-- Teil 1: -->
+    <script
+      type="application/javascript"
+      src="https://app.usercentrics.eu/latest/main.js"
+      id="G-PMLKHMYMZ2"
+    ></script>
+    <meta
+      data-privacy-proxy-server="https://privacy-proxy-server.usercentrics.eu"
+    />
+    <script
+      type="application/javascript"
+      src="https://privacy-proxy.usercentrics.eu/latest/uc-block.bundle.js"
+    ></script>
+    <!-- Teil 2: Global site tag (gtag.js) - Google Analytics -->
+    <script
+      type="text/plain"
+      data-usercentrics="Google Analytics 4"
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-PMLKHMYMZ2"
+    ></script>
+
+    <script type="text/plain" data-usercentrics="Google Analytics 4">
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-PMLKHMYMZ2');
     </script>
-    <!-- End Google Tag Manager -->
 
     <!-- Here is the script part that is needed for tailwindcss:  -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -182,7 +210,7 @@
           display: flex;
           align-items: center;
           justify-content: space-between;
-          min-width: 100%;
+          width: 100vw;
         }
 
         .topnav.responsive {
@@ -265,17 +293,6 @@
   </head>
 
   <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript
-      ><iframe
-        src="https://www.googletagmanager.com/ns.html?id=GTM-M62BRP53"
-        height="0"
-        width="0"
-        style="display: none; visibility: hidden"
-      ></iframe
-    ></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-
     <div class="topnav" id="myTopnav">
       <div class="first">
         <a href="#Start" class="active">
