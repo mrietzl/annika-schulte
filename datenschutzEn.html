@@ -2,6 +2,7 @@
 <html lang="de">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
       content="annikaSCHULTE – Your datav deserves a better place"
@@ -22,6 +23,27 @@
     </script>
 
     <!-- Cookie Consent Tool -->
+    <!-- … for faster performance: -->
+    <link rel="preconnect" href="//app.eu.usercentrics.eu" />
+    <link rel="preconnect" href="//api.eu.usercentrics.eu" />
+    <link rel="preconnect" href="//sdp.eu.usercentrics.eu" />
+    <link
+      rel="preload"
+      href="//app.eu.usercentrics.eu/browser-ui/latest/loader.js"
+      as="script"
+    />
+    <link
+      rel="preload"
+      href="//sdp.eu.usercentrics.eu/latest/uc-block.bundle.js"
+      as="script"
+    />
+
+    <!-- … only for imprint & privacy:
+    <script type="application/javascript">
+      var UC_UI_SUPPRESS_CMP_DISPLAY = true;
+    </script> -->
+
+    <!-- … general part: -->
     <script
       id="usercentrics-cmp"
       data-language="en"
@@ -34,19 +56,6 @@
       type="application/javascript"
       src="https://sdp.eu.usercentrics.eu/latest/uc-block.bundle.js"
     ></script>
-    <!-- … for faster performance: -->
-    <link rel="preconnect" href="//app.eu.usercentrics.eu" />
-    <link rel="preconnect" href="//api.eu.usercentrics.eu" />
-    <link rel="preconnect" href="//sdp.eu.usercentrics.eu" />
-    <link
-      rel="preload"
-      href="//app.eu.usercentrics.eu/browser-ui/latest/loader.js"
-      as="script"
-    />
-    <!-- … only for imprint & privacy:
-    <script type="application/javascript">
-      var UC_UI_SUPPRESS_CMP_DISPLAY = true;
-    </script> -->
 
     <!-- … Manuelle Anpassung der Dienste für das Cookie Consent Tool: Google Analytics 4: -->
     <!-- Teil 1: -->
@@ -105,6 +114,8 @@
                 "url(/public/cursor/2023-10-24-annikaSCHULTE_cursor-dot-primary-2.svg), pointer",
               dotWithArrowPrimary1:
                 "url(/public/cursor/2023-10-24-annikaSCHULTE_cursor-dot-with-arrow-primary-1.svg), pointer",
+              dotWithArrowPrimary2:
+                "url(/public/cursor/2023-10-24-annikaSCHULTE_cursor-dot-with-arrow-primary-2.svg), pointer",
               dotWithCrossPrimary1:
                 "url(/public/cursor/2023-10-24-annikaSCHULTE_cursor-dot-with-cross-primary-1.svg), pointer",
               dotWithPlusPrimary1:
@@ -140,8 +151,92 @@
         color: #333745;
       }
 
-      h2 {
+      /* this is for the navbar section */
+
+      .topnav {
+        overflow: hidden;
+        background-color: #daede2;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 24px;
+        font-weight: 600;
         text-transform: uppercase;
+        position: fixed;
+        width: 100vw;
+        z-index: 20;
+        filter: drop-shadow(0 1px 2px rgb(0 0 0 / 0.1))
+          drop-shadow(0 1px 1px rgb(0 0 0 / 0.06));
+      }
+
+      .topnav .second {
+        float: left;
+        display: block;
+        color: #333745;
+        text-align: center;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 35px;
+      }
+
+      .topnav .second a {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .topnav .second a:hover {
+        text-decoration: underline;
+      }
+
+      .topnav div .icon {
+        display: none;
+      }
+
+      @media screen and (max-width: 1200px) {
+        .topnav .second a {
+          display: none;
+        }
+        .topnav .first a.icon {
+          float: right;
+          display: block;
+        }
+      }
+
+      @media screen and (max-width: 1200px) {
+        .first {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 100vw;
+        }
+
+        .topnav.responsive {
+          display: flex;
+          flex-direction: column;
+          align-items: start;
+        }
+
+        .topnav.responsive .first a.icon {
+          padding-right: 48px;
+        }
+
+        .topnav.responsive .second {
+          display: flex;
+          flex-direction: column;
+          align-items: start;
+          gap: 24px;
+          padding-top: 48px;
+        }
+
+        .topnav.responsive .second a {
+          float: none;
+          display: flex;
+          flex-direction: column;
+          text-align: left;
+        }
       }
     </style>
 
@@ -149,49 +244,54 @@
   </head>
 
   <body>
-    <nav
-      class="sticky top-0 z-20 flex w-full items-center justify-between bg-[#DAEDE2] py-6 drop-shadow"
-    >
-      <a href="/index.html" class="hover:cursor-logo">
-        <img
-          class="h-[50px] pl-[30px]"
-          src="/public/logo/annikaSCHULTE-logo.svg"
-      /></a>
+    <div class="topnav" id="myTopnav">
+      <div class="first">
+        <a href="/indexEn.html" onclick="homeFunction()" class="active">
+          <img
+            class="h-[40px] hover:cursor-dotPrimary1"
+            src="/public/logo/annikaSCHULTE-logo.svg"
+        /></a>
+        <a class="icon hover:cursor-dotPrimary1" onclick="menuFunction()">
+          <img
+            class="h-[40px]"
+            src="public/illustrations-and-icons/2023-10-24-annikaSCHULTE-icon-menu.svg"
+        /></a>
+      </div>
 
-      <div
-        class="flex items-center gap-[35px] pr-[70px] font-semibold uppercase"
-      >
-        <a href="/index.html" class="hover:underline hover:cursor-dotPrimary1"
+      <div class="second text-sm lg:text-base">
+        <a href="/indexEn.html" class="hover:underline hover:cursor-dotPrimary1"
           >back</a
         >
+
         <a
           href="/datenschutz.html"
+          onclick="langFunction()"
           class="hover:underline hover:cursor-dotPrimary1 font-normal"
           >DE</a
         >
       </div>
-    </nav>
+    </div>
 
-    <main class="pb-[70px]">
+    <main class="pt-[88px] lg:pt-[96px] pb-[70px]">
       <div
         class="mx-[35px] lg:mx-[70px] xl:mx-[140px] flex flex-col justify-center gap-[35px] py-[35px]"
       >
-        <h1
-          class="relative sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold py-[35px]"
-        >
+        <h1 class="text-xl lg:text-2xl xl:text-4xl font-semibold">
           Privacy Policy
         </h1>
 
-        <div class="flex flex-col gap-[35px] text-2xl lg:text-xl xl:text-base">
+        <div class="flex flex-col gap-[35px]">
           <section class="flex flex-col gap-[15px]">
-            <p class="text-base lg:text-s xl:text-xs">
+            <p class="text-sm">
               [ The website was created in Germany. For this reason, the legal
               requirements there apply. ]
             </p>
           </section>
 
           <section class="flex flex-col gap-[15px]">
-            <h2 class="font-bold">1. An overview of data protection</h2>
+            <h2 class="font-bold uppercase">
+              1. An overview of data protection
+            </h2>
 
             <h3 class="font-bold">General information</h3>
 
@@ -209,10 +309,10 @@
           <section class="flex flex-col gap-[15px]">
             <h3 class="font-bold">Data recording on this website</h3>
 
-            <p class="font-semibold">
+            <h5 class="font-semibold">
               Who is the responsible party for the recording of data on this
               website (i.e., the “controller”)?
-            </p>
+            </h5>
 
             <p>
               The data on this website is processed by the operator of the
@@ -221,7 +321,7 @@
               “controller” in the GDPR)” in this Privacy Policy.
             </p>
 
-            <p class="font-semibold">How do we record your data?</p>
+            <h5 class="font-semibold">How do we record your data?</h5>
 
             <p>
               We collect your data as a result of your sharing of your data with
@@ -237,9 +337,9 @@
               is recorded automatically when you access this website.
             </p>
 
-            <p class="font-semibold">
+            <h5 class="font-semibold">
               What are the purposes we use your data for?
-            </p>
+            </h5>
 
             <p>
               A portion of the information is generated to guarantee the error
@@ -247,9 +347,9 @@
               your user patterns.
             </p>
 
-            <p class="font-semibold">
+            <h5 class="font-semibold">
               What rights do you have as far as your information is concerned?
-            </p>
+            </h5>
 
             <p>
               You have the right to receive information about the source,
@@ -271,7 +371,7 @@
           </section>
 
           <section class="flex flex-col gap-[15px]">
-            <h2 class="font-bold">2. Hosting</h2>
+            <h2 class="font-bold uppercase">2. Hosting</h2>
 
             <p>
               We are hosting the content of our website at the following
@@ -320,9 +420,8 @@
           </section>
 
           <section class="flex flex-col gap-[15px]">
-            <h2 class="font-bold">
-              3. Allgemeine Hinweise und Pflichtinformationen3. General
-              information and mandatory information
+            <h2 class="font-bold uppercase">
+              3. General information and mandatory information
             </h2>
 
             <h3 class="font-bold">Data protection</h3>
@@ -616,7 +715,9 @@
           </section>
 
           <section class="flex flex-col gap-[15px]">
-            <h2 class="font-bold">4. Recording of data on this website</h2>
+            <h2 class="font-bold uppercase">
+              4. Recording of data on this website
+            </h2>
 
             <h3 class="font-bold">Consent with Usercentrics</h3>
 
@@ -631,6 +732,7 @@
                 href="https://usercentrics.com/"
                 target="_blank"
                 rel="noreferrer"
+                class="underline hover:cursor-dotWithArrowPrimary1"
                 >https://usercentrics.com/</a
               >
               (hereinafter referred to as “Usercentrics”).
@@ -683,7 +785,7 @@
               technologies is Art. 6(1)(c) GDPR.
             </p>
 
-            <p class="font-semibold">Data processing</p>
+            <h5 class="font-semibold">Data processing</h5>
 
             <p>
               We have concluded a data processing agreement (DPA) for the use of
@@ -771,6 +873,7 @@
                 href="https://calendly.com/privacy"
                 target="_blank"
                 rel="noreferrer"
+                class="underline hover:cursor-dotWithArrowPrimary1"
                 >https://calendly.com/privacy</a
               >.
             </p>
@@ -801,11 +904,12 @@
                 href="https://calendly.com/pages/dpa"
                 target="_blank"
                 rel="noreferrer"
+                class="underline hover:cursor-dotWithArrowPrimary1"
                 >https://calendly.com/pages/dpa</a
               >.
             </p>
 
-            <p class="font-semibold">Data processing</p>
+            <h5 class="font-semibold">Data processing</h5>
 
             <p>
               We have concluded a data processing agreement (DPA) for the use of
@@ -817,7 +921,9 @@
           </section>
 
           <section class="flex flex-col gap-[15px]">
-            <h2 class="font-bold">5. Analysis tools and advertising</h2>
+            <h2 class="font-bold uppercase">
+              5. Analysis tools and advertising
+            </h2>
 
             <h3 class="font-bold">Google Tag Manager</h3>
 
@@ -861,6 +967,7 @@
                 href="https://www.dataprivacyframework.gov/s/participant-search/participant-detail?contact=true&id=a2zt000000001L5AAI&status=Active"
                 target="_blank"
                 rel="noreferrer"
+                class="underline hover:cursor-dotWithArrowPrimary1"
                 >https://www.dataprivacyframework.gov/s/participant-search/participantdetail?
                 contact=true&id=a2zt000000001L5AAI&status=Active</a
               >
@@ -912,6 +1019,7 @@
                 href="https://privacy.google.com/businesses/controllerterms/mccs/"
                 target="_blank"
                 rel="noreferrer"
+                class="underline hover:cursor-dotWithArrowPrimary1"
                 >https://privacy.google.com/businesses/controllerterms/mccs/</a
               >.
             </p>
@@ -928,12 +1036,13 @@
                 href="https://www.dataprivacyframework.gov/s/participant-search/participant-detail?contact=true&id=a2zt000000001L5AAI&status=Active"
                 target="_blank"
                 rel="noreferrer"
+                class="underline hover:cursor-dotWithArrowPrimary1"
                 >https://www.dataprivacyframework.gov/s/participant-search/participantdetail?
                 contact=true&id=a2zt000000001L5AAI&status=Active</a
               >
             </p>
 
-            <p class="font-semibold">Browser Plugin</p>
+            <h5 class="font-semibold">Browser Plugin</h5>
 
             <p>
               You can prevent the recording and processing of your data by
@@ -943,6 +1052,7 @@
                 href="https://tools.google.com/dlpage/gaoptout?hl=en"
                 target="_blank"
                 rel="noreferrer"
+                class="underline hover:cursor-dotWithArrowPrimary1"
                 >https://tools.google.com/dlpage/gaoptout?hl=en</a
               >.
             </p>
@@ -954,11 +1064,12 @@
                 href="https://support.google.com/analytics/answer/6004245?hl=en"
                 target="_blank"
                 rel="noreferrer"
+                class="underline hover:cursor-dotWithArrowPrimary1"
                 >https://support.google.com/analytics/answer/6004245?hl=en</a
               >.
             </p>
 
-            <p class="font-semibold">Contract data processing</p>
+            <h5 class="font-semibold">Contract data processing</h5>
 
             <p>
               We have executed a contract data processing agreement with Google
@@ -968,7 +1079,7 @@
           </section>
 
           <section class="flex flex-col gap-[15px]">
-            <h2 class="font-bold">6. Plug-ins and Tools</h2>
+            <h2 class="font-bold uppercase">6. Plug-ins and Tools</h2>
 
             <h3 class="font-bold">Google Fonts (local embedding)</h3>
 
@@ -985,6 +1096,7 @@
                 href="https://developers.google.com/fonts/faq"
                 target="_blank"
                 rel="noreferrer"
+                class="underline hover:cursor-dotWithArrowPrimary1"
                 >https://developers.google.com/fonts/faq</a
               >
               and consult Google’s Data Privacy Declaration under:
@@ -992,6 +1104,7 @@
                 href="https://policies.google.com/privacy?hl=en"
                 target="_blank"
                 rel="noreferrer"
+                class="underline hover:cursor-dotWithArrowPrimary1"
                 >https://policies.google.com/privacy?hl=en</a
               >.
             </p>
@@ -1080,7 +1193,7 @@
 
             <p>We employ the following conference tools:</p>
 
-            <p class="font-semibold">Microsoft Teams</p>
+            <h5 class="font-semibold">Microsoft Teams</h5>
 
             <p>
               We use Microsoft Teams. The provider is the Microsoft Ireland
@@ -1091,6 +1204,7 @@
                 href="https://privacy.microsoft.com/en-us/privacystatement"
                 target="_blank"
                 rel="noreferrer"
+                class="underline hover:cursor-dotWithArrowPrimary1"
                 >https://privacy.microsoft.com/en-us/privacystatement</a
               >.
             </p>
@@ -1107,12 +1221,13 @@
                 href="https://www.dataprivacyframework.gov/s/participant-search/participant-detail?contact=true&id=a2zt0000000KzNaAAK&status=Active"
                 target="_blank"
                 rel="noreferrer"
+                class="underline hover:cursor-dotWithArrowPrimary1"
                 >https://www.dataprivacyframework.gov/s/participant-search/participantdetail?
                 contact=true&id=a2zt0000000KzNaAAK&status=Active</a
               >
             </p>
 
-            <p class="font-semibold">Data processing</p>
+            <h5 class="font-semibold">Data processing</h5>
 
             <p>
               We have concluded a data processing agreement (DPA) for the use of
@@ -1122,58 +1237,105 @@
               compliance with the GDPR.
             </p>
           </section>
+
+          <section class="flex flex-col gap-[15px]">
+            <h2 class="font-bold uppercase">8. Social media appearances</h2>
+
+            <h3 class="font-bold">
+              This privacy policy also applies to the following online presences
+            </h3>
+
+            <p>
+              LinkedIn:
+              <a
+                href="https://www.linkedin.com/in/annika-schulte-02363511a/"
+                target="_blank"
+                rel="noreferrer"
+                class="underline hover:cursor-dotWithArrowPrimary1"
+              >
+                Annika Schulte</a
+              >
+            </p>
+          </section>
+
+          <section class="flex flex-col gap-[15px]">
+            <h2 class="font-bold uppercase">9. Modifications</h2>
+
+            <h3 class="font-bold">
+              This privacy policy also applies to the following online presences
+            </h3>
+
+            <p>
+              We may change this privacy policy at any time without prior
+              notice. The current version published on our website shall apply.
+            </p>
+          </section>
+
+          <section class="flex flex-col gap-[15px]">
+            <p>Karlsruhe, November 07, 2023</p>
+          </section>
+
+          <section class="flex flex-col gap-[15px]">
+            <p>
+              Source:
+              <a
+                href="https://www.e-recht24.de/"
+                target="_blank"
+                rel="noreferrer"
+                class="underline hover:cursor-dotWithArrowPrimary1"
+                >eRecht24.de
+              </a>
+            </p>
+          </section>
         </div>
       </div>
     </main>
 
-    <footer class="bg-[#333745] p-[70px]">
+    <footer class="bg-[#333745] p-[35px] lg:p-[70px]">
       <div>
         <div class="flex flex-col xl:flex-row justify-between">
           <div
-            class="text-[#DAEDE2] flex flex-col xl:flex-row items-center gap-[15px] xl:gap-0 xl:text-base lg:text-xl text-2xl"
+            class="text-[#DAEDE2] flex flex-col xl:flex-row items-center gap-[15px] xl:gap-0"
           >
             <a
-              href="#Leistungen"
+              href="/indexEn.html"
               class="hover:underline hover:cursor-dotPrimary2"
-              >Leistungen </a
-            ><span class="hidden xl:inline-flex text-[#DAEDE2]"
-              >&nbsp;|&nbsp;</span
-            >
-
-            <a
-              href="#Zusammenarbeit"
-              class="hover:underline hover:cursor-dotPrimary2"
-              >Zusammenarbeit</a
-            ><span class="hidden xl:inline-flex text-[#DAEDE2]"
-              >&nbsp;|&nbsp;</span
-            >
-
-            <a
-              href="#UeberMich"
-              class="hover:underline hover:cursor-dotPrimary2"
-              >Über mich</a
-            ><span class="hidden xl:inline-flex text-[#DAEDE2]"
-              >&nbsp;|&nbsp;</span
-            >
-
-            <a
-              href="#Projektbeispiele"
-              class="hover:underline hover:cursor-dotPrimary2"
-              >Projektbeispiele</a
+              >back</a
             >
           </div>
-          <div class="text-[#DAEDE2] flex justify-center pt-[35px] xl:pt-0">
-            <a href="javascript:UC_UI.showSecondLayer();">Cookies</a>
+          <div
+            class="text-[#DAEDE2] flex justify-center pt-[35px] xl:pt-0 text-[10px] md:text-sm lg:text-base"
+          >
+            <a
+              href="javascript:UC_UI.showSecondLayer();"
+              class="hover:underline hover:cursor-dotPrimary2"
+              >Cookies</a
+            >
             <span class="text-[#DAEDE2]">&nbsp;|&nbsp;</span
-            ><a href="/impressumEn.html" class="hover:underline">Imprint</a>
+            ><a
+              href="/impressumEn.html"
+              class="hover:underline hover:cursor-dotPrimary2"
+              >Imprint</a
+            >
             <span class="text-[#DAEDE2]">&nbsp;|&nbsp;</span>
-            <a href="/datenschutzEn.html" class="hover:underline">Privacy</a>
+            <a
+              href="/datenschutzEn.html"
+              class="hover:underline hover:cursor-dotPrimary2"
+              >Privacy</a
+            >
             <span class="text-[#DAEDE2]">&nbsp;|&nbsp;</span>
-            <a href="/datenschutz.html" class="hover:underline">DE</a>
+            <a
+              href="/datenschutz.html"
+              class="hover:underline hover:cursor-dotPrimary2"
+              >DE</a
+            >
           </div>
         </div>
-        <hr class="my-[35px] h-[2px] w-full bg-[#DBEDE2]" />
-        <div class="flex w-full items-center justify-between">
+
+        <hr class="my-[35px] h-[1.5px] lg:h-[2px] w-full bg-[#DBEDE2]" />
+        <div
+          class="flex flex-col md:flex-row w-full items-center justify-between text-[10px] md:text-sm lg:text-base gap-[10px] md:gap-[15px] xl:gap-0"
+        >
           <div class="text-[#DAEDE2]">
             ©
             <span id="date" class="text-[#DAEDE2]"></span>
@@ -1182,24 +1344,25 @@
           <div class="flex items-center text-[#DAEDE2]">
             Design & Development made with
             <img
-              class="mx-[5px]"
+              class="mx-[5px] max-h-[25px] md:max-h-[36px]"
               src="/public/illustrations-and-icons/2023-10-24-annikaSCHULTE-icon-heart.svg"
             />by&nbsp;
             <a
-              href="https://mk-rietzl.de/de/"
+              href="https://mk-rietzl.de/en/"
               target="_blank"
               rel="noreferrer"
-              class="underline"
+              class="underline hover:cursor-dotWithArrowPrimary2"
             >
               mk rietzl</a
             >
           </div>
           <a
-            class="hover:cursor-dotWithArrowPrimary1"
+            class="hover:cursor-dotWithArrowPrimary2"
             href="https://www.linkedin.com/in/annika-schulte-02363511a/"
             target="_blank"
             rel="noreferrer"
             ><img
+              class="h-[20px] md:h-[30px] lg:h-[36px]"
               src="/public/illustrations-and-icons/2023-10-24-annikaSCHULTE-icon-LinkedIn-2.svg"
           /></a>
         </div>
@@ -1207,6 +1370,55 @@
     </footer>
 
     <script>
+      // navbar section:
+
+      function homeFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        } else {
+          x.className = "topnav";
+        }
+      }
+
+      function menuFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        } else {
+          x.className = "topnav";
+        }
+      }
+
+      function langFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        } else {
+          x.className = "topnav";
+        }
+      }
+
+      // accordion section:
+
+      var acc = document.getElementsByClassName("accordion");
+      var i;
+
+      for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+          this.classList.toggle("active");
+          var panel = this.nextElementSibling;
+          if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+          } else {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+            document
+              .getElementByClassName("accordion")
+              .remove("hover:cursor-dotWithPlusPrimary1");
+          }
+        });
+      }
+
       document.getElementById("date").innerHTML = new Date().getFullYear();
     </script>
   </body>
